@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>MSAN 622 Homework 1</title>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/d3.min.js"></script>
+
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/bootstrap-theme.min.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="css/custom.css">
+
+<style type="text/css">
+    body {
+        padding-top: 30px;
+        padding-bottom: 20px;
+    }
+</style>
+
+</head>
+<body>
+
+<div class="jumbotron color-backblue">
+    <div class="container">
+        <h1 align="center">Homework 1</h1>      
+    </div>
+</div>
+
+<div class="chart"></div>
+
+<!-- <script src="js/d3.min.js"></script>
+ -->
+
+<script language="JavaScript" type="Text/JavaScript">
+	
+	function get_user_input2(){
+		var user_input = decodeURI(window.location.search);
+		var user_input_stripped = user_input.replace(/[^A-z]/ig, '');
+        var letter_lst = user_input_stripped.split("");
+        return letter_lst
+	}
+
+	function get_user_input(){
+		var user_input = decodeURI(window.location.search);
+		var user_input_stripped = user_input.replace(/\W/g, '')
+        return user_input_stripped
+	}
+
+	function get_letter_frequency(user_input){
+		letter_dic = {};
+        for (var i = 0; i < user_input.length; i++) {
+            var letter = simpleString[i];
+            if (!(letter in letter_dic)){letter_dic[letter] = 0};
+            letter_dic[letter] += 1;
+        };
+
+        // create lists of letters and counts from dictionary to use for bar chart:
+        // these will be in alphabetical order, I think
+        // letters = [];
+        // counts = [];
+        // for (letter in d){ 
+        //     letters.push(letter);
+        //     counts.push(dic[letter]);
+        //     };
+
+        // return [counts, letters]
+
+	}
+
+	var user_input = get_user_input();
+	var letter_freq = get_letter_frequency(user_input);
+	console.log(letter_freq);
+	var data = d3.entries(letter_freq);
+
+
+
+
+</script>	
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
