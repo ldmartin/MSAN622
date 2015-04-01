@@ -202,12 +202,12 @@
 
     svg.append("g")
         .attr("class", "x axis")
-        // .attr("transform", "translate(0," + height + ")")
+        .attr("transform", "translate(0," + height + ")")
         .call(xAxis);
 
     svg.append("text")      // text label for the x axis
         .attr("x", width / 2 )
-        .attr("y",  height + margin.bottom + 5)
+        .attr("y",  height + margin.bottom + 1)
         .style("text-anchor", "middle")
         .text("Letter");
 
