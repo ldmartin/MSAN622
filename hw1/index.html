@@ -205,6 +205,12 @@
         .attr("transform", "translate(0," + height + ")")
         .call(xAxis);
 
+    svg.append("text")      // text label for the x axis
+        .attr("x", width / 2 )
+        .attr("y",  height + margin.bottom)
+        .style("text-anchor", "middle")
+        .text("Letter");
+
     svg.append("g")
           .attr("class", "y axis")
           .call(yAxis)
