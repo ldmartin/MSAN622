@@ -123,9 +123,11 @@
 
 <script language="JavaScript" type="Text/JavaScript">
 	
-	function get_user_input2(){
-		var user_input = decodeURI(window.location.search);
-		var user_input_stripped = user_input.replace(/[^A-z]/ig, '');
+    var string_input = decodeURI(window.location.search)
+
+	function get_user_input2(string_input){
+		// var user_input = decodeURI(window.location.search);
+		var user_input_stripped = string_input.replace(/[^A-z]/ig, '');
         var letter_lst = user_input_stripped.split("");
         return letter_lst
 	}
@@ -149,7 +151,7 @@
 	}
 
 
-	var input = get_user_input();
+	var input = get_user_input2(string_input);
 	var letter_freq = get_letter_frequency(input);
 
 	console.log(letter_freq);
@@ -188,7 +190,7 @@
         .orient("left")
         .ticks(10);
 
-    var title = d3.select(".chart-title").text("Letter Frequencies in ...")
+    var title = d3.select(".chart-title").text('Letter Frequencies in "' + string_input + '"')
 
     var svg = d3.select(".chart").append("svg")
         .attr("width", width + margin.left + margin.right)
