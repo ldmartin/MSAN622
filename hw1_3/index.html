@@ -333,10 +333,10 @@ label {
           .on('mouseout', tip.hide)
           ;
 
-    d3.select("button").on("change", change);
+    d3.select("button").on("click", change);
 
     var sortTimeout = setTimeout(function() {
-        d3.select("button").property("checked", true).each(change);
+        d3.select("button").property("clicked", true).each(change);
       }, 2000);
 
     function change() {
