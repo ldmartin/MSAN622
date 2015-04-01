@@ -159,7 +159,7 @@ label {
   line-height: 1;
   font-weight: bold;
   padding: 12px;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.8);
   color: #fff;
   border-radius: 2px;
 }
@@ -171,7 +171,7 @@ label {
   font-size: 10px;
   width: 100%;
   line-height: 1;
-  color: rgba(0, 0, 0, 0.5);
+  color: rgba(0, 0, 0, 0.8);
   content: "\25BC";
   position: absolute;
   text-align: center;
@@ -279,7 +279,7 @@ label {
         .attr('class', 'd3-tip')
         .offset([-10, 0])
         .html(function(d) {
-          return "<strong>Count:</strong> <span style='color:slateblue'>" + d.value + "</span>";
+          return "<strong>Count:</strong> <span style='color:white'>" + d.value + "</span>";
         })
 
     var svg = d3.select(".chart").append("svg")
