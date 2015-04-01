@@ -88,7 +88,7 @@
 </div>
 
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-12">
         <h2 class="page-header" id="sectionHeader"></h2>
         <p id="printedText"><p>
     </div><!-- /.col-lg-6 -->
@@ -107,7 +107,7 @@
 <div class="row">
     <div class="col-md-9"></div>
     <div class="col-md-3">
-        <input type="checkbox"> Sort
+        <input id="check-input" type="checkbox"> Sort
     </div>
 </div>
 
@@ -368,10 +368,10 @@ label {
           .on('mouseout', tip.hide)
           ;
 
-    d3.select("input").on("change", change);
+    d3.select("#check-input").on("change", change);
 
     var sortTimeout = setTimeout(function() {
-        d3.select("input").property("checked", true).each(change);
+        d3.select("#check-input").property("checked", true).each(change);
       }, 2000);
 
     function change() {
