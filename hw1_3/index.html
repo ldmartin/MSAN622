@@ -8,12 +8,9 @@
 
 <title>MSAN 622 Homework 1</title>
 
-
 <script src="js/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/d3.min.js"></script>
-
-<script src="js/index.js"></script>
 
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="css/bootstrap-theme.min.css" rel="stylesheet">
@@ -74,16 +71,7 @@
     </div>
 </div>
 
-<div class="row">
-    <div class="col-md-9">Generating frequency graph...</div>
-    <div class="col-md-3">
-        <input type="checkbox"> Sort
-    </div>
-</div>
-
 <div class="chart"></div>
-
-<hr/>
 
 <div class="row">
     <div class="col-md-4">
@@ -95,10 +83,6 @@
                     <li>custom x-axis and y-axis labels and placement</li>
                     <li>number of y-axis tick marks based on maximum letter occurrence</li>
                     <li>y-axis tick marks formatted to 0 decimal places</li>
-                    <li>y-axis grid lines</li>
-                    <li>tip displaying counts of specific letter on mouse-over</li>
-                    <li>option to letters bars alphabetically or by descending count</li>
-
                 </ul>
         </p>
     </div><!-- /.col-lg-6 -->
@@ -113,14 +97,11 @@
 <style>
 
 .bar {
-  /*fill: steelblue;*/
-  fill: lavender;
-  fill-opacity: .9;
+  fill: steelblue;
 }
 
 .bar:hover {
-  /*fill: black;*/
-  fill: slateblue;
+  fill: brown;
 }
 
 .axis {
@@ -138,52 +119,7 @@
   display: none;
 }
 
-label {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-}
-
-.grid .tick {
-    stroke: lightgrey;
-    opacity: 0.7;
-}
-.grid path {
-      stroke-width: 0;
-}
-
-.d3-tip {
-  line-height: 1;
-  font-weight: bold;
-  padding: 12px;
-  background: rgba(0, 0, 0, 0.8);
-  color: #fff;
-  border-radius: 2px;
-}
-
-/* Creates a small triangle extender for the tooltip */
-.d3-tip:after {
-  box-sizing: border-box;
-  display: inline;
-  font-size: 10px;
-  width: 100%;
-  line-height: 1;
-  color: rgba(0, 0, 0, 0.8);
-  content: "\25BC";
-  position: absolute;
-  text-align: center;
-}
-
-/* Style northward tooltips differently */
-.d3-tip.n:after {
-  margin: -1px 0 0 0;
-  top: 100%;
-  left: 0;
-}
-
 </style>
-
-
 <!-- <svg class="chart"></svg>
  -->
 
@@ -250,17 +186,9 @@ label {
         .range([height, 0])
         .domain([0, d3.max(data, function(d) { return d.value; })]);
 
-    var formatAxis = d3.format('.0f');
+    var formatxAxis = d3.format('.0f');
 
     var num_ticks = d3.max(data, function(d) { return d.value; })
-
-    function make_y_axis(num_ticks, formatAxis) {        
-    return d3.svg.axis()
-        .scale(y)
-        .orient("left")
-        // .tickFormat(formatxAxis)
-        .ticks(num_ticks)
-    }
 
     var xAxis = d3.svg.axis()
         .scale(x)
@@ -269,24 +197,14 @@ label {
     var yAxis = d3.svg.axis()
         .scale(y)
         .orient("left")
-        .tickFormat(formatAxis)
+        .tickFormat(formatxAxis)
         .ticks(num_ticks);
-
-    var tip = d3.tip()
-        .attr('class', 'd3-tip')
-        .offset([-10, 0])
-        .html(function(d) {
-          return "<strong>Count:</strong> <span style='color:red'>" + d.value + "</span>";
-        })
 
     var svg = d3.select(".chart").append("svg")
         .attr("width", width + margin.left + margin.right)
         .attr("height", height + margin.top + margin.bottom)
       .append("g")
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-
-    svg.call(tip);
-
 
     svg.append("g")
         .attr("class", "x axis")
@@ -302,13 +220,6 @@ label {
     svg.append("g")
             .attr("class", "y axis")
             .call(yAxis);
-
-    svg.append("g")         
-            .attr("class", "grid")
-            .call(make_y_axis(num_ticks, formatAxis)
-            .tickSize(-width, 0, 0)
-            .tickFormat("")
-            );
 
     // svg.append("text")
     //         .attr("transform", "rotate(-90)")
@@ -333,43 +244,7 @@ label {
           .attr("x", function(d) { return x(d.key); })
           .attr("width", x.rangeBand())
           .attr("y", function(d) { return y(d.value); })
-          .attr("height", function(d) { return height - y(d.value); })
-          .on('mouseover', tip.show)
-          .on('mouseout', tip.hide)
-          ;
-
-    d3.select("input").on("change", change);
-
-    var sortTimeout = setTimeout(function() {
-        d3.select("input").property("checked", true).each(change);
-      }, 2000);
-
-    function change() {
-        clearTimeout(sortTimeout);
-
-        // Copy-on-write since tweens are evaluated after a delay.
-        var x0 = x.domain(data.sort(this.checked
-            ? function(a, b) { return b.value - a.value; }
-            : function(a, b) { return d3.ascending(a.key, b.key); })
-            .map(function(d) { return d.key; }))
-            .copy();
-
-        svg.selectAll(".bar")
-            .sort(function(a, b) { return x0(a.key) - x0(b.key); });
-
-        var transition = svg.transition().duration(750),
-            delay = function(d, i) { return i * 50; };
-
-        transition.selectAll(".bar")
-            .delay(delay)
-            .attr("x", function(d) { return x0(d.key); });
-
-        transition.select(".x.axis")
-            .call(xAxis)
-          .selectAll("g")
-            .delay(delay);
-      }
-
+          .attr("height", function(d) { return height - y(d.value); });
 
 
 
