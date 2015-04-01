@@ -203,10 +203,7 @@
     svg.append("g")
         .attr("class", "x axis")
         .attr("transform", "translate(0," + height + ")")
-        .call(xAxis)
-      .append("text")
-        .style("text-anchor", "end")
-        .text("Letters");
+        .call(xAxis);
 
     svg.append("g")
           .attr("class", "y axis")
