@@ -81,6 +81,7 @@
                     <li>mouse-over coloring</li>
                     <li>alphabetical order</li>
                     <li>custom tick marks</li>
+                    <li>X and Y axis labels</li>
                 </ul>
         </p>
     </div><!-- /.col-lg-6 -->
@@ -171,6 +172,8 @@
     // var data = [letter_freq];
     var data = d3.entries(letter_freq);
 
+    var title = d3.select(".chart-title").text('Letter Frequencies in "' + printed_input + '"')
+
     var margin = {top: 20, right: 20, bottom: 30, left: 40},
         width = 960 - margin.left - margin.right,
         height = 500 - margin.top - margin.bottom;
@@ -183,6 +186,8 @@
         .range([height, 0])
         .domain([0, d3.max(data, function(d) { return d.value; })]);
 
+    var formatxAxis = d3.format('.0f');
+
     var xAxis = d3.svg.axis()
         .scale(x)
         .orient("bottom");
@@ -190,9 +195,8 @@
     var yAxis = d3.svg.axis()
         .scale(y)
         .orient("left")
-        .ticks(10);
-
-    var title = d3.select(".chart-title").text('Letter Frequencies in "' + printed_input + '"')
+        .tickFormat(formatxAxis)
+        .ticks(3);
 
     var svg = d3.select(".chart").append("svg")
         .attr("width", width + margin.left + margin.right)
