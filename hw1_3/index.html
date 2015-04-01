@@ -12,6 +12,8 @@
 <script src="js/bootstrap.min.js"></script>
 <script src="js/d3.min.js"></script>
 
+<script src="js/index.js"></script>
+
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="css/bootstrap-theme.min.css" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="css/custom.css">
@@ -83,6 +85,8 @@
                     <li>custom x-axis and y-axis labels and placement</li>
                     <li>number of y-axis tick marks based on maximum letter occurrence</li>
                     <li>y-axis tick marks formatted to 0 decimal places</li>
+                    <li>y-axis grid lines</li>
+
                 </ul>
         </p>
     </div><!-- /.col-lg-6 -->
@@ -125,6 +129,35 @@
 }
 .grid path {
       stroke-width: 0;
+}
+
+.d3-tip {
+  line-height: 1;
+  font-weight: bold;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  border-radius: 2px;
+}
+
+/* Creates a small triangle extender for the tooltip */
+.d3-tip:after {
+  box-sizing: border-box;
+  display: inline;
+  font-size: 10px;
+  width: 100%;
+  line-height: 1;
+  color: rgba(0, 0, 0, 0.8);
+  content: "\25BC";
+  position: absolute;
+  text-align: center;
+}
+
+/* Style northward tooltips differently */
+.d3-tip.n:after {
+  margin: -1px 0 0 0;
+  top: 100%;
+  left: 0;
 }
 
 </style>
@@ -216,6 +249,13 @@
         .tickFormat(formatAxis)
         .ticks(num_ticks);
 
+    var tip = d3.tip()
+        .attr('class', 'd3-tip')
+        .offset([-10, 0])
+        .html(function(d) {
+          return "<strong>Frequency:</strong> <span style='color:red'>" + d.value + "</span>";
+        })
+
     var svg = d3.select(".chart").append("svg")
         .attr("width", width + margin.left + margin.right)
         .attr("height", height + margin.top + margin.bottom)
@@ -267,7 +307,11 @@
           .attr("x", function(d) { return x(d.key); })
           .attr("width", x.rangeBand())
           .attr("y", function(d) { return y(d.value); })
-          .attr("height", function(d) { return height - y(d.value); });
+          .attr("height", function(d) { return height - y(d.value); })
+          .on('mouseover', tip.show)
+          .on('mouseout', tip.hide)
+          ;
+
 
 
 
