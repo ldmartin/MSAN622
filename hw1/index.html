@@ -214,20 +214,20 @@
     svg.append("g")
           .attr("class", "y axis")
           .call(yAxis)
-        // .append("text")
-        //   .attr("transform", "rotate(-90)")
-        //   .attr("y", 2.5)
-        //   .attr("dy", ".71em")
-        //   .style("text-anchor", "end")
-        //   .text("Count");
+        .append("text")
+          .attr("transform", "rotate(-90)")
+          .attr("y", 2.5)
+          .attr("dy", ".71em")
+          .style("text-anchor", "end")
+          .text("Count");
 
-    svg.append("text")
-        .attr("transform", "rotate(-90)")
-        .attr("y", 0 – margin.left)
-        .attr("x",0 - (height / 2))
-        .attr("dy", "1em")
-        .style("text-anchor", "middle")
-        .text("Count");
+    // svg.append("text")
+    //     .attr("transform", "rotate(-90)")
+    //     .attr("y", 0 – margin.left)
+    //     .attr("x",0 - (height / 2))
+    //     .attr("dy", "1em")
+    //     .style("text-anchor", "middle")
+    //     .text("Count");
 
 
       svg.selectAll(".bar")
