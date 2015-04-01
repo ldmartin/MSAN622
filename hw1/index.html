@@ -79,7 +79,7 @@
         <p>
             <ul style="list-style-type:disc">
                     <li>mouse-over coloring</li>
-                    <li>alphabetical order</li>
+                    <li>alphabetical ordering of letters on graph</li>
                     <li>custom x-axis and y-axis labels and placement</li>
                     <li>number of y-axis tick marks based on max letter letter count</li>
                     <li>y-axis tick marks formatted to 0 decimal places</li>
@@ -129,15 +129,15 @@
     // var printed_input = string_input.replace(/[^\w\s]|_/g, "").replace(/\s+/g, " ");
     var printed_input = string_input.slice(1,string_input.length);
 
-	function get_user_input2(string_input){
-		// var user_input = decodeURI(window.location.search);
-		var user_input_stripped = string_input.replace(/[^A-z]/ig, '');
-        var letter_lst = user_input_stripped.split("");
-        return letter_lst
-	}
+	// function get_user_input2(string_input){
+	// 	// var user_input = decodeURI(window.location.search);
+	// 	var user_input_stripped = string_input.replace(/[^A-z]/ig, '');
+ //        var letter_lst = user_input_stripped.split("");
+ //        return letter_lst
+	// }
 
 	function get_user_input(string_input){
-		var user_input_stripped = string_input.replace(/\W/g, '');
+		var user_input_stripped = string_input.replace(/\W/g, '').toLower();
         var input = user_input_stripped.split("").sort();
         return input
 	}
