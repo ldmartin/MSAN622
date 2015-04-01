@@ -245,7 +245,7 @@ label {
         height = 500 - margin.top - margin.bottom;
 
     var x = d3.scale.ordinal()
-        .rangeRoundBands([0, width], .1, 1)
+        .rangeRoundBands([0, width], .1)
         .domain(data.map(function(d) { return d.key; }));
 
     var y = d3.scale.linear()
