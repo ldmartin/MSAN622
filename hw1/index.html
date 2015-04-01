@@ -122,7 +122,7 @@
         .domain(data.map(function(d) { return d.key; }));
 
     var y = d3.scale.linear()
-        .range([height, 0]);
+        .range([height, 0])
         .domain([0, d3.max(data, function(d) { return d.value; })]);
 
     var xAxis = d3.svg.axis()
