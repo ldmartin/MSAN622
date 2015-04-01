@@ -123,7 +123,8 @@
 
 <script language="JavaScript" type="Text/JavaScript">
 	
-    var string_input = decodeURI(window.location.search)
+    var string_input = decodeURI(window.location.search);
+    var printed_input = string_input.replace(/[^\w\s]|_/g, "").replace(/\s+/g, " ");
 
 	function get_user_input2(string_input){
 		// var user_input = decodeURI(window.location.search);
@@ -190,7 +191,7 @@
         .orient("left")
         .ticks(10);
 
-    var title = d3.select(".chart-title").text('Letter Frequencies in "' + string_input + '"')
+    var title = d3.select(".chart-title").text('Letter Frequencies in "' + printed_input + '"')
 
     var svg = d3.select(".chart").append("svg")
         .attr("width", width + margin.left + margin.right)
