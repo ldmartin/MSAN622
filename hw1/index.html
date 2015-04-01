@@ -136,8 +136,7 @@
         return letter_lst
 	}
 
-	function get_user_input(){
-		var user_input = decodeURI(window.location.search);
+	function get_user_input(string_input){
 		var user_input_stripped = user_input.replace(/\W/g, '').toLowerCase();
         var input = user_input_stripped.split("").sort();
         return input
@@ -155,7 +154,7 @@
 	}
 
 
-	var input = get_user_input2(string_input);
+	var input = get_user_input(string_input);
 	var letter_freq = get_letter_frequency(input);
 
 	console.log(letter_freq);
