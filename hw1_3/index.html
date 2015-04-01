@@ -253,7 +253,7 @@
         .attr('class', 'd3-tip')
         .offset([-10, 0])
         .html(function(d) {
-          return "<strong>Frequency:</strong> <span style='color:red'>" + d.value + "</span>";
+          return "<strong>Counts:</strong> <span style='color:red'>" + d.value + "</span>";
         })
 
     var svg = d3.select(".chart").append("svg")
@@ -261,6 +261,9 @@
         .attr("height", height + margin.top + margin.bottom)
       .append("g")
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+    svg.call(tip);
+
 
     svg.append("g")
         .attr("class", "x axis")
@@ -311,6 +314,8 @@
           .on('mouseover', tip.show)
           .on('mouseout', tip.hide)
           ;
+
+
 
 
 
