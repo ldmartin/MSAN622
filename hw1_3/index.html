@@ -234,9 +234,9 @@
         .text("Letter");
 
     svg.append("g")
-            .attr("class", "y axis")
+            // .attr("class", "y axis")
             .attr("class", "grid")
-            .call(yAxis
+            .call(make_y_axis(num_ticks, formatAxis)
             .tickSize(-width, 0, 0)
             .tickFormat("")
             )
