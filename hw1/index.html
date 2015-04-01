@@ -39,15 +39,20 @@
  -->
 
 <style>
-.chart div {
-  font: 10px sans-serif;
-  background-color: steelblue;
-  text-align: right;
-  padding: 3px;
-  margin: 1px;
-  color: white;
+
+.chart rect {
+  fill: steelblue;
 }
+
+.chart text {
+  fill: white;
+  font: 10px sans-serif;
+  text-anchor: end;
+}
+
 </style>
+<svg class="chart"></svg>
+
 
 <script language="JavaScript" type="Text/JavaScript">
 	
@@ -106,7 +111,7 @@
     //         .text(function(d) { return d; });
 
     var width = 420,
-    barHeight = 20;
+        barHeight = 20;
 
     var x = d3.scale.linear()
         .domain([0, d3.max(data)])
