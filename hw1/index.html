@@ -171,7 +171,6 @@
         .attr("y", function(d) { return y(d.value) + 3; })
         .attr("dy", ".75em")
         .text(function(d) { return d.value; });
-    });
 
     function type(d) {
         d.value = +d.value; // coerce to number
