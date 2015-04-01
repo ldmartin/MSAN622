@@ -137,7 +137,7 @@
 	}
 
 	function get_user_input(string_input){
-		var user_input_stripped = user_input.replace(/\W/g, '').toLowerCase();
+		var user_input_stripped = string_input.replace(/\W/g, '').toLower();
         var input = user_input_stripped.split("").sort();
         return input
 	}
