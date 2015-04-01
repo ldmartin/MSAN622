@@ -138,18 +138,18 @@
 
 	function get_user_input(){
 		var user_input = decodeURI(window.location.search);
-		var user_input_stripped = user_input.replace(/\W/g, '')
-        var input = user_input_stripped.split("").sort()
+		var user_input_stripped = user_input.replace(/\W/g, '').toLowerCase();
+        var input = user_input_stripped.split("").sort();
         return input
 	}
 
 	function get_letter_frequency(input){
-		letter_dic = {};
+		var letter_dic = {};
         for (var i = 0; i < input.length; i++) {
             var letter = input[i];
-            if (!(letter in letter_dic)){letter_dic[letter] = 0};
+            if (!(letter in letter_dic)){letter_dic[letter] = 0}
             letter_dic[letter] += 1;
-        };
+        }
 
         return letter_dic
 	}
@@ -168,12 +168,12 @@
     for (letter in letter_freq){ 
         letters.push(letter);
         counts.push(letter_freq[letter]);
-        };
+        }
 
     // var data = [letter_freq];
     var data = d3.entries(letter_freq);
 
-    var title = d3.select(".chart-title").text('Letter Frequencies in "' + printed_input + '"')
+    var title = d3.select(".chart-title").text('Letter Frequencies in "' + printed_input + '"');
 
     var margin = {top: 20, right: 20, bottom: 30, left: 40},
         width = 960 - margin.left - margin.right,
