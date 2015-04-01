@@ -188,6 +188,8 @@
 
     var formatxAxis = d3.format('.0f');
 
+    var num_ticks = d3.max(data, function(d) { return d.value; })
+
     var xAxis = d3.svg.axis()
         .scale(x)
         .orient("bottom");
@@ -196,7 +198,7 @@
         .scale(y)
         .orient("left")
         .tickFormat(formatxAxis)
-        .ticks(3);
+        .ticks(num_ticks);
 
     var svg = d3.select(".chart").append("svg")
         .attr("width", width + margin.left + margin.right)
