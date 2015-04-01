@@ -76,7 +76,7 @@
 
 <div class="row">
     <!-- <input class="btn btn-primary btn-lg" role="button" type="button"> Sort values -->
-    <button type="button" class="btn btn-primary">Sort Values</button>
+    <input type="button" class="btn btn-primary">Sort Values
 </div>
 
 <div class="chart"></div>
@@ -333,10 +333,10 @@ label {
           .on('mouseout', tip.hide)
           ;
 
-    d3.select("button").on("click", change);
+    d3.select("input").on("check", change);
 
     var sortTimeout = setTimeout(function() {
-        d3.select("button").property("clicked", true).each(change);
+        d3.select("input").property("checked", true).each(change);
       }, 2000);
 
     function change() {
