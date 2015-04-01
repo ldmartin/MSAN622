@@ -58,7 +58,7 @@
 <!-- to make the background transparent instead of grey:
  --><!-- <div style="background:transparent !important" class="jumbotron">
  -->
- <div class="jumbotron color-backblue">
+<div class="jumbotron color-backblue">
     <div class="container">
         <h1 align="center">Hoework 1</h1>      
     </div>
@@ -91,20 +91,31 @@
     </div><!-- /.col-lg-6 -->
 </div>
 
+
 <style>
-.chart div {
+.bar {
+  fill: steelblue;
+}
+
+.bar:hover {
+  fill: brown;
+}
+
+.axis {
   font: 10px sans-serif;
-  background-color: steelblue;
-  text-align: right;
-  padding: 3px;
-  margin: 1px;
-  color: white;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.x.axis path {
+  display: none;
 }
 </style>
-
-
-
-<div class="chart"></div>
 
 
 
@@ -119,41 +130,102 @@
         var simpleString = userInput.value;
         document.getElementById("printedText").innerHTML = fullString;
         document.getElementById("sectionHeader").innerHTML = "Letter Frequency";
+      }
 
-        // create dictionary where keys are leters and values are counts of letters:
-        dic = {};
-        for (var i = 0; i < simpleString.length; i++) {
-            var letter = simpleString[i];
-            if (!(letter in dic)){dic[letter] = 0};
-            dic[letter] += 1;
-        };
+      function get_user_input2(){
+        var user_input = decodeURI(window.location.search);
+        var user_input_stripped = user_input.replace(/[^A-z]/ig, '');
+            var letter_lst = user_input_stripped.split("");
+            return letter_lst
+      }
+
+      function get_user_input(){
+        var user_input = decodeURI(window.location.search);
+        var user_input_stripped = user_input.replace(/\W/g, '')
+            var input = user_input_stripped.split("").sort()
+            return input
+      }
+
+      function get_letter_frequency(input){
+        letter_dic = {};
+            for (var i = 0; i < input.length; i++) {
+                var letter = input[i];
+                if (!(letter in letter_dic)){letter_dic[letter] = 0};
+                letter_dic[letter] += 1;
+            };
+
+            return letter_dic
+      }
+
+
+      var input = get_user_input();
+      var letter_freq = get_letter_frequency(input);
+
+      console.log(letter_freq);
+      // var data = d3.entries(letter_freq);
 
         // create lists of letters and counts from dictionary to use for bar chart:
         // these will be in alphabetical order, I think
         letters = [];
         counts = [];
-        for (letter in d){ 
+        for (letter in letter_freq){ 
             letters.push(letter);
-            counts.push(dic[letter]);
+            counts.push(letter_freq[letter]);
             };
 
-        d3.select("body").append("p").innerHTML("Hello, world!")
+        // var data = [letter_freq];
+        var data = d3.entries(letter_freq);
 
+        var margin = {top: 20, right: 20, bottom: 30, left: 40},
+            width = 960 - margin.left - margin.right,
+            height = 500 - margin.top - margin.bottom;
 
-      };
+        var x = d3.scale.ordinal()
+            .rangeRoundBands([0, width], .1)
+            .domain(data.map(function(d) { return d.key; }));
 
-      // d3.select("body").append("p").text("Hello, world!")
+        var y = d3.scale.linear()
+            .range([height, 0])
+            .domain([0, d3.max(data, function(d) { return d.value; })]);
 
-      // var data = [4, 8, 15, 16, 23, 42];
+        var xAxis = d3.svg.axis()
+            .scale(x)
+            .orient("bottom");
 
+        var yAxis = d3.svg.axis()
+            .scale(y)
+            .orient("left")
+            .ticks(10);
 
-      // d3.select(".chart")
-      //   .selectAll("div")
-      //     .data(counts)
-      //   .enter().append("div")
-      //     .style("width", function(d) { return d * 10 + "px"; })
-      //     .text(function(d) { return d; });
-    
+        var svg = d3.select("body").append("svg")
+            .attr("width", width + margin.left + margin.right)
+            .attr("height", height + margin.top + margin.bottom)
+          .append("g")
+            .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+        svg.append("g")
+            .attr("class", "x axis")
+            .attr("transform", "translate(0," + height + ")")
+            .call(xAxis);
+
+        svg.append("g")
+              .attr("class", "y axis")
+              .call(yAxis)
+            .append("text")
+              .attr("transform", "rotate(-90)")
+              .attr("y", 6)
+              .attr("dy", ".71em")
+              .style("text-anchor", "end")
+              .text("Frequency");
+
+          svg.selectAll(".bar")
+              .data(data)
+            .enter().append("rect")
+              .attr("class", "bar")
+              .attr("x", function(d) { return x(d.key); })
+              .attr("width", x.rangeBand())
+              .attr("y", function(d) { return y(d.value); })
+              .attr("height", function(d) { return height - y(d.value); });
 
 </script>
 
