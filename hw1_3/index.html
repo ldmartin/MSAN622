@@ -74,6 +74,10 @@
     </div>
 </div>
 
+<div class="row">
+    <label><input type="checkbox"> Sort values</label>
+</div>
+
 <div class="chart"></div>
 
 <div class="row">
@@ -170,7 +174,7 @@ label {
 
 </style>
 
-<label><input type="checkbox"> Sort values</label>
+
 <!-- <svg class="chart"></svg>
  -->
 
@@ -325,7 +329,7 @@ label {
           .on('mouseout', tip.hide)
           ;
 
-    d3.select(".input").on("change", change);
+    d3.select("input").on("change", change);
 
     var sortTimeout = setTimeout(function() {
         d3.select("input").property("checked", true).each(change);
