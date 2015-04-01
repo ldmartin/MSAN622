@@ -124,7 +124,8 @@
 <script language="JavaScript" type="Text/JavaScript">
 	
     var string_input = decodeURI(window.location.search);
-    var printed_input = string_input.replace(/[^\w\s]|_/g, "").replace(/\s+/g, " ");
+    // var printed_input = string_input.replace(/[^\w\s]|_/g, "").replace(/\s+/g, " ");
+    var printed_input = string_input.slice(1,string_input.length)
 
 	function get_user_input2(string_input){
 		// var user_input = decodeURI(window.location.search);
