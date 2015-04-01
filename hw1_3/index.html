@@ -233,16 +233,16 @@
         .style("text-anchor", "middle")
         .text("Letter");
 
-    // svg.append("g")
-    //         .attr("class", "y axis")
-    //         .call(yAxis)
+    svg.append("g")
+            .attr("class", "y axis")
+            .call(yAxis);
 
     svg.append("g")         
             .attr("class", "grid")
             .call(make_y_axis(num_ticks, formatAxis)
             .tickSize(-width, 0, 0)
             .tickFormat("")
-    )
+            );
 
     // svg.append("text")
     //         .attr("transform", "rotate(-90)")
