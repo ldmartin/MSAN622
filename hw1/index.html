@@ -49,13 +49,14 @@
 	function get_user_input(){
 		var user_input = decodeURI(window.location.search);
 		var user_input_stripped = user_input.replace(/\W/g, '')
-        return user_input_stripped
+        var input = user_input_stripped.split("").sort()
+        return input
 	}
 
-	function get_letter_frequency(user_input){
+	function get_letter_frequency(input){
 		letter_dic = {};
-        for (var i = 0; i < user_input.length; i++) {
-            var letter = user_input[i];
+        for (var i = 0; i < input.length; i++) {
+            var letter = input[i];
             if (!(letter in letter_dic)){letter_dic[letter] = 0};
             letter_dic[letter] += 1;
         };
@@ -64,8 +65,8 @@
 	}
 
 
-	var user_input = get_user_input();
-	var letter_freq = get_letter_frequency(user_input);
+	var input = get_user_input();
+	var letter_freq = get_letter_frequency(input);
 
 	console.log(letter_freq);
 	// var data = d3.entries(letter_freq);
