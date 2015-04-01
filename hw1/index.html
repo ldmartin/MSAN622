@@ -80,6 +80,14 @@
         counts.push(letter_freq[letter]);
         };
 
+    d3.select(".chart")
+        .selectAll("div")
+            .data(counts)
+        .enter().append("div")
+            .style("width", function(d) { return d * 10 + "px"; })
+            .text(function(d) { return d; });
+
+
 
     var margin = {top: 20, right: 20, bottom: 30, left: 40},
         width = 960 - margin.left - margin.right,
