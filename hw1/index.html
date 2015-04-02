@@ -141,7 +141,7 @@
 
             <tbody>
                 <tr>
-                <td>basic bar chart creation</td>    
+                <td>Basic bar chart creation</td>    
                     <td>Mike Bostock's blog "Let's make a Bar Chart"
                           <ul style="list-style-type:disc">
                              <li>sections <a href="http://bost.ocks.org/mike/bar/">I</a>, <a href="http://bost.ocks.org/mike/bar/2/">II</a>, <a href="http://bost.ocks.org/mike/bar/3/">III</a></li>
@@ -150,7 +150,7 @@
                 </tr>
 
                 <tr>
-                    <th>Axis formatting</th>
+                    <td>Axis formatting</td>
                     <td><a href'http://www.d3noob.org/2012/12/adding-axis-labels-to-d3js-graph.html' >description here...</a></td>
                 </tr>
 
@@ -261,7 +261,8 @@ label {
 
 
 	function get_user_input(string_input){
-		  var user_input_stripped = string_input.replace(/\W/g, '').toLowerCase();
+		  // var user_input_stripped = string_input.replace(/\W/g, '').replace(/[0-9]/g, '').toLowerCase();
+      var user_input_stripped = string_input.replace(/[A-Za-z]/g, '').toLowerCase();
       var input = user_input_stripped.split("").sort();
       return input
 	}
