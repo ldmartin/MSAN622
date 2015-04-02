@@ -262,7 +262,7 @@ label {
 
 	function get_user_input(string_input){
 		  // var user_input_stripped = string_input.replace(/\W/g, '').replace(/[0-9]/g, '').toLowerCase();
-      var user_input_stripped = string_input.replace(/[A-Za-z]/g, '').toLowerCase();
+      var user_input_stripped = string_input.replace(/[^A-Za-z]/g, '').toLowerCase();
       var input = user_input_stripped.split("").sort();
       return input
 	}
