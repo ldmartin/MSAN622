@@ -40,7 +40,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="http://ldmartin.github.io/MSAN622/">MSAN 622 Homework 1</a>
+            <a class="navbar-brand" href="http://ldmartin.github.io/MSAN622/">MSAN 622</a>
         </div>
 
         <div id="navbar" class="navbar-collapse collapse">
@@ -111,7 +111,8 @@
         <h2 class="attributes"><a name="graph-attributes"></a>Graph Attributes</h2>
         <p>
             <ul style="list-style-type:disc">
-                    <li>mouse-over coloring</li>
+                    <li>custom coloring and opacity of bars</li>
+                    <li>mouse-over bar emphasis</li>
                     <li>alphabetical ordering of letters on graph</li>
                     <li>custom x-axis and y-axis labels and placement</li>
                     <li>number of y-axis tick marks based on maximum letter occurrence</li>
@@ -258,7 +259,7 @@ label {
     // var data = [letter_freq];
     var data = d3.entries(letter_freq);
 
-    var title = d3.select(".chart-title").text('Letter Frequencies in "' + printed_input + '"');
+    var title = d3.select(".chart-title").text('Letter frequencies in "' + printed_input + '"');
 
     var margin = {top: 20, right: 20, bottom: 30, left: 40},
         width = 960 - margin.left - margin.right,
