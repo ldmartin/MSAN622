@@ -398,7 +398,7 @@ label {
         .orient("left")
         .tickFormat(formatAxis)
         .ticks(num_ticks)
-        .ticksize(-width)
+        // .ticksize(-width)
         ;
 
     var tip = d3.tip()
@@ -429,8 +429,7 @@ label {
 
     svg.append("g")
             .attr("class", "y axis")
-            .call(yAxis)
-            ;
+            .call(yAxis);
 
     // svg.append("g")         
     //         .attr("class", "grid")
