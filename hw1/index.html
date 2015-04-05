@@ -353,12 +353,12 @@ label {
         .scale(y)
         .orient("left")
         .tickFormat(formatAxis)
-        .ticks(num_ticks);
+        .ticks(num_ticks)
         .on('mouseover.bold', function(){
           d3.select(this)
           .transition()
           .style("fill", colors.black)
-        })
+        });
 
     var tip = d3.tip()
         .attr('class', 'd3-tip')
