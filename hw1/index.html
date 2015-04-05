@@ -282,7 +282,7 @@ label {
     }
 
   if (error === true){
-      var errormessage = d3.select(".error-message").text('Please enter a valid search query, like this one!');
+      var errormessage = d3.select(".error-message").text('Please enter a valid search query, like the one above.');
       SearchTextBox.value = "Test me out!";
   }
 
@@ -295,11 +295,6 @@ label {
 
       location.href = "http://ldmartin.github.io/MSAN622/hw1/?" + fullString;
   }
-
-  // function add(text){
-  //     var TheTextBox = document.getElementById('user-field-input');
-  //     TheTextBox.value = TheTextBox.value + text;
-  // }
 
   function addtext(){
       var TheTextBox = document.getElementById('user-field-input');
