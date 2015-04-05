@@ -411,12 +411,12 @@ label {
           .attr("height", function(d) { return height - y(d.value); })
           .on('mouseover', tip.show)
           // .on('mouseout', tip.hide)
-          // .on("mouseout", function(){
-          //     d3.select(this)
-          //     .transition()
-          //     .duration(1000)
-          //     .style("fill", colors.lightteal);
-          // })
+          .on("mouseout", function(){
+              d3.select(this)
+              .transition()
+              .duration(1000)
+              .style("fill", colors.lightteal);
+          })
           ;
 
     d3.select("#check-input").on("change", change);
