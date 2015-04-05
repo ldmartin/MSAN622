@@ -469,8 +469,8 @@ label {
           .transition()
             // .delay(function(d, i) { return i * 10; })
             //.delay(1000)
-            .duration(2000)
-            .ease("elastic")
+            .duration(2500)
+            .ease("bounce")
             .attr('y', function(d) { return y(d.value); })
             .attr('height', function(d) { return height - y(d.value); });
 
@@ -536,7 +536,7 @@ label {
 
     var sortTimeout = setTimeout(function() {
         d3.select("#check-input").property("checked", true).each(change);
-      }, 2000);
+      }, 2500);
 
     function change() {
         clearTimeout(sortTimeout);
