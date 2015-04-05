@@ -469,7 +469,7 @@ label {
           .transition()
             .delay(function(d, i) { return i * 100; })
             .duration(1000)
-            .ease("elastic term")
+            .ease("elastic")
             .attr('y', function(d) { return y(d.value); })
             .attr('height', function(d) { return height - y(d.value); });
 
