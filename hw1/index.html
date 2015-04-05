@@ -181,12 +181,12 @@
   fill: lavender;
   fill-opacity: .9;
 }
-
+/*
 .bar:hover {
-  /*fill: black;*/
+  fill: black;
   fill: slateblue;
 }
-
+*/
 .axis {
   font: 10px sans-serif;
 }
@@ -291,7 +291,9 @@ label {
       "orange": "#ff7f00",
       "lightpink": "#fec0ff",
       "lightteal": "#b7fbf6",
-      "black": "#000000"
+      "black": "#000000",
+      "darkpurple": "#6a5acd",
+      "lavender": "#e6e6fa"
   };
 
 	var input = get_user_input(string_input);
@@ -410,13 +412,23 @@ label {
           .attr("width", x.rangeBand())
           .attr("y", function(d) { return y(d.value); })
           .attr("height", function(d) { return height - y(d.value); })
-          .on('mouseover', tip.show)
+          .on('mouseover.tip', tip.show)
           .on('mouseout.tip', tip.hide)
-          .on("mouseout.fill", function(){
+          // .on("mouseout.fill", function(){
+          //     d3.select(this)
+          //     .transition()
+          //     .duration(1000)
+          //     .style("fill", colors.lightteal)
+          // })
+          .on('mouseover.highlight', function(){
               d3.select(this)
               .transition()
-              .duration(1000)
-              .style("fill", colors.lightteal)
+              .style("fill", colors.darkpurple)
+          })
+          .on('mouseout.highlight', function(){
+              d3.select(this)
+              .transition()
+              .style("fill", colors.lavender)
           })
           // .on('click', function(){
           //     d3.select(this)
