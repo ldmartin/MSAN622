@@ -467,7 +467,8 @@ label {
           .attr("y", function(d) { return y(d.value); })
           .attr("height", 0)  // change this to the line above if you dont want bars to grow:
           .transition()
-            .delay(function(d, i) { return i * 10; })
+            // .delay(function(d, i) { return i * 10; })
+            .delay(1000)
             .duration(1000)
             .ease("elastic")
             .attr('y', function(d) { return y(d.value); })
