@@ -216,6 +216,11 @@ label {
       stroke-width: 0;
 }
 
+.grid:hover {
+  fill: black;
+  opacity: 0;
+}
+
 .d3-tip {
   line-height: 1;
   font-weight: bold;
@@ -386,6 +391,11 @@ label {
             .call(make_y_axis(num_ticks, formatAxis)
             .tickSize(-width, 0, 0)
             .tickFormat("")
+            .on('mouseover.bold', function(){
+              d3.select(this)
+              .transition()
+              .style("fill", colors.black)
+            })
             );
 
     // svg.append("text")
