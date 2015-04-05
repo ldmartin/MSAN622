@@ -456,7 +456,7 @@ label {
 
     var sortTimeout = setTimeout(function() {
         d3.select("#check-input").property("checked", true).each(change);
-      }, 1000);
+      }, 500);
 
     function change() {
         clearTimeout(sortTimeout);
