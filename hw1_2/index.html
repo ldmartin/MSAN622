@@ -458,11 +458,12 @@ label {
         .style("text-anchor", "middle")
         .text("Count");
 
-      svg.selectAll(".bar")
+    bars = svg.selectAll(".bar")
           .data(data)
         .enter().append("rect")
-          .style("fill", colors.black)
-          .attr("class", "bar")
+          .style("fill", colors.black);
+
+    bars.attr("class", "bar")
           .attr("x", function(d) { return x(d.key); })
           .attr("width", x.rangeBand())
           .attr("y", function(d) { return y(d.value); })
