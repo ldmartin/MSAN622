@@ -279,7 +279,9 @@ label {
     }
 
   if (error === true){
-      var errormessage = d3.select(".error-message").text('Please enter a valid search query, like the one below!');
+      var errormessage = d3.select(".error-message").text('Please enter a valid search query, like this one!');
+      var SearchTextBox = document.getElementById('user-field-input');
+      SearchTextBox.value = "Test me out!";
   }
 
   var title = d3.select(".chart-title").text('Letter frequencies in "' + printed_input + '"');
