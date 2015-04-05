@@ -398,7 +398,7 @@ label {
         .orient("left")
         .tickFormat(formatAxis)
         .ticks(num_ticks)
-        // .ticksize(-width)
+        .ticksize(-width)
         ;
 
     var tip = d3.tip()
@@ -432,18 +432,18 @@ label {
             .call(yAxis)
             ;
 
-    svg.append("g")         
-            .attr("class", "grid")
-            .call(make_y_axis(num_ticks, formatAxis)
-            .tickSize(-width, 0, 0)
-            .tickFormat("")
-            )
-            // .on('mouseover.bold', function(){
-            //   d3.select(this)
-            //   .transition()
-            //   .style("fill", colors.black)
-            // });
-            ;
+    // svg.append("g")         
+    //         .attr("class", "grid")
+    //         .call(make_y_axis(num_ticks, formatAxis)
+    //         .tickSize(-width, 0, 0)
+    //         .tickFormat("")
+    //         )
+    //         // .on('mouseover.bold', function(){
+    //         //   d3.select(this)
+    //         //   .transition()
+    //         //   .style("fill", colors.black)
+    //         // });
+    //         ;
 
     // svg.append("text")
     //         .attr("transform", "rotate(-90)")
