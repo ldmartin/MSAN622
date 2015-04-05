@@ -425,7 +425,13 @@ label {
           .attr("x", function(d) { return x(d.key); })
           .attr("width", x.rangeBand())
           .attr("y", function(d) { return y(d.value); })
-          .attr("height", function(d) { return height - y(d.value); })
+          // .attr("height", function(d) { return height - y(d.value); })
+          .attr("height", 0)  // change this to the line above if you dont want bars to grow:
+          .transition()
+            .delay(function(d, i) { return i * 100; })
+            .duration(200)
+            .attr('y', function(d) { return 100 - d * 20; })
+            .attr('height', function(d) { return d * 20; });
           .on('mouseover.tip', tip.show)
           .on('mouseout.tip', tip.hide)
           // .on("mouseout.fill", function(){
@@ -457,14 +463,15 @@ label {
           //     // .ease("bounce")
 
           // })
-          .on('click.grow', function(){
-              d3.select(this)
-              .transition()
-              .delay(function(d, i) { return i * 100; })
-              .duration(200)
-              .attr('y', function(d) { return 100 - d * 20; })
-              .attr('height', function(d) { return d * 20; });
-          })
+          // .on('click.grow', function(){
+          //     d3.select(this)
+          //     .transition()
+          //     .delay(function(d, i) { return i * 100; })
+          //     .duration(200)
+          //     .attr('y', function(d) { return 100 - d * 20; })
+          //     .attr('height', function(d) { return d * 20; });
+          // })
+      
           ;
 
 
