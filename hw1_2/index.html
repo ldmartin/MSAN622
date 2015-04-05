@@ -463,10 +463,11 @@ label {
         .enter().append("rect")
           .style("fill", colors.lightpink);
 
-    var maxval = d3.max(data, function(d) { return d.value }) 
+    var maxval = d3.max(data, function(d) { return d.value }); 
 
-    bars.filter(function(d) { return d.value === maxval })
-        .attr("fill", colors.lightteal)
+    bars.filter(function(d) { return d.value === maxval } 
+        .classed("max", true)
+        .attr("fill", colors.lightteal);
 
     bars.attr("class", "bar")
           .attr("x", function(d) { return x(d.key); })
