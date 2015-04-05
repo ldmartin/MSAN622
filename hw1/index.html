@@ -123,6 +123,10 @@
                     <li>option to sort bars alphabetically or by descending count, with animation</li>
                     <li>bar sorting automatically with time delay</li>
                     <li>user textbox search in addition to URL search</li>
+                    <li></li>
+                    <li>Modify tick label formatting: Changed number of decial points visible to 0</li>
+                    <li>Modify tick label formatting: Changed frequency of y-axis labels based on max letter count</li>
+                    <li>Modify grid and axis lines: Inserted y-axis grid lines based on number of y-axis tick marks</li>
                 </ul>
         </p>
     </div><!-- /.col-md-4 -->
@@ -279,6 +283,15 @@ label {
     return letter_dic
 	}
 
+  var colors = {
+      "grey":   "#bbbbbb",
+      "blue":   "#377eb8",
+      "purple": "#984ea3",
+      "green":  "#4daf4a",
+      "orange": "#ff7f00",
+      "lightpink": "#fec0ff",
+      "lightteal": "#b7fbf6"
+  };
 
 	var input = get_user_input(string_input);
 	var letter_freq = get_letter_frequency(input);
@@ -398,6 +411,12 @@ label {
           .attr("height", function(d) { return height - y(d.value); })
           .on('mouseover', tip.show)
           .on('mouseout', tip.hide)
+          // .on("mouseout", function(){
+          //     d3.select(this)
+          //     .transition()
+          //     .duration(1000)
+          //     .style("fill", colors.lightteal);
+          // })
           ;
 
     d3.select("#check-input").on("change", change);
