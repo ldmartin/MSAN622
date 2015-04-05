@@ -458,12 +458,16 @@ label {
         .style("text-anchor", "middle")
         .text("Count");
 
+    var maxval = d3.max(data, function(d) { return d.value }); 
+
     bars = svg.selectAll(".bar")
           .data(data)
           .enter().append("rect")
-          .style("fill", colors.lightpink);
-
-    var maxval = d3.max(data, function(d) { return d.value }); 
+          .style("fill", colors.black)
+          .filter(function(d) { return d.value === maxval } 
+            .classed("max", true)
+            .attr("fill", colors.lightteal)
+          ;
 
     // bars.selectAll("rect").filter(function(d) { return d.value === maxval } 
     //     .classed("max", true)
