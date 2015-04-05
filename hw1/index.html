@@ -91,7 +91,7 @@
 
 <div class="row">
     <div class="col-md-12">
-        <p class = 'error-message'>Error message here...</p>
+        <p class = 'error-message'></p>
     </div>
 </div>
 
@@ -272,6 +272,9 @@ label {
   // var printed_input = string_input.replace(/[^\w\s]|_/g, "").replace(/\s+/g, " ");
   var printed_input = string_input.slice(1,string_input.length);
 
+  var SearchTextBox = document.getElementById('user-field-input');
+      SearchTextBox.value = printed_input;
+
   if (printed_input.length < 1){
       string_input = 'test me out!'
       printed_input = 'test me out!'
@@ -280,9 +283,10 @@ label {
 
   if (error === true){
       var errormessage = d3.select(".error-message").text('Please enter a valid search query, like this one!');
-      var SearchTextBox = document.getElementById('user-field-input');
       SearchTextBox.value = "Test me out!";
   }
+
+  var 
 
   var title = d3.select(".chart-title").text('Letter frequencies in "' + printed_input + '"');
 
