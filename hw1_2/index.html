@@ -472,9 +472,10 @@ label {
             .duration(2500)
             .ease("bounce")
             .attr('y', function(d) { return y(d.value); })
-            .attr('height', function(d) { return height - y(d.value); });
-            .on('mouseover.tip', tip.show)
-            .on('mouseout.tip', tip.hide)
+            .attr('height', function(d) { return height - y(d.value); })
+          .on('mouseover.tip', tip.show)
+          .on('mouseout.tip', tip.hide)
+          ;
 
 
       svg.selectAll(".bar")
@@ -491,8 +492,8 @@ label {
           //   .duration(500)
           //   .attr('y', function(d) { return y(d.value); })
           //   .attr('height', function(d) { return height - y(d.value); })
-          .on('mouseover.tip', tip.show)
-          .on('mouseout.tip', tip.hide)
+          // .on('mouseover.tip', tip.show)
+          // .on('mouseout.tip', tip.hide)
           // .on("mouseout.fill", function(){
           //     d3.select(this)
           //     .transition()
