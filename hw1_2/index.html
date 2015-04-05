@@ -567,6 +567,12 @@ label {
             .delay(delay);
       }
 
+      var maxbar = d3.max(data, function(d) { return d.value; });
+      svg.selectAll("rect")
+          .filter(function(d) { return d.value === maxbar; })
+          .classed("max", true)
+          .attr("fill", colors.lightteal);
+
 
       svg.selectAll(".bar")
         .on('mouseover.highlight', function(){
@@ -586,7 +592,6 @@ label {
         })
         .on('mouseover.tip', tip.show)
         .on('mouseout.tip', tip.hide)
-      
         ;
 
 
