@@ -354,6 +354,11 @@ label {
         .orient("left")
         .tickFormat(formatAxis)
         .ticks(num_ticks);
+        .on('mouseover.bold', function(){
+          d3.select(this)
+          .transition()
+          .style("fill", colors.black)
+        })
 
     var tip = d3.tip()
         .attr('class', 'd3-tip')
@@ -392,11 +397,12 @@ label {
             .tickSize(-width, 0, 0)
             .tickFormat("")
             )
-            .on('mouseover.bold', function(){
-              d3.select(this)
-              .transition()
-              .style("fill", colors.black)
-            });
+            // .on('mouseover.bold', function(){
+            //   d3.select(this)
+            //   .transition()
+            //   .style("fill", colors.black)
+            // });
+            ;
 
     // svg.append("text")
     //         .attr("transform", "rotate(-90)")
