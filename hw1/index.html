@@ -267,7 +267,13 @@ label {
   // var printed_input = string_input.replace(/[^\w\s]|_/g, "").replace(/\s+/g, " ");
   var printed_input = string_input.slice(1,string_input.length);
 
-  if (printed_input.length < 1){string_input = 'test me out!'}
+  var title = d3.select(".chart-title").text('Letter frequencies in "' + printed_input + '"');
+
+  if (printed_input.length < 1){
+      string_input = 'test me out!';
+      printed_input = 'test me out!';
+      error = true;
+    }
 
   function reload_page(){
       var userInput = document.getElementById('user-field-input');
@@ -349,7 +355,7 @@ label {
     // var data = [letter_freq];
     var data = d3.entries(letter_freq);
 
-    var title = d3.select(".chart-title").text('Letter frequencies in "' + printed_input + '"');
+    // var title = d3.select(".chart-title").text('Letter frequencies in "' + printed_input + '"');
 
     var margin = {top: 20, right: 20, bottom: 30, left: 40},
         width = 960 - margin.left - margin.right,
