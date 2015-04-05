@@ -93,6 +93,7 @@
 <div class="row">
     <div class="col-md-12">
         <!-- <h2 class="chart-title"><a name="graph"></a>Letter Frequencies</h2> -->
+        <p class = 'error-message'> This is a little paragraph...</p>
         <h2 class="chart-title"><a name="graph"></a></h2>
     </div>
 </div>
@@ -273,7 +274,13 @@ label {
       error = true
     }
 
-  var title = d3.select(".chart-title").text('Letter frequencies in "' + printed_input + '"');
+  if (error === true){
+      var title = d3.select(".error-message").text('Please enter a valid search query, like the one below!');
+  }
+  else{
+    var title = d3.select(".chart-title").text('Letter frequencies in "' + printed_input + '"');
+  }
+
 
   function reload_page(){
       var userInput = document.getElementById('user-field-input');
