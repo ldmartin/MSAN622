@@ -478,61 +478,61 @@ label {
           ;
 
 
-      svg.selectAll(".bar")
-          .data(data)
-        .enter().append("rect")
-          .attr("class", "bar")
-          .attr("x", function(d) { return x(d.key); })
-          .attr("width", x.rangeBand())
-          .attr("y", function(d) { return y(d.value); })
-          .attr("height", function(d) { return height - y(d.value); })
-          // .attr("height", 0)  // change this to the line above if you dont want bars to grow:
-          // .transition()
-          //   .delay(function(d, i) { return i * 100; })
-          //   .duration(500)
-          //   .attr('y', function(d) { return y(d.value); })
-          //   .attr('height', function(d) { return height - y(d.value); })
-          // .on('mouseover.tip', tip.show)
-          // .on('mouseout.tip', tip.hide)
-          // .on("mouseout.fill", function(){
-          //     d3.select(this)
-          //     .transition()
-          //     .duration(1000)
-          //     .style("fill", colors.lightteal)
-          // })
-          .on('mouseover.highlight', function(){
-              d3.select(this)
-              .transition()
-              .style("fill", colors.darkpurple)
-          })
-          .on('mouseout.highlight', function(){
-              d3.select(this)
-              .transition()
-              .style("fill", colors.lavender)
-          })
-          .on('click.bars', function(){
-              d3.select(this)
-              .style("fill", colors.black)
-              .transition()
-          })
-          // .on('click.axis', function(){
-          //     d3.select(this)
-          //     .style("fill", colors.black)
-          //     .transition()
-          //     // .duration(2000)
-          //     // .ease("bounce")
+      // svg.selectAll(".bar")
+      //     .data(data)
+      //   .enter().append("rect")
+      //     .attr("class", "bar")
+      //     .attr("x", function(d) { return x(d.key); })
+      //     .attr("width", x.rangeBand())
+      //     .attr("y", function(d) { return y(d.value); })
+      //     .attr("height", function(d) { return height - y(d.value); })
+      //     // .attr("height", 0)  // change this to the line above if you dont want bars to grow:
+      //     // .transition()
+      //     //   .delay(function(d, i) { return i * 100; })
+      //     //   .duration(500)
+      //     //   .attr('y', function(d) { return y(d.value); })
+      //     //   .attr('height', function(d) { return height - y(d.value); })
+      //     // .on('mouseover.tip', tip.show)
+      //     // .on('mouseout.tip', tip.hide)
+      //     // .on("mouseout.fill", function(){
+      //     //     d3.select(this)
+      //     //     .transition()
+      //     //     .duration(1000)
+      //     //     .style("fill", colors.lightteal)
+      //     // })
+      //     .on('mouseover.highlight', function(){
+      //         d3.select(this)
+      //         .transition()
+      //         .style("fill", colors.darkpurple)
+      //     })
+      //     .on('mouseout.highlight', function(){
+      //         d3.select(this)
+      //         .transition()
+      //         .style("fill", colors.lavender)
+      //     })
+      //     .on('click.bars', function(){
+      //         d3.select(this)
+      //         .style("fill", colors.black)
+      //         .transition()
+      //     })
+      //     // .on('click.axis', function(){
+      //     //     d3.select(this)
+      //     //     .style("fill", colors.black)
+      //     //     .transition()
+      //     //     // .duration(2000)
+      //     //     // .ease("bounce")
 
-          // })
-          // .on('click.grow', function(){
-          //     d3.select(this)
-          //     .transition()
-          //     .delay(function(d, i) { return i * 100; })
-          //     .duration(200)
-          //     .attr('y', function(d) { return 100 - d * 20; })
-          //     .attr('height', function(d) { return d * 20; });
-          // })
+      //     // })
+      //     // .on('click.grow', function(){
+      //     //     d3.select(this)
+      //     //     .transition()
+      //     //     .delay(function(d, i) { return i * 100; })
+      //     //     .duration(200)
+      //     //     .attr('y', function(d) { return 100 - d * 20; })
+      //     //     .attr('height', function(d) { return d * 20; });
+      //     // })
       
-          ;
+      //     ;
 
 
     d3.select("#check-input").on("change", change);
@@ -568,6 +568,14 @@ label {
       }
 
 
+      svg.selectAll(".bar")
+        .on('mouseover.highlight', function(){
+              d3.select(this)
+              .transition()
+              .style("fill", colors.darkpurple)
+          })
+        // .on('mouseover.tip', tip.show)
+        // .on('mouseout.tip', tip.hide)
 
 
 
