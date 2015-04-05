@@ -568,7 +568,7 @@ label {
       }
 
       var maxbar = d3.max(data, function(d) { return d.value; });
-      svg.selectAll("rect")
+      svg.selectAll(".bar")
           .filter(function(d) { return d.value === maxbar; })
           .classed("max", true)
           .attr("fill", colors.lightteal);
