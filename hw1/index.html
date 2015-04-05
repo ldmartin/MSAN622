@@ -84,7 +84,7 @@
                 </button>
             </span>
 <!--             <input type="text" id="user-field-input" class="form-control" placeholder="Enter a string...">
- -->        <input type="text" id="user-field-input" class="form-control" value="add(printed_input)">
+ -->        <input type="text" id="user-field-input" class="form-control" value="addtext()">
         </div><!-- /input-group -->
     </div><!-- /.col-lg-6 -->
 </div>
@@ -274,9 +274,14 @@ label {
       location.href = "http://ldmartin.github.io/MSAN622/hw1/?" + fullString;
   }
 
-  function add(text){
+  // function add(text){
+  //     var TheTextBox = document.getElementById('user-field-input');
+  //     TheTextBox.value = TheTextBox.value + text;
+  // }
+
+  function addtext(){
       var TheTextBox = document.getElementById('user-field-input');
-      TheTextBox.value = TheTextBox.value + text;
+      TheTextBox.value = "TEST!";
   }
 
   // var userSearchInput = localStorage.getItem("userSearchInput");
