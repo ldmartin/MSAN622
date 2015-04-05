@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>MSAN 622 Homework 1</title>
+
+
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/d3.min.js"></script>
+
+<script src="js/index.js"></script>
+
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/bootstrap-theme.min.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="css/custom.css">
+
+<style type="text/css">
+    body {
+        padding-top: 30px;
+        padding-bottom: 20px;
+    }
+</style>
+
+</head>
+
+<body>
+
+<!-- Fixed Navbar -->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle Navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="http://ldmartin.github.io/MSAN622/">MSAN 622</a>
+        </div>
+
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <!-- <li><a href="#graph">Graph</a></li> -->
+                <li><a href="#graph-attributes">Graph Attributes</a></li>
+                <li><a href="#tutorial-links">Useful References</a></li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+<!--                 <li><a href="#about">About</a></li>
+ -->                
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</nav>
+
+
+<div class="jumbotron color-backblue">
+    <div class="container">
+<!--         <h1 align="center">Hoework 1</h1>      
+ -->    
+        <h1><b>Homework 1</b></h1> 
+        <p><b>Assignment Description:</b> Create an interactive bar chart displaying frequencies of letters in a user entered string.</p>    
+    </div>
+</div>
+
+<div class="container">
+
+
+
+
+<div class="row">
+    <div class="col-lg-6">
+        <div class="input-group">
+            <span class="input-group-btn">
+                <button class="btn btn-default" type="button" onclick="reload_page()">
+                  <span class="glyphicon glyphicon-signal" aria-hidden="true"></span>
+                  <!-- <span class="glyphicon glyphicon-signal" aria-hidden="true"></span> graph it -->
+                </button>
+            </span>
+            <input type="text" id="user-field-input" class="form-control" placeholder="Enter a string...">
+<!--         <input type="text" id="user-field-input" class="form-control" value="addtext()">
+ -->        </div><!-- /input-group -->
+    </div><!-- /.col-lg-6 -->
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <p class = 'error-message'></p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <!-- <h2 class="chart-title"><a name="graph"></a>Letter Frequencies</h2> -->
+        <h2 class="chart-title"><a name="graph"></a></h2>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-9"></div>
+    <div class="col-md-3">
+        <input id="check-input" type="checkbox"> Sort
+    </div>
+</div>
+
+<div class="chart"></div>
+
+<hr/>
+
+<div class="row">
+    <div class="col-md-6">
+        <h2 class="attributes"><a name="graph-attributes"></a>Graph Attributes</h2>
+        <p>
+            <ul style="list-style-type:disc">
+                    <li>custom coloring and opacity of bars</li>
+                    <li>mouse-over bar emphasis</li>
+                    <li>alphabetical ordering of letters on graph</li>
+                    <li>custom x-axis and y-axis labels and placement</li>
+                    <li>number of y-axis tick marks based on maximum letter occurrence</li>
+                    <li>y-axis tick marks formatted to 0 decimal places</li>
+                    <li>y-axis grid lines</li>
+                    <li>tip displaying counts of specific letter on mouse-over</li>
+                    <li>option to sort bars alphabetically or by descending count, with animation</li>
+                    <li>bar sorting automatically with time delay</li>
+                    <li>user textbox search in addition to URL search</li>
+                    <li></li>
+                    <li>Modify tick label formatting: Changed number of decial points visible to 0</li>
+                    <li>Modify tick label formatting: Changed frequency of y-axis labels based on max letter count</li>
+                    <li>Modify grid and axis lines: Inserted y-axis grid lines based on number of y-axis tick marks</li>
+                    <li>Added button allowing user to sort bars alphabetically or by decreasing letter count</li>
+                    <li>Added custom tooltip showing exact value of bar on mouseover</li>
+                    <li>Added search box for users to search rather than using the URL query</li>
+                </ul>
+        </p>
+    </div><!-- /.col-md-4 -->
+    <div class="col-md-6">
+        <h2 class="attributes"><a name="tutorial-links"></a>Useful References</h2>
+        <p>Below you will find references for code and ideas used in this assignment.</p>
+
+        <table class="table table-bordered" style="width: auto;">
+            <thead>
+                <tr>
+                    <!-- <th colspan="2">Layla Diana Martin</th> -->
+                    <th colspan="1">Purpose</th>
+                    <th colspan="1">Link</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                <td>Basic bar chart creation</td>    
+                    <td>Mike Bostock's blog "Let's make a Bar Chart"
+                          <ul style="list-style-type:disc">
+                             <li>sections <a href="http://bost.ocks.org/mike/bar/">I</a>, <a href="http://bost.ocks.org/mike/bar/2/">II</a>, <a href="http://bost.ocks.org/mike/bar/3/">III</a></li>
+                          </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Axis formatting</td>
+                    <td><a href'http://www.d3noob.org/2012/12/adding-axis-labels-to-d3js-graph.html' >link</a>description here...</td>
+                </tr>
+
+                <tr>
+                    <td>Make the bar chart sortable</td>
+                    <td><a href='http://bl.ocks.org/mbostock/3885705'>link</a>description here...</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>  
+</div> 
+
+
+<!-- <div class="chart"></div>
+ -->
+<!-- <script src="js/d3.min.js"></script>
+ -->
+
+<style>
+
+.bar {
+  /*fill: steelblue;*/
+  fill: lavender;
+  fill-opacity: .9;
+}
+/*
+.bar:hover {
+  fill: black;
+  fill: slateblue;
+}
+*/
+.axis {
+  font: 10px sans-serif;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.x.axis path {
+  display: none;
+}
+
+label {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.grid .tick {
+    stroke: lightgrey;
+    opacity: 0.7;
+}
+.grid path {
+      stroke-width: 0;
+}
+
+/*.grid:hover {
+  fill: black;
+  opacity: 0;
+}*/
+
+.d3-tip {
+  line-height: 1;
+  font-weight: bold;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  border-radius: 2px;
+}
+
+/* Creates a small triangle extender for the tooltip */
+.d3-tip:after {
+  box-sizing: border-box;
+  display: inline;
+  font-size: 10px;
+  width: 100%;
+  line-height: 1;
+  color: rgba(0, 0, 0, 0.8);
+  content: "\25BC";
+  position: absolute;
+  text-align: center;
+}
+
+/* Style northward tooltips differently */
+.d3-tip.n:after {
+  margin: -1px 0 0 0;
+  top: 100%;
+  left: 0;
+}
+
+</style>
+
+
+<!-- <svg class="chart"></svg>
+ -->
+
+<script language="JavaScript" type="Text/JavaScript">
+	
+  var string_input = decodeURI(window.location.search);
+
+  // var printed_input = string_input.replace(/[^\w\s]|_/g, "").replace(/\s+/g, " ");
+  var printed_input = string_input.slice(1,string_input.length);
+
+  var SearchTextBox = document.getElementById('user-field-input');
+  SearchTextBox.value = printed_input;
+
+  if (printed_input.length < 1){
+      string_input = 'test me out!'
+      printed_input = 'test me out!'
+      var error = true;
+    }
+
+  if (error === true){
+      var errormessage = d3.select(".error-message").text('Please enter a valid search query, like this one!');
+      SearchTextBox.value = "Test me out!";
+  }
+
+  var title = d3.select(".chart-title").text('Letter frequencies in "' + printed_input + '"');
+
+  function reload_page(){
+      var userInput = document.getElementById('user-field-input');
+      var fullString = userInput.value;
+      // localStorage.setItem("userSearchInput", fullString);
+
+      location.href = "http://ldmartin.github.io/MSAN622/hw1/?" + fullString;
+  }
+
+  function addtext(){
+      var TheTextBox = document.getElementById('user-field-input');
+      TheTextBox.value = "TEST!";
+  }
+
+  // var userSearchInput = localStorage.getItem("userSearchInput");
+
+
+  // function search_box_input(){
+  //     var userInput = document.getElementById('user-field-input');
+  //     var fullString = userInput.value;
+  //     // location.href = "http://ldmartin.github.io/MSAN622/hw1/?" + fullString;
+  //     return fullString
+  // }
+
+
+	function get_user_input(string_input){
+		  // var user_input_stripped = string_input.replace(/\W/g, '').replace(/[0-9]/g, '').toLowerCase();
+      var user_input_stripped = string_input.replace(/[^A-Za-z]/g, '').toLowerCase();
+      var input = user_input_stripped.split("").sort();
+      return input
+	}
+
+
+	function get_letter_frequency(input){
+		var letter_dic = {};
+    for (var i = 0; i < input.length; i++) {
+        var letter = input[i];
+        if (!(letter in letter_dic)){letter_dic[letter] = 0}
+        letter_dic[letter] += 1;
+    }
+
+    return letter_dic
+	}
+
+  var colors = {
+      "grey":   "#bbbbbb",
+      "blue":   "#377eb8",
+      "purple": "#984ea3",
+      "green":  "#4daf4a",
+      "orange": "#ff7f00",
+      "lightpink": "#fec0ff",
+      "lightteal": "#b7fbf6",
+      "black": "#000000",
+      "darkpurple": "#6a5acd",
+      "lavender": "#e6e6fa"
+  };
+
+	var input = get_user_input(string_input);
+
+	var letter_freq = get_letter_frequency(input);
+
+	console.log(letter_freq);
+	// var data = d3.entries(letter_freq);
+
+    // create lists of letters and counts from dictionary to use for bar chart:
+    // these will be in alphabetical order, I think
+    letters = [];
+    counts = [];
+    for (letter in letter_freq){ 
+        letters.push(letter);
+        counts.push(letter_freq[letter]);
+        }
+
+    // var data = [letter_freq];
+    var data = d3.entries(letter_freq);
+
+    // var title = d3.select(".chart-title").text('Letter frequencies in "' + printed_input + '"');
+
+    var margin = {top: 20, right: 20, bottom: 30, left: 40},
+        width = 960 - margin.left - margin.right,
+        height = 500 - margin.top - margin.bottom;
+
+    var x = d3.scale.ordinal()
+        .rangeRoundBands([0, width], .1)
+        .domain(data.map(function(d) { return d.key; }));
+
+    var y = d3.scale.linear()
+        .range([height, 0])
+        .domain([0, d3.max(data, function(d) { return d.value; })]);
+
+    var formatAxis = d3.format('.0f');
+
+    var num_ticks = d3.max(data, function(d) { return d.value; })
+
+    function make_y_axis(num_ticks, formatAxis) {        
+    return d3.svg.axis()
+        .scale(y)
+        .orient("left")
+        // .tickFormat(formatxAxis)
+        .ticks(num_ticks)
+    }
+
+    var xAxis = d3.svg.axis()
+        .scale(x)
+        .orient("bottom");
+
+    var yAxis = d3.svg.axis()
+        .scale(y)
+        .orient("left")
+        .tickFormat(formatAxis)
+        .ticks(num_ticks);
+
+    var tip = d3.tip()
+        .attr('class', 'd3-tip')
+        .offset([-10, 0])
+        .html(function(d) {
+          return "<strong>Count:</strong> <span style='color:white'>" + d.value + "</span>";
+        })
+
+    var svg = d3.select(".chart").append("svg")
+        .attr("width", width + margin.left + margin.right)
+        .attr("height", height + margin.top + margin.bottom)
+        .append("g")
+        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+    svg.call(tip);
+
+    svg.append("g")
+        .attr("class", "x axis")
+        .attr("transform", "translate(0," + height + ")")
+        .call(xAxis);
+
+    svg.append("text")      // text label for the x axis
+        .attr("x", width / 2 )
+        .attr("y",  height + margin.bottom + 0.2)
+        .style("text-anchor", "middle")
+        .text("Letter");
+
+    svg.append("g")
+            .attr("class", "y axis")
+            .call(yAxis)
+            ;
+
+    svg.append("g")         
+            .attr("class", "grid")
+            .call(make_y_axis(num_ticks, formatAxis)
+            .tickSize(-width, 0, 0)
+            .tickFormat("")
+            )
+            // .on('mouseover.bold', function(){
+            //   d3.select(this)
+            //   .transition()
+            //   .style("fill", colors.black)
+            // });
+            ;
+
+    // svg.append("text")
+    //         .attr("transform", "rotate(-90)")
+    //         .attr("y", 2.5)
+    //         .attr("dy", ".71em")
+    //         .style("text-anchor", "end")
+    //         .text("Count");
+
+    svg.append("text")
+        .attr("transform", "rotate(-90)")
+        .attr("y", 0 - margin.left)
+        .attr("x",0 - (height / 2))
+        .attr("dy", "1em")
+        .style("text-anchor", "middle")
+        .text("Count");
+
+
+      svg.selectAll(".bar")
+          .data(data)
+        .enter().append("rect")
+          .attr("class", "bar")
+          .attr("x", function(d) { return x(d.key); })
+          .attr("width", x.rangeBand())
+          .attr("y", function(d) { return y(d.value); })
+          .attr("height", function(d) { return height - y(d.value); })
+          // .attr("height", 0)  // change this to the line above if you dont want bars to grow:
+          // .transition()
+          //   .delay(function(d, i) { return i * 100; })
+          //   .duration(500)
+          //   .attr('y', function(d) { return y(d.value); })
+          //   .attr('height', function(d) { return height - y(d.value); })
+          .on('mouseover.tip', tip.show)
+          .on('mouseout.tip', tip.hide)
+          // .on("mouseout.fill", function(){
+          //     d3.select(this)
+          //     .transition()
+          //     .duration(1000)
+          //     .style("fill", colors.lightteal)
+          // })
+          .on('mouseover.highlight', function(){
+              d3.select(this)
+              .transition()
+              .style("fill", colors.darkpurple)
+          })
+          .on('mouseout.highlight', function(){
+              d3.select(this)
+              .transition()
+              .style("fill", colors.lavender)
+          })
+          .on('click.bars', function(){
+              d3.select(this)
+              .style("fill", colors.black)
+              .transition()
+          })
+          // .on('click.axis', function(){
+          //     d3.select(this)
+          //     .style("fill", colors.black)
+          //     .transition()
+          //     // .duration(2000)
+          //     // .ease("bounce")
+
+          // })
+          // .on('click.grow', function(){
+          //     d3.select(this)
+          //     .transition()
+          //     .delay(function(d, i) { return i * 100; })
+          //     .duration(200)
+          //     .attr('y', function(d) { return 100 - d * 20; })
+          //     .attr('height', function(d) { return d * 20; });
+          // })
+      
+          ;
+
+
+    d3.select("#check-input").on("change", change);
+
+    var sortTimeout = setTimeout(function() {
+        d3.select("#check-input").property("checked", true).each(change);
+      }, 1000);
+
+    function change() {
+        clearTimeout(sortTimeout);
+
+        // Copy-on-write since tweens are evaluated after a delay.
+        var x0 = x.domain(data.sort(this.checked
+            ? function(a, b) { return b.value - a.value; }
+            : function(a, b) { return d3.ascending(a.key, b.key); })
+            .map(function(d) { return d.key; }))
+            .copy();
+
+        svg.selectAll(".bar")
+            .sort(function(a, b) { return x0(a.key) - x0(b.key); });
+
+        var transition = svg.transition().duration(750).ease("bounce"),
+            delay = function(d, i) { return i * 50; };
+
+        transition.selectAll(".bar")
+            .delay(delay)
+            .attr("x", function(d) { return x0(d.key); });
+
+        transition.select(".x.axis")
+            .call(xAxis)
+          .selectAll("g")
+            .delay(delay);
+      }
+
+
+
+
+
+
+
+    // var chart = d3.select(".chart")
+    //     .attr("width", width)
+    //     .attr("height", height);
+
+    // var barWidth = width / data.length;
+
+    // var bar = chart.selectAll("g")
+    //         .data(data)
+    //     .enter().append("g")
+    //         .attr("transform", function(d, i) { return "translate(" + i * barWidth + ",0)"; });
+
+    // bar.append("rect")
+    //     .attr("y", function(d) { return y(d.value); })
+    //     .attr("height", function(d) { return height - y(d.value); })
+    //     .attr("width", barWidth - 1);
+
+    // bar.append("text")
+    //     .attr("x", barWidth / 2)
+    //     .attr("y", function(d) { return y(d.value) + 3; })
+    //     .attr("dy", ".75em")
+    //     .text(function(d) { return d.value; });
+
+    // function type(d) {
+    //     d.value = +d.value; // coerce to number
+    //     return d;
+    // }
+   
+
+
+
+
+
+
+</script>	
+
+
+<hr/>
+<footer>
+    <p style="text-align: center;">
+      <a name="contact"></a>
+      <img src="img/email_logo.png" alt="" border=1 height=22 width=22></img>
+      <a href="mailto:ldmartin@dons.usfca.edu">ldmartin@dons.usfca.edu</a>
+      <img src="img/github_logo.png" alt="" border=1 height=20 width=20></img>
+      <a href="https://github.com/ldmartin">github.com/ldmartin</a>
+      <img src="img/linkedin_logo.png" alt="" border=1 height=20 width=22></img>
+      <a href="https://www.linkedin.com/in/layladmartin">LinkedIn.com/layladmartin</a>
+      
+
+<!--       Layla Martin &bullet; MSAN 622 Information Visualization &bullet; Spring 2015</p> -->
+</footer>
+
+</div><!--/.container -->
+
+
+
+</body>
+
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
