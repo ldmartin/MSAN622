@@ -387,8 +387,6 @@ label {
     svg.append("g")
             .attr("class", "y axis")
             .call(yAxis)
-            .transition()
-            .delay(1000)
             ;
 
     svg.append("g")         
@@ -450,17 +448,22 @@ label {
               d3.select(this)
               .style("fill", colors.black)
               .transition()
-              // .duration(2000)
-              // .ease("bounce")
-
           })
-          .on('click.axis', function(){
-              d3.select(this)
-              .style("fill", colors.black)
-              .transition()
-              // .duration(2000)
-              // .ease("bounce")
+          // .on('click.axis', function(){
+          //     d3.select(this)
+          //     .style("fill", colors.black)
+          //     .transition()
+          //     // .duration(2000)
+          //     // .ease("bounce")
 
+          // })
+          .on('click.grow', function(){
+              d3.select(this)
+              .transition()
+              .delay(function(d, i) { return i * 100; })
+              .duration(200)
+              .attr('y', function(d) { return 100 - d * 20; })
+              .attr('height', function(d) { return d * 20; });
           })
           ;
 
