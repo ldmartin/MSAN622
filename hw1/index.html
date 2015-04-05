@@ -411,19 +411,19 @@ label {
           .attr("y", function(d) { return y(d.value); })
           .attr("height", function(d) { return height - y(d.value); })
           .on('mouseover', tip.show)
-          .on('mouseout', tip.hide)
-          // .on("mouseout", function(){
-          //     d3.select(this)
-          //     .transition()
-          //     .duration(1000)
-          //     .style("fill", colors.lightteal)
-          // })
-          .on('mouseon', function(){
+          .on('mouseout.tip', tip.hide)
+          .on("mouseout.fill", function(){
               d3.select(this)
               .transition()
               .duration(1000)
-              .style("fill", colors.black)
+              .style("fill", colors.lightteal)
           })
+          // .on('click', function(){
+          //     d3.select(this)
+          //     .transition()
+          //     .duration(1000)
+          //     .style("fill", colors.black)
+          // })
           ;
 
 
