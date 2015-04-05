@@ -83,9 +83,9 @@
                   <!-- <span class="glyphicon glyphicon-signal" aria-hidden="true"></span> graph it -->
                 </button>
             </span>
-<!--             <input type="text" id="user-field-input" class="form-control" placeholder="Enter a string...">
- -->        <input type="text" id="user-field-input" class="form-control" value="addtext()">
-        </div><!-- /input-group -->
+            <input type="text" id="user-field-input" class="form-control" placeholder="Enter a string...">
+<!--         <input type="text" id="user-field-input" class="form-control" value="addtext()">
+ -->        </div><!-- /input-group -->
     </div><!-- /.col-lg-6 -->
 </div>
 
@@ -263,8 +263,11 @@ label {
 <script language="JavaScript" type="Text/JavaScript">
 	
   var string_input = decodeURI(window.location.search);
+
   // var printed_input = string_input.replace(/[^\w\s]|_/g, "").replace(/\s+/g, " ");
   var printed_input = string_input.slice(1,string_input.length);
+
+  if (printed_input.length < 1){printed_input = 'test me out!'}
 
   function reload_page(){
       var userInput = document.getElementById('user-field-input');
@@ -328,6 +331,7 @@ label {
   };
 
 	var input = get_user_input(string_input);
+
 	var letter_freq = get_letter_frequency(input);
 
 	console.log(letter_freq);
