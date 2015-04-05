@@ -465,9 +465,9 @@ label {
 
     var maxval = d3.max(data, function(d) { return d.value }); 
 
-    bars.selectAll("rect").filter(function(d) { return d.value === maxval } 
-        .classed("max", true)
-        .attr("fill", colors.lightteal);
+    // bars.selectAll("rect").filter(function(d) { return d.value === maxval } 
+    //     .classed("max", true)
+    //     .attr("fill", colors.lightteal);
 
     bars.attr("class", "bar")
           .attr("x", function(d) { return x(d.key); })
