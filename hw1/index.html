@@ -127,6 +127,9 @@
                     <li>Modify tick label formatting: Changed number of decial points visible to 0</li>
                     <li>Modify tick label formatting: Changed frequency of y-axis labels based on max letter count</li>
                     <li>Modify grid and axis lines: Inserted y-axis grid lines based on number of y-axis tick marks</li>
+                    <li>Added button allowing user to sort bars alphabetically or by decreasing letter count</li>
+                    <li>Added custom tooltip showing exact value of bar on mouseover</li>
+                    <li>Added search box for users to search rather than using the URL query</li>
                 </ul>
         </p>
     </div><!-- /.col-md-4 -->
@@ -365,11 +368,10 @@ label {
     var svg = d3.select(".chart").append("svg")
         .attr("width", width + margin.left + margin.right)
         .attr("height", height + margin.top + margin.bottom)
-      .append("g")
+        .append("g")
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
     svg.call(tip);
-
 
     svg.append("g")
         .attr("class", "x axis")
@@ -384,7 +386,10 @@ label {
 
     svg.append("g")
             .attr("class", "y axis")
-            .call(yAxis);
+            .call(yAxis)
+            .transition()
+            .delay(1000)
+            ;
 
     svg.append("g")         
             .attr("class", "grid")
@@ -441,7 +446,15 @@ label {
               .transition()
               .style("fill", colors.lavender)
           })
-          .on('click', function(){
+          .on('click.bars', function(){
+              d3.select(this)
+              .style("fill", colors.black)
+              .transition()
+              // .duration(2000)
+              // .ease("bounce")
+
+          })
+          .on('click.axis', function(){
               d3.select(this)
               .style("fill", colors.black)
               .transition()
