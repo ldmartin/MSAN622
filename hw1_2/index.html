@@ -460,12 +460,12 @@ label {
 
     bars = svg.selectAll(".bar")
           .data(data)
-        .enter().append("rect")
+          .enter().append("rect")
           .style("fill", colors.lightpink);
 
     var maxval = d3.max(data, function(d) { return d.value }); 
 
-    bars.filter(function(d) { return d.value === maxval } 
+    bars.selectAll("rect").filter(function(d) { return d.value === maxval } 
         .classed("max", true)
         .attr("fill", colors.lightteal);
 
