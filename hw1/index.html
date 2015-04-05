@@ -430,8 +430,9 @@ label {
           .transition()
             .delay(function(d, i) { return i * 100; })
             .duration(200)
-            .attr('y', function(d) { return 100 - d * 20; })
-            .attr('height', function(d) { return d * 20; })
+            // .attr('y', function(d) { return 100 - d * 20; })
+            .attr('y', function(d) { return y(d.value); })
+            .attr('height', function(d) { return height - y(d.value); })
           .on('mouseover.tip', tip.show)
           .on('mouseout.tip', tip.hide)
           // .on("mouseout.fill", function(){
