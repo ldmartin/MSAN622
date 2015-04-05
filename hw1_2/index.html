@@ -461,6 +461,7 @@ label {
       svg.selectAll(".bar")
           .data(data)
         .enter().append("rect")
+          .style("fill", colors.black)
           .attr("class", "bar")
           .attr("x", function(d) { return x(d.key); })
           .attr("width", x.rangeBand())
@@ -476,6 +477,7 @@ label {
           // .on('mouseover.tip', tip.show)
           // .on('mouseout.tip', tip.hide)
           ;
+
 
 
       // svg.selectAll(".bar")
@@ -566,12 +568,6 @@ label {
           .selectAll("g")
             .delay(delay);
       }
-
-      var maxbar = d3.max(data, function(d) { return d.value; });
-      svg.selectAll(".bar")
-          .filter(function(d) { return d.value === maxbar; })
-          .classed("max", true)
-          .attr("fill", colors.lightteal);
 
 
       svg.selectAll(".bar")
