@@ -433,8 +433,10 @@ label {
           .on('click', function(){
               d3.select(this)
               .style("fill", colors.black)
+              .transition()
               .duration(2000)
               .ease("bounce")
+
           })
           ;
 
