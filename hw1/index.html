@@ -290,7 +290,8 @@ label {
       "green":  "#4daf4a",
       "orange": "#ff7f00",
       "lightpink": "#fec0ff",
-      "lightteal": "#b7fbf6"
+      "lightteal": "#b7fbf6",
+      "black": "#000000"
   };
 
 	var input = get_user_input(string_input);
@@ -421,7 +422,7 @@ label {
               d3.select(this)
               .transition()
               .duration(1000)
-              .style("fill", 'slateblue')
+              .style("fill", colors.black)
           })
           ;
 
