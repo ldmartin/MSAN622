@@ -83,7 +83,8 @@
                   <!-- <span class="glyphicon glyphicon-signal" aria-hidden="true"></span> graph it -->
                 </button>
             </span>
-            <input type="text" id="user-field-input" class="form-control" placeholder="Enter a string...">
+<!--             <input type="text" id="user-field-input" class="form-control" placeholder="Enter a string...">
+ -->        <input type="text" id="user-field-input" class="form-control" value="add(printed_input)">
         </div><!-- /input-group -->
     </div><!-- /.col-lg-6 -->
 </div>
@@ -268,8 +269,25 @@ label {
   function reload_page(){
       var userInput = document.getElementById('user-field-input');
       var fullString = userInput.value;
+      // localStorage.setItem("userSearchInput", fullString);
+
       location.href = "http://ldmartin.github.io/MSAN622/hw1/?" + fullString;
   }
+
+  function add(text){
+      var TheTextBox = document.getElementById('user-field-input');
+      TheTextBox.value = TheTextBox.value + text;
+  }
+
+  // var userSearchInput = localStorage.getItem("userSearchInput");
+
+
+  // function search_box_input(){
+  //     var userInput = document.getElementById('user-field-input');
+  //     var fullString = userInput.value;
+  //     // location.href = "http://ldmartin.github.io/MSAN622/hw1/?" + fullString;
+  //     return fullString
+  // }
 
 
 	function get_user_input(string_input){
@@ -434,12 +452,12 @@ label {
           //   .attr('height', function(d) { return height - y(d.value); })
           .on('mouseover.tip', tip.show)
           .on('mouseout.tip', tip.hide)
-          .on("mouseout.fill", function(){
-              d3.select(this)
-              .transition()
-              .duration(1000)
-              .style("fill", colors.lightteal)
-          })
+          // .on("mouseout.fill", function(){
+          //     d3.select(this)
+          //     .transition()
+          //     .duration(1000)
+          //     .style("fill", colors.lightteal)
+          // })
           .on('mouseover.highlight', function(){
               d3.select(this)
               .transition()
