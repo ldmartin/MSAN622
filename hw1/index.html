@@ -277,10 +277,8 @@ label {
   if (error === true){
       var title = d3.select(".error-message").text('Please enter a valid search query, like the one below!');
   }
-  else{
-    var title = d3.select(".chart-title").text('Letter frequencies in "' + printed_input + '"');
-  }
 
+  var title = d3.select(".chart-title").text('Letter frequencies in "' + printed_input + '"');
 
   function reload_page(){
       var userInput = document.getElementById('user-field-input');
