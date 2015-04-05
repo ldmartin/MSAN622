@@ -473,6 +473,8 @@ label {
             .ease("bounce")
             .attr('y', function(d) { return y(d.value); })
             .attr('height', function(d) { return height - y(d.value); });
+            .on('mouseover.tip', tip.show)
+            .on('mouseout.tip', tip.hide)
 
 
       svg.selectAll(".bar")
