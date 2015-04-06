@@ -110,7 +110,7 @@
 
     var formatAxis = d3.format('.0f');
 
-    // var num_ticks = d3.max(data, function(d) { return d.value; })
+    var num_ticks = d3.max(data, function(d) { return d.value; })
 
     function make_y_axis(num_ticks, formatAxis) {        
     return d3.svg.axis()
@@ -161,7 +161,9 @@
 
     svg.append("g")
             .attr("class", "y axis")
-            .call(yAxis);
+            .call(yAxis)
+            .style("fill", colors.grey) 
+            ;
 
     // svg.append("g")         
     //         .attr("class", "grid")
