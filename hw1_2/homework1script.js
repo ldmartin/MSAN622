@@ -206,7 +206,7 @@
     bars = svg.selectAll(".bar")
           .data(data)
           .enter().append("rect")
-          .style("fill", colors.black)
+          .style("fill", colors.lavender)
           // .attr("opacity", function(d) {return (d.value)/maxval})
           .attr("opacity", function(d) {return (d.value)/maxval});
           // .filter(function(d) { return d.value === maxval } 
@@ -335,7 +335,7 @@
         .on('mouseout.highlight', function(){
               d3.select(this)
               .transition()
-              .style("fill", colors.lavender)
+              .style("fill", colors.black)
         })
         .on('click.bars', function(){
               d3.select(this)
