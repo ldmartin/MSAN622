@@ -194,19 +194,21 @@
         .style("text-anchor", "middle")
         .text("Count");
 
-    // var maxval = d3.max(data, function(d) { return d.value }); 
+    var maxval = d3.max(data, function(d) { return d.value }); 
 
-    svg.selectAll('g.y.axis')
-        .on('mouseover.bold', function(){
-              d3.select(this)
-              .transition()
-              .style("fill", colors.black)
-        })
+    // svg.selectAll('g.y.axis')
+    //     .on('mouseover.bold', function(){
+    //           d3.select(this)
+    //           .transition()
+    //           .style("fill", colors.black)
+    //     })
 
     bars = svg.selectAll(".bar")
           .data(data)
           .enter().append("rect")
           .style("fill", colors.black);
+          // .attr("opacity", function(d) {return (d.value)/maxval})
+          .attr("opacity", 1)
           // .filter(function(d) { return d.value === maxval } 
           //   .classed("max", true)
           //   .attr("fill", colors.lightteal)
