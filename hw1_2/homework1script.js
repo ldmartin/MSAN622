@@ -206,7 +206,7 @@
     bars = svg.selectAll(".bar")
           .data(data)
           .enter().append("rect")
-          .style("fill", colors.lightpink)
+          .style("fill", colors.black)
           // .attr("opacity", function(d) {return (d.value)/maxval})
           .attr("opacity", function(d) {return (d.value)/maxval});
           // .filter(function(d) { return d.value === maxval } 
