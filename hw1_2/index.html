@@ -200,7 +200,12 @@
   font: 10px sans-serif;
 }
 
-.axis path,
+.axis path {
+  fill: none;
+  stroke: lightgrey;
+  shape-rendering: crispEdges;
+}
+
 .axis line {
   fill: none;
   stroke: lightgrey;
@@ -226,7 +231,7 @@ label {
 }
 
 .tick line {
-  stroke: #eee;
+  stroke: lightgrey;
   stroke-width: 1;
   shape-rendering: crispEdges;
   stroke-dasharray: 5,5;
