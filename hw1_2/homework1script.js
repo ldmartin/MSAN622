@@ -163,7 +163,7 @@
             .attr("class", "y axis")
             .call(yAxis)
             // .style("fill", colors.grey) 
-            .style("stroke", colors.grey)
+            // .style("stroke", colors.grey)
             ;
 
     // svg.append("g")         
