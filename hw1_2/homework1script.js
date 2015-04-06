@@ -196,6 +196,13 @@
 
     // var maxval = d3.max(data, function(d) { return d.value }); 
 
+    svg.selectAll('g.y.axis')
+        .on('mouseover.bold', function(){
+              d3.select(this)
+              .transition()
+              .style("fill", colors.black)
+        })
+
     bars = svg.selectAll(".bar")
           .data(data)
           .enter().append("rect")
