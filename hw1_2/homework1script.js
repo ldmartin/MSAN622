@@ -260,8 +260,9 @@
         })
         .on('click.bars', function(){
               d3.select(this)
-              .style("fill", colors.redorange)
               .transition()
+              .style("fill", colors.redorange)
+              .style("fill-opacity", 1);
         })
         .on('mouseover.tip', tip.show)
         .on('mouseout.tip', tip.hide)
