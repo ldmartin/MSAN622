@@ -254,6 +254,7 @@
               d3.select(this)
               .transition() 
               .style("fill", colors.black)
+              .style("fill-opacity", 1)
         })
         .on('click.bars', function(){
               d3.select(this)
