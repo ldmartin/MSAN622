@@ -91,6 +91,8 @@
         counts.push(letter_freq[letter]);
         }
 
+    var num_letters = letters.length
+
     // var data = [letter_freq];
     var data = d3.entries(letter_freq);
 
@@ -225,9 +227,10 @@
           .attr("y", height)
           .attr("height", 0)  // change this to the line above if you dont want bars to grow:
           .transition()
-            // .delay(function(d, i) { return i * 10; })
+            // make the whole function take only 700. This means the whole transition is done by 2500 (when sorting starts)
+            .delay(function(d, i) { return (i/num_letters) * (700.0); })
             //.delay(1000)
-            .duration(2500)
+            .duration(1800)
             .ease("bounce")
             .attr('y', function(d) { return y(d.value); })
             .attr('height', function(d) { return height - y(d.value); })
