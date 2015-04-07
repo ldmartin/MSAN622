@@ -249,6 +249,7 @@
               d3.select(this)
               .transition()
               .style("fill", colors.darkpurple)
+              .style("fill-opacity", function(d) {return (d.value)/maxval})
         })
         .on('mouseout.highlight', function(){
               d3.select(this)
