@@ -235,7 +235,7 @@
 
         transition.selectAll(".bar")
             .delay(delay)
-            .attr("x", function(d) { return x0(d.key); });
+            .attr("x", function(d) { return x0(d.key) });
 
         transition.select(".x.axis")
             .call(xAxis)
@@ -249,13 +249,13 @@
               d3.select(this)
               .transition()
               .style("fill", colors.darkpurple)
-              .style("fill-opacity", function(d) {return (d.value)/maxval})
+              .style("fill-opacity", function(d) {return (d.value)/maxval});
         })
         .on('mouseout.highlight', function(){
               d3.select(this)
               .transition() 
               .style("fill", colors.black)
-              .style("fill-opacity", 1)
+              .style("fill-opacity", 1);
         })
         .on('click.bars', function(){
               d3.select(this)
