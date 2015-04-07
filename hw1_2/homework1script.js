@@ -254,7 +254,9 @@
         })
         .on('mouseout.highlight', function(){
               d3.select(this)
-              .transition() 
+              .transition()
+              .delay(100) 
+              .duration(100)
               .style("fill", colors.black)
               .style("fill-opacity", 1);
         })
