@@ -330,13 +330,11 @@
         .on('mouseover.highlight', function(){
               d3.select(this)
               .transition()
-              .delay(2500)
               .style("fill", colors.darkpurple)
         })
         .on('mouseout.highlight', function(){
               d3.select(this)
-              .transition()
-              .delay(2500)
+              .transition() 
               .style("fill", colors.black)
         })
         .on('click.bars', function(){
