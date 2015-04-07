@@ -256,7 +256,7 @@
               d3.select(this)
               .transition()
               .delay(100) 
-              .duration(100)
+              .duration(500)
               .style("fill", colors.black)
               .style("fill-opacity", 1);
         })
