@@ -340,7 +340,7 @@
         })
         .on('click.bars', function(){
               d3.select(this)
-              .style("fill", colors.black)
+              .style("fill", colors.blue)
               .transition()
         })
         .on('mouseover.tip', tip.show)
