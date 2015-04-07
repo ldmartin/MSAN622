@@ -221,7 +221,8 @@
     bars.attr("class", "bar")
           .attr("x", function(d) { return x(d.key); })
           .attr("width", x.rangeBand())
-          .attr("y", function(d) { return y(d.value); })
+          // .attr("y", function(d) { return y(d.value); })
+          .attr("y", height)
           .attr("height", 0)  // change this to the line above if you dont want bars to grow:
           .transition()
             // .delay(function(d, i) { return i * 10; })
@@ -346,6 +347,8 @@
         .on('mouseout.tip', tip.hide)
         ;
 
+
+      svg.select
 
 
 
