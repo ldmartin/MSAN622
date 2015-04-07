@@ -179,9 +179,9 @@
     bars = svg.selectAll(".bar")
           .data(data)
           .enter().append("rect")
-          .style("fill", colors.lavender)
+          .style("fill", colors.lavender);
           // .attr("opacity", function(d) {return (d.value)/maxval})
-          .style("fill-opacity", function(d) {return (d.value)/maxval});
+          // .style("fill-opacity", function(d) {return (d.value)/maxval});
           // .filter(function(d) { return d.value === maxval } 
           //   .classed("max", true)
           //   .attr("fill", colors.lightteal)
@@ -203,7 +203,12 @@
             .ease("bounce")
             .attr('y', function(d) { return y(d.value); })
             .attr('height', function(d) { return height - y(d.value); })
-          ;
+            .each("end", function(){
+                d3.select(this).transition()
+                .duration(50)
+                .style("fill-opacity", function(d) {return (d.value)/maxval});
+              })
+            ;
 
 
     d3.select("#check-input").on("change", change);
