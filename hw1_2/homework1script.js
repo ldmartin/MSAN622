@@ -72,7 +72,8 @@
       "lightteal": "#b7fbf6",
       "black": "#000000",
       "darkpurple": "#6a5acd",
-      "lavender": "#e6e6fa"
+      "lavender": "#e6e6fa",
+      "redorange": "#ff4500"
   };
 
 	var input = get_user_input(string_input);
@@ -259,7 +260,7 @@
         })
         .on('click.bars', function(){
               d3.select(this)
-              .style("fill", colors.blue)
+              .style("fill", colors.redorange)
               .transition()
         })
         .on('mouseover.tip', tip.show)
