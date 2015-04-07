@@ -206,7 +206,7 @@
             .each("end", function(){
                 d3.select(this).transition()
                 .duration(100)
-                .style("fill-opacity", function(d) {return (d.value)/maxval});
+                .style("fill-opacity", function(d) {return 0.2 + (d.value)/maxval});
               })
             ;
 
