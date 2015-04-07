@@ -205,7 +205,7 @@
             .attr('height', function(d) { return height - y(d.value); })
             .each("end", function(){
                 d3.select(this).transition()
-                .duration(100)
+                .duration(500)
                 .style("fill-opacity", function(d) {return (d.value)/maxval});
               })
             ;
