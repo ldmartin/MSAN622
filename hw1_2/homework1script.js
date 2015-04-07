@@ -181,7 +181,7 @@
           .enter().append("rect")
           .style("fill", colors.lavender)
           // .attr("opacity", function(d) {return (d.value)/maxval})
-          .attr("opacity", function(d) {return (d.value)/maxval});
+          .style("fill-opacity", function(d) {return (d.value)/maxval});
           // .filter(function(d) { return d.value === maxval } 
           //   .classed("max", true)
           //   .attr("fill", colors.lightteal)
