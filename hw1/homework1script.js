@@ -24,7 +24,7 @@
       var fullString = userInput.value;
       // localStorage.setItem("userSearchInput", fullString);
 
-      location.href = "http://ldmartin.github.io/MSAN622/hw1_2/?" + fullString;
+      location.href = "http://ldmartin.github.io/MSAN622/hw1/?" + fullString;
   }
 
   function addtext(){
