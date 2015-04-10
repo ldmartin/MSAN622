@@ -130,12 +130,19 @@
                     <li>bar sorting automatically with time delay</li>
                     <li>user textbox search in addition to URL search</li>
                     <li></li>
+                    <li>Modify bar colors: Bars are shaded on a gradient corresponding to frequency of letter, with more frequent letters appearing with darker bars</li>
                     <li>Modify tick label formatting: Changed number of decial points visible to 0</li>
                     <li>Modify tick label formatting: Changed frequency of y-axis labels based on max letter count</li>
                     <li>Modify grid and axis lines: Inserted y-axis grid lines based on number of y-axis tick marks</li>
+                    <li>Modify grid and axis lines: Made y-axis lines dashed and lighter grey</li>
                     <li>Added button allowing user to sort bars alphabetically or by decreasing letter count</li>
                     <li>Added custom tooltip showing exact value of bar on mouseover</li>
                     <li>Added search box for users to search rather than using the URL query</li>
+                    <li>On first mouseover, bars change to greyscale permanently</li>
+                    <li>On subsequent mouseovers, bars change color temporarily for emphasis</li>
+                    <li>On click, bar changes to blue temporarily for emphasis</li>
+                    <li>Search box maintains user input (even across page refresh) for easy alteration of string input</li>
+                    <li>At start of visualization, bars grow from bottom up and bounce into place</li>
                 </ul>
         </p>
     </div><!-- /.col-md-4 -->
@@ -164,12 +171,17 @@
 
                 <tr>
                     <td>Axis formatting</td>
-                    <td><a href'http://www.d3noob.org/2012/12/adding-axis-labels-to-d3js-graph.html' >link</a>description here...</td>
+                    <td><a href'http://www.d3noob.org/2012/12/adding-axis-labels-to-d3js-graph.html' >link</a> description here...</td>
                 </tr>
 
                 <tr>
                     <td>Make the bar chart sortable</td>
-                    <td><a href='http://bl.ocks.org/mbostock/3885705'>link</a>description here...</td>
+                    <td><a href='http://bl.ocks.org/mbostock/3885705'>link</a> description here...</td>
+                </tr>
+
+                <tr>
+                    <td>Grow bar chart bars</td>
+                    <td>Alex Coco's  <a href='http://alexcoco.com/lets-make-a-bar-chart/'>Blog</a> description here...</td>
                 </tr>
             </tbody>
         </table>
@@ -200,10 +212,15 @@
   font: 10px sans-serif;
 }
 
-.axis path,
+.axis path {
+  fill: none;
+  stroke: lightgrey;
+  shape-rendering: crispEdges;
+}
+
 .axis line {
   fill: none;
-  stroke: #000;
+  stroke: lightgrey;
   shape-rendering: crispEdges;
 }
 
@@ -223,6 +240,13 @@ label {
 }
 .grid path {
       stroke-width: 0;
+}
+
+.tick line {
+  stroke: lightgrey;
+  stroke-width: 1;
+  shape-rendering: crispEdges;
+  stroke-dasharray: 5,5;
 }
 
 /*.grid:hover {
@@ -265,7 +289,7 @@ label {
 <!-- <svg class="chart"></svg>
  -->
 
-<script language="JavaScript" type="Text/JavaScript" src="homework1script.js"></script> 
+<script language="JavaScript" type="Text/JavaScript" src="homework1script.js"></script>	
 
 
 <hr/>
