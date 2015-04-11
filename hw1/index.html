@@ -192,11 +192,15 @@
 </div> 
 
 <div class="row">
-    <div class="col-md-8">
+    <div class="col-md-12">
         <h2 class="functionality"><a name="graph-functionality"></a>Functionality</h2>
         <p>The main motivation behind much of the functionality of this chart was solely to practice implementing D3 code. For example, in most cases it would not be advisable to have bars "bounce" into place while the visualization is being rendered. In the same way, the color lag on mouseovers for bars does not add to the information of the graph, but rather serves as an interesting effect to implement in D3. 
         </p>
         <p>On the other hand, having an option for sorting the bars alphabetically or by letter frequency is an interactive feature which enables a user to get a better sense of the data. Similarly, the opacity of bars serves a similar purpose. Bars representing larger letter freuencies appear darker and therefore stand out more. If a bar is clicked on, it turns red. This feature also brings attention to a specific user chosen attribute of the graph by turning that attribute into a "stand-out" color.
+        </p>
+        <p>Other attributes of the graph serve to bring attention to the graph content and away from the background. X-axis grid lines were removed and y-axis grid lines were turned light grey and dashed. Decimal places were also removed from y-axis labels since letter frequency will always appear as an integer. 
+        </p>
+        <p>The last feature of this graph is that a user mouseover on an individual bar fades that bar black permanently. This was put into effect because when there is a large difference between the most frequent letter count and the least frequent letter count, the opacity of the smaller bars appears more washed out. These bars tend to fade into the background. While this effect is desired initially to give the user an overall sense of difference between letter frequencies, turning all bars black decreases the lie-factor of the graph by standardizing bars. It can be beneficial for the user to experience the graph both ways.  
         </p>
     </div><!-- /.col-md-8 -->
 </div>
