@@ -24,7 +24,7 @@
       var fullString = userInput.value;
       // localStorage.setItem("userSearchInput", fullString);
 
-      location.href = "http://ldmartin.github.io/MSAN622/hw1_2/?" + fullString;
+      location.href = "http://ldmartin.github.io/MSAN622/hw1/?" + fullString;
   }
 
   function addtext(){
@@ -72,7 +72,8 @@
       "lightteal": "#b7fbf6",
       "black": "#000000",
       "darkpurple": "#6a5acd",
-      "lavender": "#e6e6fa"
+      "lavender": "#e6e6fa",
+      "redorange": "#ff4500"
   };
 
 	var input = get_user_input(string_input);
@@ -90,6 +91,8 @@
         letters.push(letter);
         counts.push(letter_freq[letter]);
         }
+
+    var num_letters = letters.length
 
     // var data = [letter_freq];
     var data = d3.entries(letter_freq);
@@ -161,27 +164,8 @@
 
     svg.append("g")
             .attr("class", "y axis")
-            .call(yAxis);
-
-    // svg.append("g")         
-    //         .attr("class", "grid")
-    //         .call(make_y_axis(num_ticks, formatAxis)
-    //         .tickSize(-width, 0, 0)
-    //         .tickFormat("")
-    //         )
-    //         // .on('mouseover.bold', function(){
-    //         //   d3.select(this)
-    //         //   .transition()
-    //         //   .style("fill", colors.black)
-    //         // });
-    //         ;
-
-    // svg.append("text")
-    //         .attr("transform", "rotate(-90)")
-    //         .attr("y", 2.5)
-    //         .attr("dy", ".71em")
-    //         .style("text-anchor", "end")
-    //         .text("Count");
+            .call(yAxis)
+            ;
 
     svg.append("text")
         .attr("transform", "rotate(-90)")
@@ -191,12 +175,14 @@
         .style("text-anchor", "middle")
         .text("Count");
 
-    // var maxval = d3.max(data, function(d) { return d.value }); 
+    var maxval = d3.max(data, function(d) { return d.value }); 
 
     bars = svg.selectAll(".bar")
           .data(data)
           .enter().append("rect")
-          .style("fill", colors.black);
+          .style("fill", colors.lavender);
+          // .attr("opacity", function(d) {return (d.value)/maxval})
+          // .style("fill-opacity", function(d) {return (d.value)/maxval});
           // .filter(function(d) { return d.value === maxval } 
           //   .classed("max", true)
           //   .attr("fill", colors.lightteal)
@@ -209,76 +195,21 @@
     bars.attr("class", "bar")
           .attr("x", function(d) { return x(d.key); })
           .attr("width", x.rangeBand())
-          .attr("y", function(d) { return y(d.value); })
+          .attr("y", height)
           .attr("height", 0)  // change this to the line above if you dont want bars to grow:
           .transition()
-            // .delay(function(d, i) { return i * 10; })
-            //.delay(1000)
-            .duration(2500)
+            // make the whole function take only 700. This means the whole transition is done by 2500 (when sorting starts)
+            .delay(function(d, i) { return (i/num_letters) * (700.0); })
+            .duration(1800)
             .ease("bounce")
             .attr('y', function(d) { return y(d.value); })
             .attr('height', function(d) { return height - y(d.value); })
-          // .on('mouseover.tip', tip.show)
-          // .on('mouseout.tip', tip.hide)
-          ;
-
-
-
-      // svg.selectAll(".bar")
-      //     .data(data)
-      //   .enter().append("rect")
-      //     .attr("class", "bar")
-      //     .attr("x", function(d) { return x(d.key); })
-      //     .attr("width", x.rangeBand())
-      //     .attr("y", function(d) { return y(d.value); })
-      //     .attr("height", function(d) { return height - y(d.value); })
-      //     // .attr("height", 0)  // change this to the line above if you dont want bars to grow:
-      //     // .transition()
-      //     //   .delay(function(d, i) { return i * 100; })
-      //     //   .duration(500)
-      //     //   .attr('y', function(d) { return y(d.value); })
-      //     //   .attr('height', function(d) { return height - y(d.value); })
-      //     // .on('mouseover.tip', tip.show)
-      //     // .on('mouseout.tip', tip.hide)
-      //     // .on("mouseout.fill", function(){
-      //     //     d3.select(this)
-      //     //     .transition()
-      //     //     .duration(1000)
-      //     //     .style("fill", colors.lightteal)
-      //     // })
-      //     .on('mouseover.highlight', function(){
-      //         d3.select(this)
-      //         .transition()
-      //         .style("fill", colors.darkpurple)
-      //     })
-      //     .on('mouseout.highlight', function(){
-      //         d3.select(this)
-      //         .transition()
-      //         .style("fill", colors.lavender)
-      //     })
-      //     .on('click.bars', function(){
-      //         d3.select(this)
-      //         .style("fill", colors.black)
-      //         .transition()
-      //     })
-      //     // .on('click.axis', function(){
-      //     //     d3.select(this)
-      //     //     .style("fill", colors.black)
-      //     //     .transition()
-      //     //     // .duration(2000)
-      //     //     // .ease("bounce")
-
-      //     // })
-      //     // .on('click.grow', function(){
-      //     //     d3.select(this)
-      //     //     .transition()
-      //     //     .delay(function(d, i) { return i * 100; })
-      //     //     .duration(200)
-      //     //     .attr('y', function(d) { return 100 - d * 20; })
-      //     //     .attr('height', function(d) { return d * 20; });
-      //     // })
-      
-      //     ;
+            .each("end", function(){
+                d3.select(this).transition()
+                .duration(500)
+                .style("fill-opacity", function(d) {return (d.value)/maxval});
+              })
+            ;
 
 
     d3.select("#check-input").on("change", change);
@@ -305,7 +236,7 @@
 
         transition.selectAll(".bar")
             .delay(delay)
-            .attr("x", function(d) { return x0(d.key); });
+            .attr("x", function(d) { return x0(d.key) });
 
         transition.select(".x.axis")
             .call(xAxis)
@@ -319,53 +250,40 @@
               d3.select(this)
               .transition()
               .style("fill", colors.darkpurple)
+              .style("fill-opacity", function(d) {return (d.value)/maxval});
         })
         .on('mouseout.highlight', function(){
               d3.select(this)
               .transition()
-              .style("fill", colors.lavender)
+              .delay(500) 
+              .duration(2000)
+              .style("fill", colors.black)
+              .style("fill-opacity", 1);
         })
         .on('click.bars', function(){
               d3.select(this)
-              .style("fill", colors.black)
               .transition()
+              .style("fill", colors.redorange)
+              .style("fill-opacity", 1);
         })
         .on('mouseover.tip', tip.show)
         .on('mouseout.tip', tip.hide)
         ;
+  
 
 
+    // d3.selectAll(".chart")
+    //   .on('mouseover.show', function(){
+    //       d3.select(this)
+    //       .transition()
+    //       .style("fill", colors.white)
+    //   })
+    //   .on('mouseout.show', function(){
+    //       d3.select(this)
+    //       .transition()
+    //       .style("fill", colors.white)
+    //   })
 
-
-
-
-    // var chart = d3.select(".chart")
-    //     .attr("width", width)
-    //     .attr("height", height);
-
-    // var barWidth = width / data.length;
-
-    // var bar = chart.selectAll("g")
-    //         .data(data)
-    //     .enter().append("g")
-    //         .attr("transform", function(d, i) { return "translate(" + i * barWidth + ",0)"; });
-
-    // bar.append("rect")
-    //     .attr("y", function(d) { return y(d.value); })
-    //     .attr("height", function(d) { return height - y(d.value); })
-    //     .attr("width", barWidth - 1);
-
-    // bar.append("text")
-    //     .attr("x", barWidth / 2)
-    //     .attr("y", function(d) { return y(d.value) + 3; })
-    //     .attr("dy", ".75em")
-    //     .text(function(d) { return d.value; });
-
-    // function type(d) {
-    //     d.value = +d.value; // coerce to number
-    //     return d;
-    // }
-   
 
 
 

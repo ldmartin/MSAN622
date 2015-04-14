@@ -48,12 +48,14 @@
                 <!-- <li><a href="#graph">Graph</a></li> -->
                 <li><a href="#graph-attributes">Graph Attributes</a></li>
                 <li><a href="#tutorial-links">Useful References</a></li>
+                <li><a href="#graph-functionality">Functionality</a></li>
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
 <!--                 <li><a href="#about">About</a></li>
  -->                
                 <li><a href="#contact">Contact</a></li>
+               <!--  <li>Layla Diana Martin</a></li> -->
             </ul>
         </div><!--/.nav-collapse -->
     </div>
@@ -65,13 +67,15 @@
 <!--         <h1 align="center">Hoework 1</h1>      
  -->    
         <h1><b>Homework 1</b></h1> 
-        <p><b>Assignment Description:</b> Create an interactive bar chart displaying frequencies of letters in a user entered string.</p>    
+        <p>Brought to you by Layla Diana</p>
+        <p><b>Assignment Description:</b> Create an interactive bar chart displaying frequencies of letters in a user entered string.</p>  
+        <p><b>Asignment Repository:</b> 
+          <a href="https://github.com/ldmartin/MSAN622/tree/gh-pages/hw1" target="_blank">Take me there!</a>
+        </p>
     </div>
 </div>
 
 <div class="container">
-
-
 
 
 <div class="row">
@@ -118,7 +122,7 @@
         <h2 class="attributes"><a name="graph-attributes"></a>Graph Attributes</h2>
         <p>
             <ul style="list-style-type:disc">
-                    <li>custom coloring and opacity of bars</li>
+                  <!--   <li>custom coloring and opacity of bars</li>
                     <li>mouse-over bar emphasis</li>
                     <li>alphabetical ordering of letters on graph</li>
                     <li>custom x-axis and y-axis labels and placement</li>
@@ -129,13 +133,20 @@
                     <li>option to sort bars alphabetically or by descending count, with animation</li>
                     <li>bar sorting automatically with time delay</li>
                     <li>user textbox search in addition to URL search</li>
-                    <li></li>
-                    <li>Modify tick label formatting: Changed number of decial points visible to 0</li>
-                    <li>Modify tick label formatting: Changed frequency of y-axis labels based on max letter count</li>
-                    <li>Modify grid and axis lines: Inserted y-axis grid lines based on number of y-axis tick marks</li>
-                    <li>Added button allowing user to sort bars alphabetically or by decreasing letter count</li>
-                    <li>Added custom tooltip showing exact value of bar on mouseover</li>
-                    <li>Added search box for users to search rather than using the URL query</li>
+                    <li></li> -->
+                    <li>Modify bar colors: Bars are shaded on a gradient corresponding to frequency of letter, with more frequent letters appearing with darker bars (C-level)</li>
+                    <li>Modify tick label formatting: Changed number of decial points visible to 0 (C-level)</li>
+                    <li>Modify tick label formatting: Changed frequency of y-axis labels based on max letter count (C-level)</li>
+                    <li>Modify grid and axis lines: Inserted y-axis grid lines based on number of y-axis tick marks (C-level)</li>
+                    <li>Modify grid and axis lines: Made y-axis lines dashed and lighter grey (C-level)</li>
+                    <li>Added button allowing user to sort bars alphabetically or by decreasing letter count (B-level)</li>
+                    <li>Added custom tooltip showing exact value of bar on mouseover (B-level)</li>
+                    <li>Added search box for users to search rather than using the URL query (B-level)</li>
+                    <li>Search box maintains user input (even across page refresh) for easy alteration of string input (A-level)</li>
+                    <li>At start of visualization, bars grow from bottom up and bounce into place (A-level)</li>
+                    <li>On first mouseover, bars change to black permanently</li>
+                    <li>On subsequent mouseovers, bars change color temporarily for emphasis</li>
+                    <li>On click, bar changes to red temporarily for emphasis</li>
                 </ul>
         </p>
     </div><!-- /.col-md-4 -->
@@ -164,12 +175,17 @@
 
                 <tr>
                     <td>Axis formatting</td>
-                    <td><a href'http://www.d3noob.org/2012/12/adding-axis-labels-to-d3js-graph.html' >link</a>description here...</td>
+                    <td>D3 Noob's <a href="http://www.d3noob.org/2012/12/adding-axis-labels-to-d3js-graph.html">blog</a> "Adding axis labels to a d3.js graph"</td>
                 </tr>
 
                 <tr>
                     <td>Make the bar chart sortable</td>
-                    <td><a href='http://bl.ocks.org/mbostock/3885705'>link</a>description here...</td>
+                    <td>Mike Bostock's D3 <a href='http://bl.ocks.org/mbostock/3885705'>demo and code</a> "Sortable Bar Chart"</td>
+                </tr>
+
+                <tr>
+                    <td>Grow bar chart bars</td>
+                    <td>Alex Coco's  <a href='http://alexcoco.com/lets-make-a-bar-chart/'>blog</a> "Let's Make A Barchart"</td>
                 </tr>
             </tbody>
         </table>
@@ -177,11 +193,21 @@
     </div>  
 </div> 
 
+<div class="row">
+    <div class="col-md-12">
+        <h2 class="functionality"><a name="graph-functionality"></a>Functionality</h2>
+        <p>The main motivation behind much of the functionality of this chart was solely to practice implementing D3 code. For example, in most cases it would not be advisable to have bars "bounce" into place while the visualization is being rendered. In the same way, the color lag on mouseovers for bars does not add to the information of the graph, but rather serves as an interesting effect to implement in D3. 
+        </p>
+        <p>On the other hand, having an option for sorting the bars alphabetically or by letter frequency is an interactive feature which enables a user to get a better sense of the data. Similarly, the opacity of bars serves a similar purpose. Bars representing larger letter freuencies appear darker and therefore stand out more. If a bar is clicked on, it turns red. This feature also brings attention to a specific user chosen attribute of the graph by turning that attribute into a "stand-out" color.
+        </p>
+        <p>Other attributes of the graph serve to bring attention to the graph content and away from the background. X-axis grid lines were removed and y-axis grid lines were turned light grey and dashed. Decimal places were also removed from y-axis labels since letter frequency will always appear as an integer. 
+        </p>
+        <p>The last feature of this graph is that a user mouseover on an individual bar fades that bar black permanently. This was put into effect because when there is a large difference between the most frequent letter count and the least frequent letter count, the opacity of the smaller bars appears more washed out. These bars tend to fade into the background. While this effect is desired initially to give the user an overall sense of difference between letter frequencies, turning all bars black decreases the lie-factor of the graph by standardizing bars. It can be beneficial for the user to experience the graph both ways.  
+        </p>
+    </div><!-- /.col-md-8 -->
+</div>
 
-<!-- <div class="chart"></div>
- -->
-<!-- <script src="js/d3.min.js"></script>
- -->
+
 
 <style>
 
@@ -200,10 +226,15 @@
   font: 10px sans-serif;
 }
 
-.axis path,
+.axis path {
+  fill: none;
+  stroke: lightgrey;
+  shape-rendering: crispEdges;
+}
+
 .axis line {
   fill: none;
-  stroke: #000;
+  stroke: lightgrey;
   shape-rendering: crispEdges;
 }
 
@@ -223,6 +254,13 @@ label {
 }
 .grid path {
       stroke-width: 0;
+}
+
+.tick line {
+  stroke: lightgrey;
+  stroke-width: 1;
+  shape-rendering: crispEdges;
+  stroke-dasharray: 5,5;
 }
 
 /*.grid:hover {
@@ -261,11 +299,7 @@ label {
 
 </style>
 
-
-<!-- <svg class="chart"></svg>
- -->
-
-<script language="JavaScript" type="Text/JavaScript" src="homework1script.js"></script> 
+<script language="JavaScript" type="Text/JavaScript" src="homework1script.js"></script>	
 
 
 <hr/>
