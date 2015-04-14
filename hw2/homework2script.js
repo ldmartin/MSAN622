@@ -16,7 +16,7 @@ var projection = d3.geo.albersUsa()
 var path = d3.geo.path()
     .projection(projection);
 
-var svg = d3.select("body").append("svg")
+var svg = d3.select("chart").append("svg")
     .attr("width", width)
     .attr("height", height);
 
