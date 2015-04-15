@@ -6,38 +6,24 @@
 // References:
 // http://d3-geomap.github.io/map/choropleth/us-states/
 
-var width = 960,
-    height = 500;
-
-var projection = d3.geo.albersUsa()
-    .scale(1000)
-    .translate([width / 2, height / 2]);
-
-var path = d3.geo.path()
-    .projection(projection);
-
-var svg = d3.select("chart").append("svg")
-    .attr("width", width)
-    .attr("height", height);
-
-d3.json("/d/4090846/us.json", function(error, us) {
-  svg.insert("path", ".graticule")
-      .datum(topojson.feature(us, us.objects.land))
-      .attr("class", "land")
-      .attr("d", path);
-
-  svg.insert("path", ".graticule")
-      .datum(topojson.mesh(us, us.objects.counties, function(a, b) { return a !== b && !(a.id / 1000 ^ b.id / 1000); }))
-      .attr("class", "county-boundary")
-      .attr("d", path);
-
-  svg.insert("path", ".graticule")
-      .datum(topojson.mesh(us, us.objects.states, function(a, b) { return a !== b; }))
-      .attr("class", "state-boundary")
-      .attr("d", path);
+d3.csv("data/stateData.csv", function(d) {
+    return {
+        name: d.name,
+        abbrev: d.abbrev,
+        pop: +d.pop,
+        income: +d.income,
+        illiteracy: +d.illiteracy,
+        lifeExp: +d.lifeExp,
+        murder: +d.murder,
+        hsGrad: +d.hsGrad,
+        frost: +d.frost,
+        area: +d.area,
+        region: d.region,
+        division: d.division
+    };
+}, function(error, rows) {
+    console.log(rows);
 });
-
-d3.select(self.frameElement).style("height", height + "px");
 
 
 
