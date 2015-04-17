@@ -24,10 +24,10 @@
 
 
     <style type="text/css">
-    body {
-    padding-top: 30px;
-    padding-bottom: 20px;
-    }
+        body {
+            padding-top: 30px;
+            padding-bottom: 20px;
+        }
     </style>
 
 </head>
@@ -39,18 +39,18 @@
         padding: 10px;
     }
 
-    /*.axis,*/
-    /*.frame {*/
-        /*shape-rendering: crispEdges;*/
-    /*}*/
+    .axis,
+    .frame {
+    shape-rendering: crispEdges;
+    }
 
-    /*.axis line {*/
-        /*stroke: #ddd;*/
-    /*}*/
+    .axis line {
+    stroke: #ddd;
+    }
 
-    /*.axis path {*/
-        /*display: none;*/
-    /*}*/
+    .axis path {
+    display: none;
+    }
 
     .frame {
         fill: none;
@@ -71,17 +71,7 @@
         stroke: #fff;
     }
 
-    .axis path,
-    .axis line {
-        fill: none;
-        stroke: #000;
-        shape-rendering: crispEdges;
-    }
 
-
-    /*.dot {*/
-        /*stroke: #000;*/
-    /*}*/
 
 </style>
 <body>
@@ -135,44 +125,63 @@ Fixed Navbar
 
 <div class="container" >
 
+    <div class="row">
+        <div class="col-md-12">
+            <!-- <h2 class="chart-title"><a name="graph"></a>Letter Frequencies</h2> -->
+            <h2 class="chart-title"><a name="graph"></a></h2>
+            <p class="chart-desctiption"></p>
+        </div>
+    </div>
+
+    <div class="chart1"></div>
+
+    <div class="chart2"></div>
+
+    <!--chart javascript:    -->
+    <script src="d3.v3.min.js"></script>
+    <script language="JavaScript" type="Text/JavaScript" src="homework2script2.js"></script>
+
+    <!--<script language="JavaScript" type="Text/JavaScript" src="homework2script2.js"></script>-->
 
 
-<div class="row">
-    <div class="col-md-6">
-        <h2 class="attributes"><a name="graph-attributes"></a>Graph Attributes</h2>
-        <p>
-        <ul style="list-style-type:disc">
-            <li>Scatterplot Matrix</li>
-        </ul>
-        </p>
-    </div><!-- /.col-md-6 -->
-</div>
+    <hr/>
 
-<div class="row">
-    <div class="col-md-12">
-        <h2 class="functionality"><a name="graph-functionality"></a>Functionality</h2>
-        <p>Funcitonality goes here....
-        </p>
-        <p>Color scheme: Three distinct colors for region which do not highlight one area over another.</p>
-        <p>Selection region to identify the same data point in all plots.</p>
+    <div class="row">
+        <div class="col-md-6">
+            <h2 class="attributes"><a name="graph-attributes"></a>Graph Attributes</h2>
+            <p>
+            <ul style="list-style-type:disc">
+                <li>Scatterplot Matrix</li>
+            </ul>
+            </p>
+        </div><!-- /.col-md-6 -->
+    </div>
 
-    </div><!-- /.col-md-8 -->
-</div>
+    <div class="row">
+        <div class="col-md-12">
+            <h2 class="functionality"><a name="graph-functionality"></a>Functionality</h2>
+            <p>Funcitonality goes here....
+            </p>
+            <p>Color scheme: Three distinct colors for region which do not highlight one area over another.</p>
+            <p>Selection region to identify the same data point in all plots.</p>
 
-<hr/>
-<footer>
-    <p style="text-align: center;">
-        <a name="contact"></a>
-        <img src="img/email_logo.png" alt="" border=1 height=22 width=22></img>
-        <a href="mailto:ldmartin@dons.usfca.edu">ldmartin@dons.usfca.edu</a>
-        <img src="img/github_logo.png" alt="" border=1 height=20 width=20></img>
-        <a href="https://github.com/ldmartin">github.com/ldmartin</a>
-        <img src="img/linkedin_logo.png" alt="" border=1 height=20 width=22></img>
-        <a href="https://www.linkedin.com/in/layladmartin">LinkedIn.com/layladmartin</a>
+        </div><!-- /.col-md-8 -->
+    </div>
+
+    <hr/>
+    <footer>
+        <p style="text-align: center;">
+            <a name="contact"></a>
+            <img src="img/email_logo.png" alt="" border=1 height=22 width=22></img>
+            <a href="mailto:ldmartin@dons.usfca.edu">ldmartin@dons.usfca.edu</a>
+            <img src="img/github_logo.png" alt="" border=1 height=20 width=20></img>
+            <a href="https://github.com/ldmartin">github.com/ldmartin</a>
+            <img src="img/linkedin_logo.png" alt="" border=1 height=20 width=22></img>
+            <a href="https://www.linkedin.com/in/layladmartin">LinkedIn.com/layladmartin</a>
 
 
-        <!--       Layla Martin &bullet; MSAN 622 Information Visualization &bullet; Spring 2015</p> -->
-</footer>
+            <!--       Layla Martin &bullet; MSAN 622 Information Visualization &bullet; Spring 2015</p> -->
+    </footer>
 
 </div><!--/.container -->
 
