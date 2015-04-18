@@ -129,7 +129,7 @@ Fixed Navbar
         <div class="col-md-12">
             <!-- <h2 class="chart-title"><a name="graph"></a>Letter Frequencies</h2> -->
             <h2 class="chart-title"></h2>
-            <p class="chart-desctiption"></p>
+            <p class="chart-desctiption"><font color="grey">Brush a region to highlight corresponding points in all plots.</font></p>
         </div>
     </div>
 
@@ -162,7 +162,24 @@ Fixed Navbar
     <div class="row">
         <div class="col-md-12">
             <h2 class="functionality"><a name="graph-functionality"></a>Functionality</h2>
-            <p>Color scheme: Three distinct colors for region which do not emphasize one area over another.</p>
+            <p>The main functionality of these plots is intended to be minimalistic and have a high data to ink ratio.
+            I focused on maximizing the plot space by setting the margins low and increasing the dot size so the data
+            stands out over any labels. While grid lines are useful in the scatterplot matrix, I have removed them from
+            the plain bubble chart so as to lessen the amount of distraction in the visual.</p>
+            <p>Additionally, I have chosen a color scheme that does not emphasize one category over another. This
+            categorical grouping is intended to merely separate regions of the US and not highlight any one region.</p>
+            <p>I have also chosen to group the categories of "Northeast" and "North Central" from the original data
+            into one category, "North". This preserves the overall trend in the data (as seen in the scatterplot matrix)
+            that states within these regions naturally group together in some areas. The reduction to only three categories
+            increases simplicity in the visual and reduces clutter. </p>
+            <p>Brushing within the scatterplot matrix makes it especially easy for viewers to highlight the same data points
+            across all plots. This is an important aspect which allows much data to be presented to the user without losing
+            the ability to look at very specific details within the data.</p>
+            <p>In the large scatterplot, the x-axis range is limited from 67 to 74. Although this increases the lie factor, I felt
+                it was unnecessary to view the full range starting from 0 since the variable "Life Expectancy" is never referrenced
+                in a range that low. The visual becomes more informative when the range is viewed only for values that the data
+                takes on. It was also relevant in this aspect to format the numbers with one decimal point. Because the range for
+                average life expectancy across states is so small, it is more informative to mark half years as well as full years.</p>
 
         </div><!-- /.col-md-8 -->
     </div>

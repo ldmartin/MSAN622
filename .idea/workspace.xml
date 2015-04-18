@@ -4,8 +4,7 @@
     <list default="true" id="98f70332-6a3d-4f75-bc2a-cdb0fe28b4b4" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hw2/graph1.html" afterPath="$PROJECT_DIR$/hw2/graph1.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hw2/graph2.html" afterPath="$PROJECT_DIR$/hw2/graph2.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hw2/index.html" afterPath="$PROJECT_DIR$/hw2/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hw2/homework2script2.js" afterPath="$PROJECT_DIR$/hw2/homework2script2.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hw2/.idea/workspace.xml" afterPath="$PROJECT_DIR$/hw2/.idea/workspace.xml" />
     </list>
     <ignored path="ldmartin.github.io.iws" />
@@ -30,8 +29,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.72790295">
-              <caret line="68" column="90" selection-start-line="68" selection-start-column="90" selection-end-line="68" selection-end-column="90" />
+            <state vertical-scroll-proportion="0.44194108">
+              <caret line="57" column="10" selection-start-line="57" selection-start-column="10" selection-end-line="57" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -240,8 +239,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.72790295">
-          <caret line="68" column="90" selection-start-line="68" selection-start-column="90" selection-end-line="68" selection-end-column="90" />
+        <state vertical-scroll-proportion="0.44194108">
+          <caret line="57" column="10" selection-start-line="57" selection-start-column="10" selection-end-line="57" selection-end-column="10" />
           <folding />
         </state>
       </provider>

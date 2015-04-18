@@ -30,7 +30,7 @@ var color = d3.scale.ordinal().range(["#e7ba52", "#de9ed6", "#17becf"]);
 
 //append title to chart:
 var title = d3.select(".chart-title").text('State education and wealth by US region');
-var description = d3.select(".chart-desctiption").text("Brush a region to highlight corresponding points in all plots.");
+//var description = d3.select(".chart-desctiption").text("Brush a region to highlight corresponding points in all plots.");
 
 
 d3.csv("data/stateData5.csv", function(error, data) {
