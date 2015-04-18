@@ -69,7 +69,7 @@ d3.csv("data/stateData6.csv", function(error, data) {
         .enter().append("circle")
         // remove border around dots:
         //.attr("class", "dot")
-        .attr("r", 7)
+        .attr("r", 9)
         .attr("cx", function(d) { return x(d.LifeExp); })
         .attr("cy", function(d) { return y(d.Murder); })
         .style("fill", function(d) { return color(d.Region); });

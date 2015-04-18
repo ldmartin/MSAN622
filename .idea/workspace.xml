@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="98f70332-6a3d-4f75-bc2a-cdb0fe28b4b4" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hw2/graph1.html" afterPath="$PROJECT_DIR$/hw2/graph1.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hw2/graph2.html" afterPath="$PROJECT_DIR$/hw2/graph2.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hw2/homework2script2.js" afterPath="$PROJECT_DIR$/hw2/homework2script2.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hw2/homework2script1.js" afterPath="$PROJECT_DIR$/hw2/homework2script1.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hw2/.idea/workspace.xml" afterPath="$PROJECT_DIR$/hw2/.idea/workspace.xml" />
     </list>
     <ignored path="ldmartin.github.io.iws" />
