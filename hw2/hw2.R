@@ -72,8 +72,17 @@ write.csv(df5,
 
 df5_2 <- df5
 names(df5_2) <- c('PCI', 'Illiterate', 'HSGrad', 'Region')
+write.csv(df5_2, 
+          '/Users/laylamartin/Desktop/MSAN/Module4/Dataviz/ldmartin.github.io/hw2/data/stateData5_2.csv',
+          row.names=FALSE
+)
 
-
-
+df6 <- subset(df, select=c('Murder', 'Life.Exp', 'region2'))
+names(df6) <- c('Murder', 'LifeExp', 'Region')
+View(df6)
+write.csv(df6, 
+          '/Users/laylamartin/Desktop/MSAN/Module4/Dataviz/ldmartin.github.io/hw2/data/stateData6.csv',
+          row.names=FALSE
+)
 
 
