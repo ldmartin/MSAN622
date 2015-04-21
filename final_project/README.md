@@ -1,5 +1,5 @@
 
-MSAN 622 Information Visualization
+MSAN 622 Information Visualization Final Project Sketch
 ==================================
 
 |  **Name:** | Layla Martin           |
