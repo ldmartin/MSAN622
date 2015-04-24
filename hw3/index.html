@@ -221,7 +221,11 @@ Fixed Navbar
             <h2 class="attributes"><a name="graph-attributes"></a>Graph Attributes</h2>
             <p>
             <ul style="list-style-type:disc">
-                <li>Basic implementation</li>
+                <li>Multi-series line plot (basic)</li>
+                <li>2 stacked area plots (basic)</li>
+                <li>Focus plus context (zoomed region) (moderate)</li>
+                <li>Details on demand (moderate)</li>
+                <li>Brushing (advanced)</li>
             </ul>
             </p>
         </div><!-- /.col-md-6 -->
@@ -230,7 +234,34 @@ Fixed Navbar
     <div class="row">
         <div class="col-md-12">
             <h2 class="functionality"><a name="graph-functionality"></a>Functionality</h2>
-            <p>Functionality here...</p>
+            <p>
+                The first plot is a multi-series line plot depicting deaths and injuries of UK drivers over time. These four
+                variables were chosen based on the descriptive similarity of deaths and injuries to certain groups of people.
+                Due to the qualitative nature of the variables, a the color scheme implemented was chosen using
+                <a href="http://colorbrewer2.org/">colorbrewer.org</a>. These colors imply no underlying hierarchy or
+                emphasis of certain classes over others. However, I did want to perform some color grouping representing
+                similarity between variables. Variables representing deaths and serious injuries are a shade of green whereas
+                variables representing only deaths are a shade of purple. I have added a "details on demand" mouseover feature
+                as a vertical line showing the date at that particular point in the graph. This allows the user to draw conclusions
+                between multiple variables at the same point in time, which is important given the wide variance across variables
+                at any point in time (i.e., van deaths are always relatively low compared to front seat passengers killed/injured).
+            </p>
+            <p>
+                The next two plots implemented are stacked area plots with zooming and brushing features, allowing the user
+                a source of focus plus context. I have created two such plots as a further way to focus on certain variable
+                groupings at the same time. The first plot corresponds to total number of people killed, whereas the second plot
+                looks at passengers killed or seriously injured. The colors used in these plots are the same as those used in
+                the original plot to create a stronger relationship between all graphics included in the assignment.
+            </p>
+            <p>
+                In an effort to increase the data to ink ratio for all plots, x-axis titles have been removed because the
+                time component should be implied from the labels and context. However, y-axis titles are preserved across plots.
+                Although repetitive, this was necessary because the layout of the two types of plots is different enough to
+                invoke confusion as to what the non-time component plotted is. Before applying the brushing feature on the
+                stacked area plot, the time labels of the y-axis are identical for the context and focused attributes. However,
+                once brushing is applied, the labels of the focused area are adjusted and scaled to better fit the time scale
+                focued on. This primarily means switching to a monthly scale of labels instead of yearly.
+            </p>
 
         </div><!-- /.col-md-8 -->
     </div>

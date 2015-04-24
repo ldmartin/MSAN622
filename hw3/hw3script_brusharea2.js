@@ -186,7 +186,7 @@ svg3.append("g")
 
 // add some white rectangle to cover up a random black line idk why it's being created...
 var cover2 = svg3.append("rect")
-    .attr("width",10)
+    .attr("width",7)
     .attr("height",height__)
     .attr("x",0)
     .attr("y",0)
