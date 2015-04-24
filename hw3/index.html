@@ -34,41 +34,8 @@
 
 <style>
 
-    svg {
+    body {
         font: 10px sans-serif;
-        padding: 10px;
-    }
-
-    /*.axis,*/
-    /*.frame {*/
-    /*shape-rendering: crispEdges;*/
-    /*}*/
-
-    /*.axis line {*/
-    /*stroke: #ddd;*/
-    /*}*/
-
-    /*.axis path {*/
-    /*display: none;*/
-    /*}*/
-
-    .frame {
-        fill: none;
-        stroke: #aaa;
-    }
-
-    circle {
-        fill-opacity: .7;
-    }
-
-    circle.hidden2 {
-        fill: #ccc !important;
-    }
-
-    .extent {
-        fill: #000;
-        fill-opacity: .125;
-        stroke: #fff;
     }
 
     .axis path,
@@ -78,10 +45,79 @@
         shape-rendering: crispEdges;
     }
 
+    .x.axis path {
+        display: none;
+    }
 
-    /*.dot {*/
-    /*stroke: #000;*/
+    .line {
+        fill: none;
+        stroke: steelblue;
+        stroke-width: 3.0px;
+    }
+
+    .overlay {
+        fill: none;
+        pointer-events: all;
+    }
+
+    .focus circle {
+        fill: none;
+        stroke: steelblue;
+    }
+
+    .area {
+        fill: #c2a5cf;
+        clip-path: url(#clip);
+    }
+
+    .area2 {
+        fill: #7b3294;
+        clip-path: url(#clip);
+    }
+
+    .area3 {
+        fill: #a6dba0;
+        clip-path: url(#clip);
+    }
+
+    .area4 {
+        fill: #008837;
+        clip-path: url(#clip);
+    }
+
+
+    .brush .extent {
+        stroke: #fff;
+        fill-opacity: .125;
+        shape-rendering: crispEdges;
+    }
+
+
+
+
+    svg {
+        font: 10px sans-serif;
+    }
+
+    /*.area {*/
+        /*fill: steelblue;*/
+        /*clip-path: url(#clip);*/
     /*}*/
+
+    /*.axis path,*/
+    /*.axis line {*/
+        /*fill: none;*/
+        /*stroke: #000;*/
+        /*shape-rendering: crispEdges;*/
+    /*}*/
+
+    /*.brush .extent {*/
+        /*stroke: #fff;*/
+        /*fill-opacity: .125;*/
+        /*shape-rendering: crispEdges;*/
+    /*}*/
+
+
 
 </style>
 <body>
@@ -101,9 +137,9 @@ Fixed Navbar
 
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li><a href="#graph1">Graph</a></li>
+                <!--<li><a href="#graph1">Graph</a></li>-->
                 <li><a href="#graph-attributes">Graph Attributes</a></li>
-                <li><a href="#tutorial-links">Useful References</a></li>
+                <!--<li><a href="#tutorial-links">Useful References</a></li>-->
                 <li><a href="#graph-functionality">Functionality</a></li>
             </ul>
 
@@ -138,14 +174,45 @@ Fixed Navbar
         </div>
     </div>
 
-    <div class="chart"></div>
+    <div class="row">
+        <div class="col-md-12">
+            <!-- <h2 class="chart-title"><a name="graph"></a>Letter Frequencies</h2> -->
+            <h2 class="chart-title1"></h2>
+        </div>
+    </div>
+    <div class="chart1"></div>
+
+    <hr/>
+
+    <div class="row">
+        <div class="col-md-12">
+            <!-- <h2 class="chart-title"><a name="graph"></a>Letter Frequencies</h2> -->
+            <h2 class="chart-title2"></h2>
+            <p class="chart-description2"></p>
+        </div>
+    </div>
+    <div class="chart2"></div>
+
+    <hr/>
+
+    <div class="row">
+        <div class="col-md-12">
+            <!-- <h2 class="chart-title"><a name="graph"></a>Letter Frequencies</h2> -->
+            <h2 class="chart-title3"></h2>
+            <p class="chart-description3"></p>
+        </div>
+    </div>
+    <div class="chart3"></div>
+
 
     <!--chart javascript:    -->
     <script src="d3.v3.min.js"></script>
-    <!--<script language="JavaScript" type="Text/JavaScript" src="homework2script.js"></script>-->
 
-    <script language="JavaScript" type="Text/JavaScript" src="homework3script.js"></script>
+    <script language="JavaScript" type="Text/JavaScript" src="hw3script_multipleline1.js"></script>
 
+    <script language="JavaScript" type="Text/JavaScript" src="hw3script_brusharea1.js"></script>
+
+    <script language="JavaScript" type="Text/JavaScript" src="hw3script_brusharea2.js"></script>
 
     <hr/>
 
