@@ -58,7 +58,7 @@
     <div class="container">
         <h1>Final Project Sketch</h1>
 
-        <p>Sketch description here</p>
+        <p>This page contains a broad overview of my final project for Information Visualization.</p>
 
         <p>
           <a class="btn btn-primary btn-lg" href="#about" role="button">About Me &raquo;</a>
@@ -73,26 +73,108 @@
     <div class="row">
         <div class="col-md-12">
             <h2 class="page-header"><a name="project"></a>Planned Tools</h2>
+            <p>
+                Since the data is contained in multiple CSV files, I plan on performing preprocessing in Python, using
+                the Pandas library. Because I would like to create a network visualization, this involves transforming
+                the data into either an adjacency matrix representation or sparse matrix columnar format. I will most
+                likely be using the file containing a list of recipes by region. This file has in one column a country,
+                and in the second column a list of ingredients used in that recipe. I will transform this data into
+                a graph network representation in order to visualize similarity between recipes across parts of the world.
+                Aside from using Python to transform the data, I do not foresee any other tools being needed for data preprocessing.
+            </p>
+            <p>
+                For implementation in D3 purposes, I plan on using the TopoJSON library to visualize regions of the world
+                where these recipes are occurring.
+            </p>
         </div>
     </div>
 
     <div class="row">
         <div class="col-md-12">
             <h2 class="page-header"><a name="project"></a>Planned Techniques</h2>
+                <b><u>Technique 1</u></b>
+                <p>
+                    This technique will be a visual network of shared ingredients across recipes for a certain region.
+                    In this case, nodes will be specific ingredients (column 2 in scirep-cuisines-detail/allr_recipes.txt)
+                    and edges will connect nodes if those ingredients appear
+                    in the same recipe (column 1 in scirep-cuisines-detail/allr_recipes.txt). I imagine this to be a
+                    highly connected network, and therefore a "backbone extraction"
+                    technique will most likely be needed to better visualize the connections between nodes. This technique
+                    essentially picks out the most important edges of a highly connected network to display. Thus, the weighted
+                    network will be more easily interpreted. The nodes will have the same structure in the visualization,
+                    but the edges will be shaded and styled according to how much weight is associated with that edge (how
+                    many recipes those two ingredients appear together in).
+                </p>
+                <b><u>Technique 2</u></b>
+                <p>
+                    My second visualization will be a bar chart. Bars will originate from the x-axis, representing the
+                    highest occurring ingredient by region (unique values of column 2 in scirep-cuisines-detail/map.txt).
+                    The height of each bar will represent the percent of overall recipes for that region in which the
+                    ingredient occurred. Bars will be sorted alphabetically by the name of the ingredient which is being
+                    shown. This is implemented so that in the case where two regions have the same "most popular" ingredient,
+                    the user will be able to recognize this quickly.
+                </p>
+                <b><u>Technique 2</u></b>
+                <p>
+                    The last technique implemented will be a map with "details on demand". A map of the world will be shown
+                    with countries outlined that I have recipe information for. When a user clicks on a country, a bar chart
+                    will be displayed showing the five most prevalent ingredients used in recipes for that country. This
+                    allows users to get a broad overview of which ingredients are common to certain countries rather than
+                    regions. Data for this technique will use both columns 1 and 2 in scirep-cuisines-detail/allr_recipes.txt.
+                </p>
         </div>
     </div>
 
     <div class="row">
         <div class="col-md-12">
             <h2 class="page-header"><a name="project"></a>Planned Interaction</h2>
+            <p>
+               It is my intent that the above mentioned map will be the first visual the user is introduced to. Upon
+                interacting with this map, the user will be able to dive deeper into specific details and connections
+                within the dataset.
+            </p>
+            <p>
+                I would like to implement mouseover highlighting on the map so that when the user hovers over a country
+                they are able to receive information as to what region that country is in. This will help draw connections
+                between country statistics and regional statistics. Details on demand will also be implemented on the map,
+                so that when the user clicks on a country, another plot with the details discussed in technique 2 above
+                will appear below
+                the map. Interactivity within the network visualization will be limited as to not clutter the already very
+                connected graph. When the user hovers over a node, a tooltip will appear with the name of the ingredient.
+            </p>
         </div>
     </div>
+
 
     <div class="row">
         <div class="col-md-12">
             <h2 class="page-header"><a name="project"></a>Planned Interface</h2>
+            <p>
+                Below are the rough sketches of the visualizations I will create. Because these visualizations will be
+                highly interactive with eachother, it is hard to portray them as a layout on a web page. Overall web
+                page layout and interactivity are described above.
+            </p>
+            <div class="media">
+                <style>
+
+                    .rotate90 {
+                        -webkit-transform: rotate(90deg);
+                        -moz-transform: rotate(90deg);
+                        -o-transform: rotate(90deg);
+                        -ms-transform: rotate(90deg);
+                        transform: rotate(90deg);
+                    }
+
+                </style>
+                <!--<img class="media-object" src="img/interface1.jpg" style="width: 285px; height: 250px;">-->
+                <!--<img class="media-object" src="img/interface2.jpg" style="width: 285px; height: 250px;">-->
+                <img src="img/interface1.jpg" style="float: left; width: 45%; margin-right: 5%; margin-bottom: 0.5em;">
+                <img src="img/interface2.jpg" style="float: left; width: 45%; margin-right: 5%; margin-bottom: 0.5em;">
+            </div>
         </div>
     </div>
+
+
 
     <div class="row">
         <div class="col-md-8">
@@ -100,10 +182,7 @@
             <ul>
                 <li><a href="http://yongyeol.com/2011/12/15/paper-flavor-network.html">Project Dataset Webpage</a></li>
                 <li><a href="https://github.com/ldmartin/MSAN622/tree/gh-pages/final_project/data">Project Dataset Files</a></li>
-                <li><a href="https://github.com/ldmartin/MSAN622/tree/gh-pages/final_project">Project Sketch</a></li>
-                <li><a href="http://www.nature.com/srep/2011/111215/srep00196/full/srep00196.html">Project Prototype</a></li>
-                <li>Project Video</li>
-                <li>Project Report</li>
+                <li><a href="http://www.nature.com/srep/2011/111215/srep00196/full/srep00196.html">Project Inspiration</a></li>
             </ul>
         </div>
     </div>
