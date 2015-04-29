@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="98f70332-6a3d-4f75-bc2a-cdb0fe28b4b4" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/final_project/projectSketch/img/keep_off.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/final_project/projectSketch/img/profile.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/final_project/projectSketch/img/twitter_logo.png" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/final_project/projectSketch/index.html" afterPath="$PROJECT_DIR$/final_project/projectSketch/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/final_project/.idea/workspace.xml" afterPath="$PROJECT_DIR$/final_project/.idea/workspace.xml" />
     </list>
     <ignored path="ldmartin.github.io.iws" />
