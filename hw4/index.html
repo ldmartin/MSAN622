@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>MSAN 622 Homework 3</title>
+
+    <!--<script src="js/jquery.min.js"></script>-->
+    <!--<script src="js/bootstrap.min.js"></script>-->
+    <!--<script src="js/d3.min.js"></script>-->
+    <!--<script src="js/index.js"></script>-->
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/d3.min.js"></script>
+
+    <script src="js/index.js"></script>
+
+
+    <!--<script src="topojson-js/topojson.js"></script>-->
+
+    <!--references for bootstrap web page formatting    -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-theme.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/custom.css">
+
+
+    <style type="text/css">
+        body {
+            padding-top: 30px;
+            padding-bottom: 20px;
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+<!--Fixed Navbar-->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle Navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="http://ldmartin.github.io/MSAN622/">MSAN 622</a>
+        </div>
+
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <!--<li><a href="#graph1">Graph</a></li>-->
+                <li><a href="#graph-attributes">Graph Attributes</a></li>
+                <!--<li><a href="#tutorial-links">Useful References</a></li>-->
+                <li><a href="#graph-functionality">Functionality</a></li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <!--                 <li><a href="#about">About</a></li>
+                 -->
+                <li><a href="#contact">Contact</a></li>
+                <!--  <li>Layla Diana Martin</a></li> -->
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</nav>
+
+
+<div class="jumbotron color-backblue">
+    <div class="container">
+        <h1><b>Homework 4</b></h1>
+        <p>Brought to you by Layla Diana</p>
+        <p><b>Assignment Description:</b> Implement a dashboard in Tableau and D3.</p>
+        <p><b>Asignment Repository:</b>
+            <a href="https://github.com/ldmartin/MSAN622/tree/gh-pages/hw4" target="_blank">Take me there!</a>
+        </p>
+    </div>
+</div>
+
+<div class="container" >
+
+    <!--insert javascript code for tableau prototype here:-->
+    <!--<script language="JavaScript" type="Text/JavaScript" src="hw3script_multipleline1.js"></script>-->
+    <script type='text/javascript' src='https://public.tableau.com/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 1004px; height: 869px;'><noscript><a href='#'><img alt='Dashboard 2 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;hw&#47;hw4_movies&#47;Dashboard2&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz' width='1004' height='869' style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='site_root' value='' /><param name='name' value='hw4_movies&#47;Dashboard2' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;hw&#47;hw4_movies&#47;Dashboard2&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='showVizHome' value='no' /><param name='showTabs' value='y' /><param name='bootstrapWhenNotified' value='true' /></object></div>
+
+    <hr/>
+
+    <!--line chart goes here:-->
+    <div class="row">
+        <div class="col-md-6">
+            <!-- <h2 class="chart-title"><a name="graph"></a>Letter Frequencies</h2> -->
+            <h2 class="chart-title1"></h2>
+        </div>
+    </div>
+    <div class="chart1"></div>
+
+
+    <!--bar chart goes here:-->
+    <div class="row">
+        <div class="col-md-6">
+            <!-- <h2 class="chart-title"><a name="graph"></a>Letter Frequencies</h2> -->
+            <h2 class="chart-title2">Average movie budget by genre</h2>
+        </div>
+    </div>
+    <div class="chart2"></div>
+
+    <hr/>
+
+    <style>
+
+        .bar {
+            fill: lavender;
+            fill-opacity: .9;
+        }
+
+        .axis {
+            font: 10px sans-serif;
+        }
+
+        .axis path {
+            fill: none;
+            stroke: lightgrey;
+            shape-rendering: crispEdges;
+        }
+
+        .axis line {
+            fill: none;
+            stroke: lightgrey;
+            shape-rendering: crispEdges;
+        }
+
+        .x.axis path {
+            display: none;
+        }
+
+        label {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
+        .grid .tick {
+            stroke: lightgrey;
+            opacity: 0.7;
+        }
+        .grid path {
+            stroke-width: 0;
+        }
+
+        .tick line {
+            stroke: lightgrey;
+            stroke-width: 1;
+            shape-rendering: crispEdges;
+            stroke-dasharray: 5,5;
+        }
+
+        .d3-tip {
+            line-height: 1;
+            font-weight: bold;
+            padding: 12px;
+            background: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            border-radius: 2px;
+        }
+
+        /* Creates a small triangle extender for the tooltip */
+        .d3-tip:after {
+            box-sizing: border-box;
+            display: inline;
+            font-size: 10px;
+            width: 100%;
+            line-height: 1;
+            color: rgba(0, 0, 0, 0.8);
+            content: "\25BC";
+            position: absolute;
+            text-align: center;
+        }
+
+        /* Style northward tooltips differently */
+        .d3-tip.n:after {
+            margin: -1px 0 0 0;
+            top: 100%;
+            left: 0;
+        }
+
+    </style>
+    <!--chart javascript:    -->
+    <!--<script src="d3.v3.min.js"></script>-->
+    <!--<script src="js2/d3.min.js"></script>-->
+
+    <!--insert javascript code for d3 dashboard here:-->
+    <script language="JavaScript" type="Text/JavaScript" src="hw2script.js"></script>
+
+    <hr/>
+
+    <div class="row">
+        <div class="col-md-6">
+            <h2 class="attributes"><a name="graph-attributes"></a>Graph Attributes</h2>
+            <p>
+            <ul style="list-style-type:disc">
+                <li>Basic functionality here</li>
+            </ul>
+            </p>
+        </div><!-- /.col-md-6 -->
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <h2 class="functionality"><a name="graph-functionality"></a>Functionality</h2>
+            <p>
+                Functionality here
+            </p>
+        </div><!-- /.col-md-12 -->
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <h2 class="functionality"><a name="graph-functionality"></a>Data preprocessing</h2>
+            <p>
+                Preprocessing description here
+            </p>
+        </div><!-- /.col-md-12 -->
+    </div>
+
+    <hr/>
+    <footer>
+        <p style="text-align: center;">
+            <a name="contact"></a>
+            <img src="img/email_logo.png" alt="" border=1 height=22 width=22></img>
+            <a href="mailto:ldmartin@dons.usfca.edu">ldmartin@dons.usfca.edu</a>
+            <img src="img/github_logo.png" alt="" border=1 height=20 width=20></img>
+            <a href="https://github.com/ldmartin">github.com/ldmartin</a>
+            <img src="img/linkedin_logo.png" alt="" border=1 height=20 width=22></img>
+            <a href="https://www.linkedin.com/in/layladmartin">LinkedIn.com/layladmartin</a>
+
+
+            <!--       Layla Martin &bullet; MSAN 622 Information Visualization &bullet; Spring 2015</p> -->
+    </footer>
+
+</div><!--/.container -->
+
+
+</body>
+
+</html>

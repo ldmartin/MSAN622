@@ -92,7 +92,7 @@
         counts.push(letter_freq[letter]);
         }
 
-    var num_letters = letters.length
+    var num_letters = letters.length;
 
     // var data = [letter_freq];
     var data = d3.entries(letter_freq);
