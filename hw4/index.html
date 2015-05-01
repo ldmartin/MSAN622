@@ -83,13 +83,17 @@
     </div>
 </div>
 
-<div class="container" >
+<div class="container">
+
+    <h2 class="tableau-title">Tableau Dashboard Implementation</h2>
 
     <!--insert javascript code for tableau prototype here:-->
     <!--<script language="JavaScript" type="Text/JavaScript" src="hw3script_multipleline1.js"></script>-->
     <script type='text/javascript' src='https://public.tableau.com/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 1004px; height: 869px;'><noscript><a href='#'><img alt='Dashboard 2 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;hw&#47;hw4_movies&#47;Dashboard2&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz' width='1004' height='869' style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='site_root' value='' /><param name='name' value='hw4_movies&#47;Dashboard2' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;hw&#47;hw4_movies&#47;Dashboard2&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='showVizHome' value='no' /><param name='showTabs' value='y' /><param name='bootstrapWhenNotified' value='true' /></object></div>
 
     <hr/>
+
+    <h2>D3 Dashboard Implementation</h2>
 
     <!--line chart goes here:-->
     <div class="row">
@@ -105,7 +109,7 @@
     <div class="row">
         <div class="col-md-6">
             <!-- <h2 class="chart-title"><a name="graph"></a>Letter Frequencies</h2> -->
-            <h2 class="chart-title2">Average movie budget by genre</h2>
+            <h4 class="chart-title2">Average movie budget by genre</h4>
         </div>
     </div>
     <div class="chart2"></div>
@@ -190,21 +194,18 @@
         }
 
     </style>
-    <!--chart javascript:    -->
-    <!--<script src="d3.v3.min.js"></script>-->
-    <!--<script src="js2/d3.min.js"></script>-->
-
     <!--insert javascript code for d3 dashboard here:-->
     <script language="JavaScript" type="Text/JavaScript" src="hw2script.js"></script>
 
-    <hr/>
+    <!--<hr/>-->
 
     <div class="row">
         <div class="col-md-6">
             <h2 class="attributes"><a name="graph-attributes"></a>Graph Attributes</h2>
             <p>
             <ul style="list-style-type:disc">
-                <li>Basic functionality here</li>
+                <li>Implemented dashboard in tableau (C-level)</li>
+                <li>Started implementing dashboard in D3, one chart (B-level)</li>
             </ul>
             </p>
         </div><!-- /.col-md-6 -->
@@ -214,7 +215,31 @@
         <div class="col-md-12">
             <h2 class="functionality"><a name="graph-functionality"></a>Functionality</h2>
             <p>
-                Functionality here
+                The main function of my dashboard is to portray various statistics relating to budget of different movies.
+                The first plot displays the average budget spent on movies for a given year. This is conveyed in an area
+                line chart. I have chosen area over a strict line in order to emphasize the overall trend for movies to
+                have higher budget in more recent years. Although area may increase the ile factor slightly, I believe
+                that since only one statistic is being conveyed, the graph would seem very sparse with only a line
+                portrayal.
+            </p>
+            <p>
+                The second graph is a bar chart of average budget by genre. While the previous graph showed a discrepancy
+                between year and budget, this graph shows a discrepancy between genre and budget. A bar chart has a very
+                easy interpretation for the user and limited lie factor.
+            </p>
+            <p>
+                Lastly, the scatterplot converys information of average budget and average rating aggregated by genre.
+                Each data point represents a genre and average rating and average budget is plotted. This gives the
+                user an idea of how budget and rating may be connected. My first attempt at visualizing this did not
+                involve aggregating by genre and resulted in a very dense graph.This was hard to interpret because the
+                majority of points were plotted on top of one another. This led to the need of further aggregation,
+                achieved by grouping by genre. While the lie factor is increased using this technique, it is a trade off
+                which makes the concept of rating versus budget more easily interpreted by users.
+            </p>
+            <p>
+                The colors were chosen according to colorbrewer for unordered, categorical data. Since the three
+                elements of the dashboard are only connected in underlying relation to budget, I wanted colors to imply
+                dissimilarity between information being visualized.
             </p>
         </div><!-- /.col-md-12 -->
     </div>
@@ -223,7 +248,11 @@
         <div class="col-md-12">
             <h2 class="functionality"><a name="graph-functionality"></a>Data preprocessing</h2>
             <p>
-                Preprocessing description here
+                Data preprocessing was essential in order to visualize this data. This was performed in R. Since my                     dashboard deals with each movie's budget statistic, the first step was to remove every row for which
+                budget did not exist. Since I am further aggregating by genre, I have chosen to select only rows in which
+                a movie is classified as being <b>only one</b> genre. This made aggregation into disjoint genres                        achievable. I have also performed various binning techniques to display histograms of the number of
+                movies within certain budget ranges. While I did not end up displaying this visualization, code for
+                creation (in R) of the dataframe with this information can be found in the data folder.
             </p>
         </div><!-- /.col-md-12 -->
     </div>

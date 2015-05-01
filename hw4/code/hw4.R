@@ -78,8 +78,6 @@ write.csv(data_genre, '/Users/laylamartin/Desktop/MSAN/Module4/Dataviz/ldmartin.
 
 
 #TODO:
-# create data frame with column 1: genre and column 2: average budget
-# output to csv: '/Users/laylamartin/Desktop/MSAN/Module4/Dataviz/ldmartin.github.io/hw4/data/genre_avg_budget.csv'
 
 aggdata <-aggregate(data_genre, by=list(data_genre$genre), 
                     FUN=mean, na.rm=TRUE)
