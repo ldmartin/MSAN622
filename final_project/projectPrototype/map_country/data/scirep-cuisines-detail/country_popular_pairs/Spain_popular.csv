@@ -1,0 +1,11 @@
+node1,node2,weight,ingredients,percent_recipes
+onion,olive oil,34,onion & olive oil,45.0
+olive oil,garlic,29,olive oil & garlic,39.0
+onion,garlic,28,onion & garlic,37.0
+onion,tomato,27,onion & tomato,36.0
+onion,pepper,23,onion & pepper,31.0
+bell pepper,olive oil,23,bell pepper & olive oil,31.0
+garlic,tomato,23,garlic & tomato,31.0
+olive oil,tomato,22,olive oil & tomato,29.0
+onion,bell pepper,22,onion & bell pepper,29.0
+bell pepper,garlic,21,bell pepper & garlic,28.0

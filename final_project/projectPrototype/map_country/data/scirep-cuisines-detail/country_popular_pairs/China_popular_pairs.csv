@@ -1,0 +1,11 @@
+node1,node2,weight,ingredients,percent_recipes
+soy sauce,garlic,51,soy sauce & garlic,0.39
+soy sauce,scallion,48,soy sauce & scallion,0.37
+soy sauce,ginger,42,soy sauce & ginger,0.32
+starch,soy sauce,39,starch & soy sauce,0.3
+soy sauce,vegetable oil,37,soy sauce & vegetable oil,0.28
+soy sauce,sesame oil,36,soy sauce & sesame oil,0.28
+pork,soy sauce,33,pork & soy sauce,0.25
+soy sauce,egg,33,soy sauce & egg,0.25
+ginger,garlic,30,ginger & garlic,0.23
+starch,garlic,29,starch & garlic,0.22

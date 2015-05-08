@@ -1,0 +1,11 @@
+node1,node2,weight,ingredients,percent_recipes
+fish,garlic,92,fish & garlic,32.0
+garlic,ginger,90,garlic & ginger,31.0
+garlic,cayenne,90,garlic & cayenne,31.0
+fish,cayenne,84,fish & cayenne,29.0
+coriander,cumin,83,coriander & cumin,29.0
+soy sauce,garlic,79,soy sauce & garlic,27.0
+cilantro,garlic,78,cilantro & garlic,27.0
+cilantro,fish,76,cilantro & fish,26.0
+garlic,vegetable oil,73,garlic & vegetable oil,25.0
+coriander,coconut,71,coriander & coconut,25.0

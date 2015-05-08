@@ -1,0 +1,11 @@
+node1,node2,weight,ingredients,percent_recipes
+soy sauce,garlic,15,soy sauce & garlic,35.0
+soy sauce,black pepper,14,soy sauce & black pepper,33.0
+vegetable oil,onion,13,vegetable oil & onion,30.0
+vegetable oil,garlic,13,vegetable oil & garlic,30.0
+black pepper,garlic,13,black pepper & garlic,30.0
+vinegar,garlic,11,vinegar & garlic,26.0
+soy sauce,vegetable oil,11,soy sauce & vegetable oil,26.0
+pork,black pepper,10,pork & black pepper,23.0
+chicken,soy sauce,10,chicken & soy sauce,23.0
+vegetable oil,black pepper,10,vegetable oil & black pepper,23.0

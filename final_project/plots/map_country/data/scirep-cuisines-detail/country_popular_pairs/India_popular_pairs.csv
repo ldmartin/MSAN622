@@ -1,0 +1,11 @@
+node1,node2,weight,ingredients,percent_recipes
+cumin,turmeric,153,cumin & turmeric,0.47
+coriander,cumin,146,coriander & cumin,0.45
+coriander,turmeric,138,coriander & turmeric,0.43
+onion,cumin,135,onion & cumin,0.42
+onion,turmeric,132,onion & turmeric,0.41
+onion,garlic,125,onion & garlic,0.39
+cumin,garlic,115,cumin & garlic,0.35
+onion,cayenne,113,onion & cayenne,0.35
+garlic,turmeric,113,garlic & turmeric,0.35
+coriander,onion,112,coriander & onion,0.35

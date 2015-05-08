@@ -1,0 +1,11 @@
+node1,node2,weight,ingredients,percent_recipes
+garlic,soy sauce,18,garlic & soy sauce,56.0
+sesame oil,soy sauce,17,sesame oil & soy sauce,53.0
+sesame oil,garlic,14,sesame oil & garlic,44.0
+scallion,soy sauce,14,scallion & soy sauce,44.0
+sesame seed,soy sauce,12,sesame seed & soy sauce,38.0
+scallion,garlic,12,scallion & garlic,38.0
+beef,soy sauce,12,beef & soy sauce,38.0
+beef,sesame oil,11,beef & sesame oil,34.0
+scallion,sesame oil,11,scallion & sesame oil,34.0
+black pepper,soy sauce,11,black pepper & soy sauce,34.0

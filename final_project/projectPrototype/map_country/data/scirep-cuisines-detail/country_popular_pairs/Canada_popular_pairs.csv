@@ -1,0 +1,11 @@
+node1,node2,weight,ingredients,percent_recipes
+wheat,butter,195,wheat & butter,0.25
+wheat,egg,192,wheat & egg,0.25
+butter,egg,144,butter & egg,0.19
+milk,wheat,135,milk & wheat,0.17
+onion,garlic,124,onion & garlic,0.16
+milk,butter,111,milk & butter,0.14
+black pepper,onion,105,black pepper & onion,0.14
+vanilla,wheat,100,vanilla & wheat,0.13
+milk,egg,98,milk & egg,0.13
+onion,tomato,97,onion & tomato,0.13

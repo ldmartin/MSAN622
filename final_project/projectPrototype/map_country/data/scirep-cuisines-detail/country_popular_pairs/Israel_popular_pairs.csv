@@ -1,0 +1,11 @@
+node1,node2,weight,ingredients,percent_recipes
+wheat,butter,4,wheat & butter,0.44
+wheat,egg,3,wheat & egg,0.33
+vegetable oil,egg,2,vegetable oil & egg,0.22
+black pepper,onion,2,black pepper & onion,0.22
+black pepper,cumin,2,black pepper & cumin,0.22
+black pepper,garlic,2,black pepper & garlic,0.22
+vegetable oil,wheat,2,vegetable oil & wheat,0.22
+sesame seed,butter,2,sesame seed & butter,0.22
+sesame seed,wheat,2,sesame seed & wheat,0.22
+wheat,black pepper,2,wheat & black pepper,0.22

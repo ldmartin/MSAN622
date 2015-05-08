@@ -1,0 +1,11 @@
+node1,node2,weight,ingredients,percent_recipes
+olive oil,garlic,89,olive oil & garlic,0.4
+onion,olive oil,71,onion & olive oil,0.32
+olive oil,tomato,68,olive oil & tomato,0.3
+olive oil,feta cheese,61,olive oil & feta cheese,0.27
+lemon juice,olive oil,60,lemon juice & olive oil,0.27
+olive oil,oregano,57,olive oil & oregano,0.25
+onion,tomato,48,onion & tomato,0.21
+olive oil,parsley,47,olive oil & parsley,0.21
+lemon juice,garlic,43,lemon juice & garlic,0.19
+bread,olive oil,42,bread & olive oil,0.19

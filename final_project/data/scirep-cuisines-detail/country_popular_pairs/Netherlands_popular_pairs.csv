@@ -1,0 +1,11 @@
+node1,node2,weight,ingredients,percent_recipes
+wheat,butter,25,wheat & butter,78.0
+wheat,egg,21,wheat & egg,66.0
+butter,egg,18,butter & egg,56.0
+wheat,cinnamon,13,wheat & cinnamon,41.0
+butter,cinnamon,10,butter & cinnamon,31.0
+cane molasses,wheat,10,cane molasses & wheat,31.0
+almond,wheat,9,almond & wheat,28.0
+cane molasses,butter,9,cane molasses & butter,28.0
+almond,butter,9,almond & butter,28.0
+milk,wheat,9,milk & wheat,28.0

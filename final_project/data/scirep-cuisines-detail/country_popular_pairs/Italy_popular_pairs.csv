@@ -1,0 +1,11 @@
+node1,node2,weight,ingredients,percent_recipes
+garlic,olive oil,643,garlic & olive oil,44.0
+garlic,tomato,589,garlic & tomato,40.0
+garlic,basil,535,garlic & basil,37.0
+basil,tomato,501,basil & tomato,34.0
+olive oil,tomato,500,olive oil & tomato,34.0
+olive oil,basil,468,olive oil & basil,32.0
+onion,garlic,422,onion & garlic,29.0
+onion,tomato,380,onion & tomato,26.0
+garlic,parmesan cheese,357,garlic & parmesan cheese,24.0
+garlic,macaroni,353,garlic & macaroni,24.0
