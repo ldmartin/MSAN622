@@ -24,12 +24,13 @@
       <file leaf-file-name="map_country2.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/plots/map_country/map_country2.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.09269162">
-              <caret line="452" column="31" selection-start-line="452" selection-start-column="31" selection-end-line="452" selection-end-column="31" />
+            <state vertical-scroll-proportion="0.72192514">
+              <caret line="44" column="95" selection-start-line="44" selection-start-column="95" selection-end-line="44" selection-end-column="95" />
               <folding>
                 <element signature="n#style#0;n#div#1;n#body#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#2;n#body#0;n#!!top" expanded="true" />
-                <marker date="1431061460000" expanded="true" signature="16900:16911" placeholder="..." />
+                <element signature="n#style#0;n#div#3;n#body#0;n#!!top" expanded="true" />
+                <marker date="1431063445000" expanded="true" signature="17433:17444" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -521,12 +522,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/plots/map_country/map_country2.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.09269162">
-          <caret line="452" column="31" selection-start-line="452" selection-start-column="31" selection-end-line="452" selection-end-column="31" />
+        <state vertical-scroll-proportion="0.72192514">
+          <caret line="44" column="95" selection-start-line="44" selection-start-column="95" selection-end-line="44" selection-end-column="95" />
           <folding>
             <element signature="n#style#0;n#div#1;n#body#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#2;n#body#0;n#!!top" expanded="true" />
-            <marker date="1431061460000" expanded="true" signature="16900:16911" placeholder="..." />
+            <element signature="n#style#0;n#div#3;n#body#0;n#!!top" expanded="true" />
+            <marker date="1431063445000" expanded="true" signature="17433:17444" placeholder="..." />
           </folding>
         </state>
       </provider>

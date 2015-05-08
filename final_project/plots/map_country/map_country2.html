@@ -41,6 +41,9 @@
     </div>
 </div>
 
+<div class="container" style="position: relative; width: 100%;">
+<h5>Select an available country to view important ingredients used in traditional recipes there.</h5>
+</div>
 
 <!--world map inserted here-->
 <div class="chart1" id="chart1" style="position: relative; width: 100%; height: 600px;"></div>
@@ -62,10 +65,12 @@
 
     <!--description information for ingredient network visualization:-->
     <div class="row">
-        <div class="col-md-12">
-            <h2 class="chart-title3"></h2>
+        <div class="col-md-12" id="chart3description">
+            <h4 class="chart-title3"></h4>
             <h5 class="chart-desc3-1"></h5>
             <h5 class="chart-desc3-2"></h5>
+            <h5 class="chart-desc3-3"></h5>
+            <h5 class="chart-desc3-4"></h5>
         </div>
     </div>
     <!--ingredient network visualization inserted here-->
@@ -319,7 +324,7 @@
         //TODO: insert variable similar to one above presenting the most popular ingredient per country:
 
         var chartTitle = d3.select(".chart-title2").text(selectedCountry);
-        var chartDesc = d3.select(".chart-desc2-1").text("Ten most popular ingredient pairings presented as a percentage of overall recipes appeared in together.");
+        var chartDesc = d3.select(".chart-desc2-1").text("Ten most popular ingredient pairings presented as a percentage of overall recipes analyzed.");
         var chartDesc = d3.select(".chart-desc2-2").text("Total number of traditional recipes compiled: " + countryNumRecipes[selectedCountry]);
 
         //determine width of container for chart2:
@@ -443,10 +448,13 @@
 
         //descriptions and titles for network plot:
 //        var chartTitle = d3.select(".chart-title3").text(selectedCountry);
-        var chartDesc = d3.select(".chart-desc3-1").text("Interactive network visualization of ingredients comprising recipes.");
-        var chartDesc = d3.select(".chart-desc3-2").text("Ingredients are connected in the network if they appear in a recipe together. " +
-                                                          "Click an ingredient to highlight ingredients occurring in a recipe with " +
-                                                          "it.");
+        var chartDesc = d3.select(".chart-title3").text("Interactive network visualization of ingredients appearing in the same recipe.");
+        d3.select(".chart-desc3-1").text("Ingredients are connected in the network if they exist in the same recipe. " +
+        "Edges are weighted as a function of the number of recipes the two ingredients have appeared in together.");
+        d3.select(".chart-desc3-2").text("Hover over a node to display ingredient name.");
+        d3.select(".chart-desc3-3").text("Drag a node to better view connections.");
+        d3.select(".chart-desc3-4").text("Select an " +
+        "ingredient to view all other connected ingredients. Select the ingredient again to return to initial display.");
 
 //        var width_n  = 1100;
 //        var height_n = 600;
