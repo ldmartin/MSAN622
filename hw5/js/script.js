@@ -119,6 +119,12 @@ function symbolMap() {
         //    .classed({"state": true});
 
         // draw symbols
+
+        var color = d3.scale.linear()
+            .domain([0, 604])
+            .range(["steelblue", "red"])
+            .interpolate(d3.interpolateLab);
+
         symbols.selectAll("circle")
             .data(values)
             .enter()
@@ -134,6 +140,8 @@ function symbolMap() {
             .attr("cy", function(d, i) {
                 return projection([d.longitude, d.latitude])[1];
             })
+            .style("fill", function(d) { return color(d.depth); })
+            .style("stroke", function(d) { return color(d.depth); })
             .classed({"symbol": true})
             .on("mouseover", showHighlight)
             .on("mouseout", hideHighlight);
@@ -273,10 +281,8 @@ function symbolMap() {
                 "highlight": true,
                 "state": true
             });
-
-        updateLog(d.city + ", " + d.state +
-            " received an average of " + d.precip +
-            " inches of precipitation.");
+        // log the location which recieved the earthquake and magnitude of the earthquake:
+        updateLog(d.place + " experienced an earthquake of magnitude " + d.mag + " and depth " + d.depth);
     }
 
     // called on mouseout

@@ -2,22 +2,132 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Symbol Map Demo</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- load D3 and TopoJSON //-->
-    <!--<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>-->
-    <!--<script src="http://d3js.org/topojson.v1.min.js"></script>-->
+    <title>MSAN 622 Homework 5</title>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/d3.min.js"></script>
+
+    <script src="js/index.js"></script>
+
+    <!--references for bootstrap web page formatting    -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-theme.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/custom.css">
+
+
+    <style type="text/css">
+    body {
+    padding-top: 30px;
+    padding-bottom: 20px;
+    }
+    </style>
+
+    <!--load D3 and TopoJSON //-->
+    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script src="http://d3js.org/topojson.v1.min.js"></script>
 
     <script src="js/d3.v3.min.js" charset="utf-8"></script>
     <script src="js/topojson.v1.min.js"></script>
 
     <!-- load custom CSS and JavaScript //-->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
     <script src="js/script.js"></script>
 
  </head>
 
+<!--<!DOCTYPE html>-->
+<!--<meta charset="utf-8">-->
+
+<!--<head>-->
+    <!--<meta charset="utf-8">-->
+    <!--<meta http-equiv="X-UA-Compatible" content="IE=edge">-->
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
+
+    <!--<title>MSAN 622 Homework 3</title>-->
+
+    <!--&lt;!&ndash;<script src="js/jquery.min.js"></script>&ndash;&gt;-->
+    <!--&lt;!&ndash;<script src="js/bootstrap.min.js"></script>&ndash;&gt;-->
+    <!--&lt;!&ndash;<script src="js/d3.min.js"></script>&ndash;&gt;-->
+
+
+
+    <!--<script src="js/index.js"></script>-->
+    <!--<script src="topojson-js/topojson.js"></script>-->
+
+    <!--&lt;!&ndash;references for bootstrap web page formatting    &ndash;&gt;-->
+    <!--<link href="css/bootstrap.min.css" rel="stylesheet">-->
+    <!--<link href="css/bootstrap-theme.min.css" rel="stylesheet">-->
+    <!--<link rel="stylesheet" type="text/css" href="css/custom.css">-->
+
+
+    <!--<style type="text/css">-->
+        <!--body {-->
+            <!--padding-top: 30px;-->
+            <!--padding-bottom: 20px;-->
+        <!--}-->
+    <!--</style>-->
+
+<!--</head>-->
 <body>
+
+<!--Fixed Navbar-->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle Navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="http://ldmartin.github.io/MSAN622/">MSAN 622</a>
+        </div>
+
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <!--<li><a href="#graph1">Graph</a></li>-->
+                <li><a href="#graph-attributes">Graph Attributes</a></li>
+                <!--<li><a href="#tutorial-links">Useful References</a></li>-->
+                <li><a href="#graph-functionality">Functionality</a></li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <!--                 <li><a href="#about">About</a></li>
+                 -->
+                <li><a href="#contact">Contact</a></li>
+                <!--  <li>Layla Diana Martin</a></li> -->
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</nav>
+
+
+<div class="jumbotron color-backblue">
+    <div class="container">
+        <h1><b>Homework 5</b></h1>
+        <p>Brought to you by Layla Diana</p>
+        <p><b>Assignment Description:</b> Create a visualization for the latest earthquake data. </p>
+        <p><b>Asignment Repository:</b>
+            <a href="https://github.com/ldmartin/MSAN622/tree/gh-pages/hw5" target="_blank">Take me there!</a>
+        </p>
+    </div>
+</div>
+
+<div class="container" >
+
+    <h2>A visualization of earthquakes taking place in April 2015. </h2>
+    <!--<div class="row">-->
+        <!--<div class="col-md-12">-->
+            <!--&lt;!&ndash; <h2 class="chart-title"><a name="graph"></a>Letter Frequencies</h2> &ndash;&gt;-->
+            <!--<h2>Earthquakes!</h2>-->
+        <!--</div>-->
+    <!--</div>-->
+
+<!--begin homework 5 code:-->
 
 <div id="block">
 <svg id="map" width="960" height="960"></svg>
@@ -59,15 +169,66 @@ d3.json(url.world, function(mapError, mapJSON) {
     });
 });
 
-//// Load state lookup information
-//// Possible some lookups will fail until this loads
-//d3.tsv(url.states, parseStateName, function(error, data) {
-//        if (processError(error)) return;
-//        chart = chart.lookup(data);
-//    }
-//);
-
 </script>
+
+
+<hr/>
+
+<div class="row">
+    <div class="col-md-6">
+        <h2 class="attributes"><a name="graph-attributes"></a>Graph Attributes</h2>
+        <p>
+        <ul style="list-style-type:disc">
+            <li>map visualization of earthquake data with bubbles over latitude and longitude of epicenter corresponding to magnitude (basic)</li>
+            <li>color scaling of bubbles based on earthquake depth at that location (moderate)</li>
+
+        </ul>
+        </p>
+    </div><!-- /.col-md-6 -->
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <h2 class="functionality"><a name="graph-functionality"></a>Functionality</h2>
+        <p>
+            I have chosen to use the mercator projection as the background for displaying this data in an effort
+        to increase the vertical space shown. Bubbles apear over latitude and longitude coordinates of epicenters
+        of earthquakes. The circle size is representative of the relative magnitude of the earthquake, thus earthquakes
+        experiencing a higher magnitude have more attention drawn to them. Additionally, circle colors range on a scale
+        from red to blue, where the more red circles represent earthquakes which occurred at a lower depth and more
+        blue circles occurred closer to surface levels.
+        </p>
+        <p>
+            Since many data points are plotted on top of one another, circle boundaries are highlighted while circle
+            fills have adjusted opacity. This prevents one observation form completely covering another one. There do
+            still exist some problems in the far eastern region of the graph where the data density is very high.
+            However, it can ultimately be inferred by the user that these regions have more earthquake activity by using
+            this coloring technique.
+
+        </p>
+
+    </div><!-- /.col-md-8 -->
+</div>
+
+<hr/>
+<footer>
+    <p style="text-align: center;">
+        <a name="contact"></a>
+        <img src="img/email_logo.png" alt="" border=1 height=22 width=22></img>
+        <a href="mailto:ldmartin@dons.usfca.edu">ldmartin@dons.usfca.edu</a>
+        <img src="img/github_logo.png" alt="" border=1 height=20 width=20></img>
+        <a href="https://github.com/ldmartin">github.com/ldmartin</a>
+        <img src="img/linkedin_logo.png" alt="" border=1 height=20 width=22></img>
+        <a href="https://www.linkedin.com/in/layladmartin">LinkedIn.com/layladmartin</a>
+
+
+        <!--       Layla Martin &bullet; MSAN 622 Information Visualization &bullet; Spring 2015</p> -->
+</footer>
+
+</div><!--/.container -->
+
+
+
 
 </body>
 </html>
