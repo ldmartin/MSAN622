@@ -1,0 +1,658 @@
+
+Log 3/27 first day of dativis lab. Setting up github pages and cloning template, with Wei-Wei’s help.
+
+
+Last login: Fri Mar 27 15:18:57 on ttys001
+Laylas-MacBook-Pro:~ laylamartin$ ls
+Applications	Downloads	Music		anaconda
+Desktop		Library		Pictures	nltk_data
+Documents	Movies		Public		secret.py
+Laylas-MacBook-Pro:~ laylamartin$ cd Desktop/MSAN
+Laylas-MacBook-Pro:MSAN laylamartin$ ls
+Bootcamp	Module1		Module3		Resume		UsefulThings
+FridaySeminars	Module2		Module4		SAS
+Laylas-MacBook-Pro:MSAN laylamartin$ cd Mdoule4
+-bash: cd: Mdoule4: No such file or directory
+Laylas-MacBook-Pro:MSAN laylamartin$ ls
+Bootcamp	Module1		Module3		Resume		UsefulThings
+FridaySeminars	Module2		Module4		SAS
+Laylas-MacBook-Pro:MSAN laylamartin$ cd Module4
+Laylas-MacBook-Pro:Module4 laylamartin$ ls
+Dataviz			Interview_topics.pages
+Distributedcomp		Multivarstats
+Laylas-MacBook-Pro:Module4 laylamartin$ cd Dataviz
+Laylas-MacBook-Pro:Dataviz laylamartin$ ls
+Laylas-MacBook-Pro:Dataviz laylamartin$ git clone https://github.com/ldmartin/ldmartin.github.io
+Cloning into 'ldmartin.github.io'...
+warning: You appear to have cloned an empty repository.
+Checking connectivity... done.
+Laylas-MacBook-Pro:Dataviz laylamartin$ cd ldmartin.github.io
+Laylas-MacBook-Pro:ldmartin.github.io laylamartin$ echo "Hello World" > index.html
+Laylas-MacBook-Pro:ldmartin.github.io laylamartin$ git add --all
+Laylas-MacBook-Pro:ldmartin.github.io laylamartin$ git commit -m "Initial commit"
+[master (root-commit) 5489fc2] Initial commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 index.html
+Laylas-MacBook-Pro:ldmartin.github.io laylamartin$ git push -u origin master
+Counting objects: 3, done.
+Writing objects: 100% (3/3), 226 bytes | 0 bytes/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/ldmartin/ldmartin.github.io
+ * [new branch]      master -> master
+Branch master set up to track remote branch master from origin.
+Laylas-MacBook-Pro:ldmartin.github.io laylamartin$ cd ..
+Laylas-MacBook-Pro:Dataviz laylamartin$ ls
+ldmartin.github.io
+Laylas-MacBook-Pro:Dataviz laylamartin$ open .
+Laylas-MacBook-Pro:Dataviz laylamartin$ ls
+ldmartin.github.io
+Laylas-MacBook-Pro:Dataviz laylamartin$ cd ldmartin.github.io
+Laylas-MacBook-Pro:ldmartin.github.io laylamartin$ ls
+README.md	fonts		index.html
+css		img		js
+Laylas-MacBook-Pro:ldmartin.github.io laylamartin$ git add --all
+Laylas-MacBook-Pro:ldmartin.github.io laylamartin$ git commit -m "Cloning basic template"
+[master e3bfec2] Cloning basic template
+ 30 files changed, 12217 insertions(+), 1 deletion(-)
+ create mode 100644 .DS_Store
+ create mode 100755 README.md
+ create mode 100755 css/LICENSE (Colorbrewer).txt
+ create mode 100755 css/bootstrap-theme.css
+ create mode 100755 css/bootstrap-theme.css.map
+ create mode 100755 css/bootstrap-theme.min.css
+ create mode 100755 css/bootstrap.css
+ create mode 100755 css/bootstrap.css.map
+ create mode 100755 css/bootstrap.min.css
+ create mode 100755 css/colorbrewer.css
+ create mode 100755 fonts/glyphicons-halflings-regular.eot
+ create mode 100755 fonts/glyphicons-halflings-regular.svg
+ create mode 100755 fonts/glyphicons-halflings-regular.ttf
+ create mode 100755 fonts/glyphicons-halflings-regular.woff
+ create mode 100755 fonts/glyphicons-halflings-regular.woff2
+ create mode 100755 img/profile.jpg
+ create mode 100755 img/twitter_logo.png
+ rewrite index.html (100%)
+ mode change 100644 => 100755
+ create mode 100755 js/LICENSE (Colorbrewer).txt
+ create mode 100755 js/LICENSE (D3).txt
+ create mode 100755 js/LICENSE (Plugins).txt
+ create mode 100755 js/bootstrap.js
+ create mode 100755 js/bootstrap.min.js
+ create mode 100755 js/colorbrewer.js
+ create mode 100755 js/cubehelix.js
+ create mode 100755 js/d3.min.js
+ create mode 100755 js/hexbin.js
+ create mode 100755 js/jquery.min.js
+ create mode 100755 js/npm.js
+ create mode 100755 js/testD3.js
+Laylas-MacBook-Pro:ldmartin.github.io laylamartin$ git push -u origin master
+Counting objects: 37, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (35/35), done.
+Writing objects: 100% (35/35), 392.90 KiB | 0 bytes/s, done.
+Total 35 (delta 5), reused 0 (delta 0)
+To https://github.com/ldmartin/ldmartin.github.io
+   5489fc2..e3bfec2  master -> master
+Branch master set up to track remote branch master from origin.
+Laylas-MacBook-Pro:ldmartin.github.io laylamartin$ ls
+README.md	fonts		index.html
+css		img		js
+Laylas-MacBook-Pro:ldmartin.github.io laylamartin$ cd ..
+Laylas-MacBook-Pro:Dataviz laylamartin$ ls
+ldmartin.github.io
+Laylas-MacBook-Pro:Dataviz laylamartin$ open .
+Laylas-MacBook-Pro:Dataviz laylamartin$ git push origin gh-pages
+fatal: Not a git repository (or any of the parent directories): .git
+Laylas-MacBook-Pro:Dataviz laylamartin$ ls
+ldmartin.github.io
+Laylas-MacBook-Pro:Dataviz laylamartin$ cd ldmartin.github.io
+Laylas-MacBook-Pro:ldmartin.github.io laylamartin$ ls
+Laylas-MacBook-Pro:ldmartin.github.io laylamartin$ git add --all
+Laylas-MacBook-Pro:ldmartin.github.io laylamartin$ ls
+Laylas-MacBook-Pro:ldmartin.github.io laylamartin$ git commit -m "Take 2"
+[master 7f80458] Take 2
+ 29 files changed, 12217 deletions(-)
+ delete mode 100755 README.md
+ delete mode 100755 css/LICENSE (Colorbrewer).txt
+ delete mode 100755 css/bootstrap-theme.css
+ delete mode 100755 css/bootstrap-theme.css.map
+ delete mode 100755 css/bootstrap-theme.min.css
+ delete mode 100755 css/bootstrap.css
+ delete mode 100755 css/bootstrap.css.map
+ delete mode 100755 css/bootstrap.min.css
+ delete mode 100755 css/colorbrewer.css
+ delete mode 100755 fonts/glyphicons-halflings-regular.eot
+ delete mode 100755 fonts/glyphicons-halflings-regular.svg
+ delete mode 100755 fonts/glyphicons-halflings-regular.ttf
+ delete mode 100755 fonts/glyphicons-halflings-regular.woff
+ delete mode 100755 fonts/glyphicons-halflings-regular.woff2
+ delete mode 100755 img/profile.jpg
+ delete mode 100755 img/twitter_logo.png
+ delete mode 100755 index.html
+ delete mode 100755 js/LICENSE (Colorbrewer).txt
+ delete mode 100755 js/LICENSE (D3).txt
+ delete mode 100755 js/LICENSE (Plugins).txt
+ delete mode 100755 js/bootstrap.js
+ delete mode 100755 js/bootstrap.min.js
+ delete mode 100755 js/colorbrewer.js
+ delete mode 100755 js/cubehelix.js
+ delete mode 100755 js/d3.min.js
+ delete mode 100755 js/hexbin.js
+ delete mode 100755 js/jquery.min.js
+ delete mode 100755 js/npm.js
+ delete mode 100755 js/testD3.js
+Laylas-MacBook-Pro:ldmartin.github.io laylamartin$ git push -u origin master
+Counting objects: 4, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (1/1), done.
+Writing objects: 100% (2/2), 232 bytes | 0 bytes/s, done.
+Total 2 (delta 0), reused 0 (delta 0)
+To https://github.com/ldmartin/ldmartin.github.io
+   e3bfec2..7f80458  master -> master
+Branch master set up to track remote branch master from origin.
+Laylas-MacBook-Pro:ldmartin.github.io laylamartin$ ls
+Laylas-MacBook-Pro:ldmartin.github.io laylamartin$ open .
+Laylas-MacBook-Pro:ldmartin.github.io laylamartin$ ls
+README.md	fonts		index.html
+css		img		js
+Laylas-MacBook-Pro:ldmartin.github.io laylamartin$ git add --all
+Laylas-MacBook-Pro:ldmartin.github.io laylamartin$ git commit -m "Cloning basic templates"
+[master 3138280] Cloning basic templates
+ 29 files changed, 12217 insertions(+)
+ create mode 100755 README.md
+ create mode 100755 css/LICENSE (Colorbrewer).txt
+ create mode 100755 css/bootstrap-theme.css
+ create mode 100755 css/bootstrap-theme.css.map
+ create mode 100755 css/bootstrap-theme.min.css
+ create mode 100755 css/bootstrap.css
+ create mode 100755 css/bootstrap.css.map
+ create mode 100755 css/bootstrap.min.css
+ create mode 100755 css/colorbrewer.css
+ create mode 100755 fonts/glyphicons-halflings-regular.eot
+ create mode 100755 fonts/glyphicons-halflings-regular.svg
+ create mode 100755 fonts/glyphicons-halflings-regular.ttf
+ create mode 100755 fonts/glyphicons-halflings-regular.woff
+ create mode 100755 fonts/glyphicons-halflings-regular.woff2
+ create mode 100755 img/profile.jpg
+ create mode 100755 img/twitter_logo.png
+ create mode 100755 index.html
+ create mode 100755 js/LICENSE (Colorbrewer).txt
+ create mode 100755 js/LICENSE (D3).txt
+ create mode 100755 js/LICENSE (Plugins).txt
+ create mode 100755 js/bootstrap.js
+ create mode 100755 js/bootstrap.min.js
+ create mode 100755 js/colorbrewer.js
+ create mode 100755 js/cubehelix.js
+ create mode 100755 js/d3.min.js
+ create mode 100755 js/hexbin.js
+ create mode 100755 js/jquery.min.js
+ create mode 100755 js/npm.js
+ create mode 100755 js/testD3.js
+Laylas-MacBook-Pro:ldmartin.github.io laylamartin$ git push -u origin gh-pages
+error: src refspec gh-pages does not match any.
+error: failed to push some refs to 'https://github.com/ldmartin/ldmartin.github.io'
+Laylas-MacBook-Pro:ldmartin.github.io laylamartin$ git push -u gh-pages
+warning: push.default is unset; its implicit value is changing in
+Git 2.0 from 'matching' to 'simple'. To squelch this message
+and maintain the current behavior after the default changes, use:
+
+  git config --global push.default matching
+
+To squelch this message and adopt the new behavior now, use:
+
+  git config --global push.default simple
+
+When push.default is set to 'matching', git will push local branches
+to the remote branches that already exist with the same name.
+
+In Git 2.0, Git will default to the more conservative 'simple'
+behavior, which only pushes the current branch to the corresponding
+remote branch that 'git pull' uses to update the current branch.
+
+See 'git help config' and search for 'push.default' for further information.
+(the 'simple' mode was introduced in Git 1.7.11. Use the similar mode
+'current' instead of 'simple' if you sometimes use older versions of Git)
+
+fatal: 'gh-pages' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+Laylas-MacBook-Pro:ldmartin.github.io laylamartin$ ls
+README.md	fonts		index.html
+css		img		js
+Laylas-MacBook-Pro:ldmartin.github.io laylamartin$ git push -u origin
+warning: push.default is unset; its implicit value is changing in
+Git 2.0 from 'matching' to 'simple'. To squelch this message
+and maintain the current behavior after the default changes, use:
+
+  git config --global push.default matching
+
+To squelch this message and adopt the new behavior now, use:
+
+  git config --global push.default simple
+
+When push.default is set to 'matching', git will push local branches
+to the remote branches that already exist with the same name.
+
+In Git 2.0, Git will default to the more conservative 'simple'
+behavior, which only pushes the current branch to the corresponding
+remote branch that 'git pull' uses to update the current branch.
+
+See 'git help config' and search for 'push.default' for further information.
+(the 'simple' mode was introduced in Git 1.7.11. Use the similar mode
+'current' instead of 'simple' if you sometimes use older versions of Git)
+
+Counting objects: 37, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (34/34), done.
+Writing objects: 100% (34/34), 392.70 KiB | 0 bytes/s, done.
+Total 34 (delta 4), reused 0 (delta 0)
+To https://github.com/ldmartin/ldmartin.github.io
+   7f80458..3138280  master -> master
+Branch master set up to track remote branch master from origin.
+Laylas-MacBook-Pro:ldmartin.github.io laylamartin$ ls
+README.md	fonts		index.html
+css		img		js
+Laylas-MacBook-Pro:ldmartin.github.io laylamartin$ git checkout gh-pages
+error: pathspec 'gh-pages' did not match any file(s) known to git.
+Laylas-MacBook-Pro:ldmartin.github.io laylamartin$ ls
+Laylas-MacBook-Pro:ldmartin.github.io laylamartin$ cd ..
+Laylas-MacBook-Pro:Dataviz laylamartin$ ls
+ldmartin.github.io
+Laylas-MacBook-Pro:Dataviz laylamartin$ cd ldmartin.github.io
+Laylas-MacBook-Pro:ldmartin.github.io laylamartin$ git add --all
+Laylas-MacBook-Pro:ldmartin.github.io laylamartin$ git commit -m "Removing files from master"
+[master f52db7b] Removing files from master
+ 29 files changed, 12217 deletions(-)
+ delete mode 100755 README.md
+ delete mode 100755 css/LICENSE (Colorbrewer).txt
+ delete mode 100755 css/bootstrap-theme.css
+ delete mode 100755 css/bootstrap-theme.css.map
+ delete mode 100755 css/bootstrap-theme.min.css
+ delete mode 100755 css/bootstrap.css
+ delete mode 100755 css/bootstrap.css.map
+ delete mode 100755 css/bootstrap.min.css
+ delete mode 100755 css/colorbrewer.css
+ delete mode 100755 fonts/glyphicons-halflings-regular.eot
+ delete mode 100755 fonts/glyphicons-halflings-regular.svg
+ delete mode 100755 fonts/glyphicons-halflings-regular.ttf
+ delete mode 100755 fonts/glyphicons-halflings-regular.woff
+ delete mode 100755 fonts/glyphicons-halflings-regular.woff2
+ delete mode 100755 img/profile.jpg
+ delete mode 100755 img/twitter_logo.png
+ delete mode 100755 index.html
+ delete mode 100755 js/LICENSE (Colorbrewer).txt
+ delete mode 100755 js/LICENSE (D3).txt
+ delete mode 100755 js/LICENSE (Plugins).txt
+ delete mode 100755 js/bootstrap.js
+ delete mode 100755 js/bootstrap.min.js
+ delete mode 100755 js/colorbrewer.js
+ delete mode 100755 js/cubehelix.js
+ delete mode 100755 js/d3.min.js
+ delete mode 100755 js/hexbin.js
+ delete mode 100755 js/jquery.min.js
+ delete mode 100755 js/npm.js
+ delete mode 100755 js/testD3.js
+Laylas-MacBook-Pro:ldmartin.github.io laylamartin$ git push -u origin master
+Counting objects: 4, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (1/1), done.
+Writing objects: 100% (2/2), 245 bytes | 0 bytes/s, done.
+Total 2 (delta 0), reused 0 (delta 0)
+To https://github.com/ldmartin/ldmartin.github.io
+   3138280..f52db7b  master -> master
+Branch master set up to track remote branch master from origin.
+Laylas-MacBook-Pro:ldmartin.github.io laylamartin$ ls
+Laylas-MacBook-Pro:ldmartin.github.io laylamartin$ ls
+README.md	fonts		index.html
+css		img		js
+Laylas-MacBook-Pro:ldmartin.github.io laylamartin$ git checkout gh-pages
+error: pathspec 'gh-pages' did not match any file(s) known to git.
+Laylas-MacBook-Pro:ldmartin.github.io laylamartin$ git pull
+From https://github.com/ldmartin/ldmartin.github.io
+ * [new branch]      gh-pages   -> origin/gh-pages
+Already up-to-date.
+Laylas-MacBook-Pro:ldmartin.github.io laylamartin$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	README.md
+	css/
+	fonts/
+	img/
+	index.html
+	js/
+
+nothing added to commit but untracked files present (use "git add" to track)
+Laylas-MacBook-Pro:ldmartin.github.io laylamartin$ git log
+commit f52db7b334d8b10ea5d56f2161c2832ccc8057a0
+Author: ldmartin <layla.d.martin@gmail.com>
+Date:   Fri Mar 27 16:22:38 2015 -0700
+
+    Removing files from master
+
+commit 3138280bde209a6762cc8bf903231a7ffb7d461e
+Author: ldmartin <layla.d.martin@gmail.com>
+Date:   Fri Mar 27 16:18:48 2015 -0700
+
+    Cloning basic templates
+
+commit 7f804585a44f71f161740839a8a54096e6fc8706
+Author: ldmartin <layla.d.martin@gmail.com>
+Date:   Fri Mar 27 16:17:50 2015 -0700
+
+    Take 2
+
+commit e3bfec2b3a5b73fe64ce3698bcc4a7c31cb71818
+Author: ldmartin <layla.d.martin@gmail.com>
+Date:   Fri Mar 27 16:14:10 2015 -0700
+
+    Cloning basic template
+Laylas-MacBook-Pro:ldmartin.github.io laylamartin$ git push
+warning: push.default is unset; its implicit value is changing in
+Git 2.0 from 'matching' to 'simple'. To squelch this message
+and maintain the current behavior after the default changes, use:
+
+  git config --global push.default matching
+
+To squelch this message and adopt the new behavior now, use:
+
+  git config --global push.default simple
+
+When push.default is set to 'matching', git will push local branches
+to the remote branches that already exist with the same name.
+
+In Git 2.0, Git will default to the more conservative 'simple'
+behavior, which only pushes the current branch to the corresponding
+remote branch that 'git pull' uses to update the current branch.
+
+See 'git help config' and search for 'push.default' for further information.
+(the 'simple' mode was introduced in Git 1.7.11. Use the similar mode
+'current' instead of 'simple' if you sometimes use older versions of Git)
+
+Everything up-to-date
+Laylas-MacBook-Pro:ldmartin.github.io laylamartin$ git add --all
+Laylas-MacBook-Pro:ldmartin.github.io laylamartin$ git commit -m "Cloning basic templates"
+[master e30aa91] Cloning basic templates
+ 29 files changed, 12217 insertions(+)
+ create mode 100755 README.md
+ create mode 100755 css/LICENSE (Colorbrewer).txt
+ create mode 100755 css/bootstrap-theme.css
+ create mode 100755 css/bootstrap-theme.css.map
+ create mode 100755 css/bootstrap-theme.min.css
+ create mode 100755 css/bootstrap.css
+ create mode 100755 css/bootstrap.css.map
+ create mode 100755 css/bootstrap.min.css
+ create mode 100755 css/colorbrewer.css
+ create mode 100755 fonts/glyphicons-halflings-regular.eot
+ create mode 100755 fonts/glyphicons-halflings-regular.svg
+ create mode 100755 fonts/glyphicons-halflings-regular.ttf
+ create mode 100755 fonts/glyphicons-halflings-regular.woff
+ create mode 100755 fonts/glyphicons-halflings-regular.woff2
+ create mode 100755 img/profile.jpg
+ create mode 100755 img/twitter_logo.png
+ create mode 100755 index.html
+ create mode 100755 js/LICENSE (Colorbrewer).txt
+ create mode 100755 js/LICENSE (D3).txt
+ create mode 100755 js/LICENSE (Plugins).txt
+ create mode 100755 js/bootstrap.js
+ create mode 100755 js/bootstrap.min.js
+ create mode 100755 js/colorbrewer.js
+ create mode 100755 js/cubehelix.js
+ create mode 100755 js/d3.min.js
+ create mode 100755 js/hexbin.js
+ create mode 100755 js/jquery.min.js
+ create mode 100755 js/npm.js
+ create mode 100755 js/testD3.js
+Laylas-MacBook-Pro:ldmartin.github.io laylamartin$ git push
+warning: push.default is unset; its implicit value is changing in
+Git 2.0 from 'matching' to 'simple'. To squelch this message
+and maintain the current behavior after the default changes, use:
+
+  git config --global push.default matching
+
+To squelch this message and adopt the new behavior now, use:
+
+  git config --global push.default simple
+
+When push.default is set to 'matching', git will push local branches
+to the remote branches that already exist with the same name.
+
+In Git 2.0, Git will default to the more conservative 'simple'
+behavior, which only pushes the current branch to the corresponding
+remote branch that 'git pull' uses to update the current branch.
+
+See 'git help config' and search for 'push.default' for further information.
+(the 'simple' mode was introduced in Git 1.7.11. Use the similar mode
+'current' instead of 'simple' if you sometimes use older versions of Git)
+
+Counting objects: 37, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (34/34), done.
+Writing objects: 100% (34/34), 392.70 KiB | 0 bytes/s, done.
+Total 34 (delta 4), reused 0 (delta 0)
+To https://github.com/ldmartin/ldmartin.github.io
+   f52db7b..e30aa91  master -> master
+Laylas-MacBook-Pro:ldmartin.github.io laylamartin$ git checkout master
+Already on 'master'
+Your branch is up-to-date with 'origin/master'.
+Laylas-MacBook-Pro:ldmartin.github.io laylamartin$ git checkout gh-pages
+Branch gh-pages set up to track remote branch gh-pages from origin.
+Switched to a new branch 'gh-pages'
+Laylas-MacBook-Pro:ldmartin.github.io laylamartin$ git add --all
+Laylas-MacBook-Pro:ldmartin.github.io laylamartin$ git commit -m "Cloning basic template"
+On branch gh-pages
+Your branch is up-to-date with 'origin/gh-pages'.
+
+nothing to commit, working directory clean
+Laylas-MacBook-Pro:ldmartin.github.io laylamartin$ git push
+warning: push.default is unset; its implicit value is changing in
+Git 2.0 from 'matching' to 'simple'. To squelch this message
+and maintain the current behavior after the default changes, use:
+
+  git config --global push.default matching
+
+To squelch this message and adopt the new behavior now, use:
+
+  git config --global push.default simple
+
+When push.default is set to 'matching', git will push local branches
+to the remote branches that already exist with the same name.
+
+In Git 2.0, Git will default to the more conservative 'simple'
+behavior, which only pushes the current branch to the corresponding
+remote branch that 'git pull' uses to update the current branch.
+
+See 'git help config' and search for 'push.default' for further information.
+(the 'simple' mode was introduced in Git 1.7.11. Use the similar mode
+'current' instead of 'simple' if you sometimes use older versions of Git)
+
+Everything up-to-date
+Laylas-MacBook-Pro:ldmartin.github.io laylamartin$ git checkout master
+Switched to branch 'master'
+Your branch is up-to-date with 'origin/master'.
+Laylas-MacBook-Pro:ldmartin.github.io laylamartin$ git checkout gh-pages
+Switched to branch 'gh-pages'
+Your branch is up-to-date with 'origin/gh-pages'.
+Laylas-MacBook-Pro:ldmartin.github.io laylamartin$ git pull
+Already up-to-date.
+Laylas-MacBook-Pro:ldmartin.github.io laylamartin$ ls
+index.html
+Laylas-MacBook-Pro:ldmartin.github.io laylamartin$ git checkout master
+Switched to branch 'master'
+Your branch is up-to-date with 'origin/master'.
+Laylas-MacBook-Pro:ldmartin.github.io laylamartin$ ls
+README.md	fonts		index.html
+css		img		js
+Laylas-MacBook-Pro:ldmartin.github.io laylamartin$ git push
+warning: push.default is unset; its implicit value is changing in
+Git 2.0 from 'matching' to 'simple'. To squelch this message
+and maintain the current behavior after the default changes, use:
+
+  git config --global push.default matching
+
+To squelch this message and adopt the new behavior now, use:
+
+  git config --global push.default simple
+
+When push.default is set to 'matching', git will push local branches
+to the remote branches that already exist with the same name.
+
+In Git 2.0, Git will default to the more conservative 'simple'
+behavior, which only pushes the current branch to the corresponding
+remote branch that 'git pull' uses to update the current branch.
+
+See 'git help config' and search for 'push.default' for further information.
+(the 'simple' mode was introduced in Git 1.7.11. Use the similar mode
+'current' instead of 'simple' if you sometimes use older versions of Git)
+
+Everything up-to-date
+Laylas-MacBook-Pro:ldmartin.github.io laylamartin$ ls
+Laylas-MacBook-Pro:ldmartin.github.io laylamartin$ git add--all
+git: 'add--all' is not a git command. See 'git --help'.
+Laylas-MacBook-Pro:ldmartin.github.io laylamartin$ git add --all
+Laylas-MacBook-Pro:ldmartin.github.io laylamartin$ git commit "deleting files"
+error: pathspec 'deleting files' did not match any file(s) known to git.
+Laylas-MacBook-Pro:ldmartin.github.io laylamartin$ git commit -m "deleting files"
+[master e150bd6] deleting files
+ 29 files changed, 12217 deletions(-)
+ delete mode 100755 README.md
+ delete mode 100755 css/LICENSE (Colorbrewer).txt
+ delete mode 100755 css/bootstrap-theme.css
+ delete mode 100755 css/bootstrap-theme.css.map
+ delete mode 100755 css/bootstrap-theme.min.css
+ delete mode 100755 css/bootstrap.css
+ delete mode 100755 css/bootstrap.css.map
+ delete mode 100755 css/bootstrap.min.css
+ delete mode 100755 css/colorbrewer.css
+ delete mode 100755 fonts/glyphicons-halflings-regular.eot
+ delete mode 100755 fonts/glyphicons-halflings-regular.svg
+ delete mode 100755 fonts/glyphicons-halflings-regular.ttf
+ delete mode 100755 fonts/glyphicons-halflings-regular.woff
+ delete mode 100755 fonts/glyphicons-halflings-regular.woff2
+ delete mode 100755 img/profile.jpg
+ delete mode 100755 img/twitter_logo.png
+ delete mode 100755 index.html
+ delete mode 100755 js/LICENSE (Colorbrewer).txt
+ delete mode 100755 js/LICENSE (D3).txt
+ delete mode 100755 js/LICENSE (Plugins).txt
+ delete mode 100755 js/bootstrap.js
+ delete mode 100755 js/bootstrap.min.js
+ delete mode 100755 js/colorbrewer.js
+ delete mode 100755 js/cubehelix.js
+ delete mode 100755 js/d3.min.js
+ delete mode 100755 js/hexbin.js
+ delete mode 100755 js/jquery.min.js
+ delete mode 100755 js/npm.js
+ delete mode 100755 js/testD3.js
+Laylas-MacBook-Pro:ldmartin.github.io laylamartin$ git push
+warning: push.default is unset; its implicit value is changing in
+Git 2.0 from 'matching' to 'simple'. To squelch this message
+and maintain the current behavior after the default changes, use:
+
+  git config --global push.default matching
+
+To squelch this message and adopt the new behavior now, use:
+
+  git config --global push.default simple
+
+When push.default is set to 'matching', git will push local branches
+to the remote branches that already exist with the same name.
+
+In Git 2.0, Git will default to the more conservative 'simple'
+behavior, which only pushes the current branch to the corresponding
+remote branch that 'git pull' uses to update the current branch.
+
+See 'git help config' and search for 'push.default' for further information.
+(the 'simple' mode was introduced in Git 1.7.11. Use the similar mode
+'current' instead of 'simple' if you sometimes use older versions of Git)
+
+Counting objects: 4, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (1/1), done.
+Writing objects: 100% (2/2), 233 bytes | 0 bytes/s, done.
+Total 2 (delta 0), reused 0 (delta 0)
+To https://github.com/ldmartin/ldmartin.github.io
+   e30aa91..e150bd6  master -> master
+Laylas-MacBook-Pro:ldmartin.github.io laylamartin$ git checkout gh-pages
+Switched to branch 'gh-pages'
+Your branch is up-to-date with 'origin/gh-pages'.
+Laylas-MacBook-Pro:ldmartin.github.io laylamartin$ ls
+index.html
+Laylas-MacBook-Pro:ldmartin.github.io laylamartin$ ls
+README.md	fonts		index.html
+css		img		js
+Laylas-MacBook-Pro:ldmartin.github.io laylamartin$ git add --all
+Laylas-MacBook-Pro:ldmartin.github.io laylamartin$ ls
+README.md	fonts		index.html
+css		img		js
+Laylas-MacBook-Pro:ldmartin.github.io laylamartin$ git commit -m "Cloning basic template files"
+[gh-pages e5dff56] Cloning basic template files
+ 29 files changed, 12217 insertions(+), 1 deletion(-)
+ create mode 100755 README.md
+ create mode 100755 css/LICENSE (Colorbrewer).txt
+ create mode 100755 css/bootstrap-theme.css
+ create mode 100755 css/bootstrap-theme.css.map
+ create mode 100755 css/bootstrap-theme.min.css
+ create mode 100755 css/bootstrap.css
+ create mode 100755 css/bootstrap.css.map
+ create mode 100755 css/bootstrap.min.css
+ create mode 100755 css/colorbrewer.css
+ create mode 100755 fonts/glyphicons-halflings-regular.eot
+ create mode 100755 fonts/glyphicons-halflings-regular.svg
+ create mode 100755 fonts/glyphicons-halflings-regular.ttf
+ create mode 100755 fonts/glyphicons-halflings-regular.woff
+ create mode 100755 fonts/glyphicons-halflings-regular.woff2
+ create mode 100755 img/profile.jpg
+ create mode 100755 img/twitter_logo.png
+ rewrite index.html (100%)
+ mode change 100644 => 100755
+ create mode 100755 js/LICENSE (Colorbrewer).txt
+ create mode 100755 js/LICENSE (D3).txt
+ create mode 100755 js/LICENSE (Plugins).txt
+ create mode 100755 js/bootstrap.js
+ create mode 100755 js/bootstrap.min.js
+ create mode 100755 js/colorbrewer.js
+ create mode 100755 js/cubehelix.js
+ create mode 100755 js/d3.min.js
+ create mode 100755 js/hexbin.js
+ create mode 100755 js/jquery.min.js
+ create mode 100755 js/npm.js
+ create mode 100755 js/testD3.js
+Laylas-MacBook-Pro:ldmartin.github.io laylamartin$ git push
+warning: push.default is unset; its implicit value is changing in
+Git 2.0 from 'matching' to 'simple'. To squelch this message
+and maintain the current behavior after the default changes, use:
+
+  git config --global push.default matching
+
+To squelch this message and adopt the new behavior now, use:
+
+  git config --global push.default simple
+
+When push.default is set to 'matching', git will push local branches
+to the remote branches that already exist with the same name.
+
+In Git 2.0, Git will default to the more conservative 'simple'
+behavior, which only pushes the current branch to the corresponding
+remote branch that 'git pull' uses to update the current branch.
+
+See 'git help config' and search for 'push.default' for further information.
+(the 'simple' mode was introduced in Git 1.7.11. Use the similar mode
+'current' instead of 'simple' if you sometimes use older versions of Git)
+
+Counting objects: 37, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (34/34), done.
+Writing objects: 100% (34/34), 392.66 KiB | 0 bytes/s, done.
+Total 34 (delta 4), reused 0 (delta 0)
+To https://github.com/ldmartin/ldmartin.github.io
+   5489fc2..e5dff56  gh-pages -> gh-pages
+Laylas-MacBook-Pro:ldmartin.github.io laylamartin$ ls
+README.md	fonts		index.html
+css		img		js
+Laylas-MacBook-Pro:ldmartin.github.io laylamartin$ 
