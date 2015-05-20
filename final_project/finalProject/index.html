@@ -14,7 +14,7 @@
 
 
 
-    <script src="js/index.js"></script>
+    <!--<script src="js/index.js"></script>-->
     <!--<script src="topojson-js/topojson.js"></script>-->
 
     <!--references for bootstrap web page formatting    -->
@@ -41,42 +41,40 @@
     </div>
 </div>
 
-<!--<div class="container" >-->
+<div class="container" style="position: relative; width: 100%;">
+    <h5>Hover over an available country to view the most popular ingredient used in traditional recipes.</h5>
+    <h5>Select an available country to view important ingredients used in traditional recipes there.</h5>
+</div>
 
-    <!--<div class="row">-->
-        <!--<div class="col-md-12">-->
-            <!--&lt;!&ndash; <h2 class="chart-title"><a name="graph"></a>Letter Frequencies</h2> &ndash;&gt;-->
-            <!--<h2 class="chart-title1"></h2>-->
-        <!--</div>-->
-    <!--</div>-->
-    <!--world map inserted here-->
-    <!--<div class="chart1" id="chart1" style="position: relative; width: 100%; top: 0; max-height: 450px;"></div>-->
-    <div class="chart1" id="chart1" style="position: relative; width: 100%; height: 600px;"></div>
+<!--world map inserted here-->
+<div class="chart1" id="chart1" style="position: relative; width: 100%; height: 600px;"></div>
 
-    <!--<hr/>-->
 <div class="container" style="position: relative; width: 100%;">
 
+    <!--description information for ingredient pairs barchart:-->
     <div class="row">
         <div class="col-md-12">
-            <!--<div class="container" style="position: relative; width: 90%;">-->
-                <h2 class="chart-title2"></h2>
-                <h5 class="chart-desc2-1"></h5>
-                <h5 class="chart-desc2-2"></h5>
-            <!--</div>-->
+            <h2 class="chart-title2"></h2>
+            <h5 class="chart-desc2-1"></h5>
+            <h5 class="chart-desc2-2"></h5>
         </div>
     </div>
-    <!--other graphics inserted here-->
-    <div class="chart2" id="ingredient-pairings-chart"></div>
+    <!--ingredient pairs barchart inserted here:-->
+    <div class="chart2"></div>
 
+    <hr/>
+
+    <!--description information for ingredient network visualization:-->
     <div class="row">
         <div class="col-md-12">
-            <!--<div class="container" style="position: relative; width: 90%;">-->
             <h2 class="chart-title3"></h2>
-            <p class="chart-description3"></p>
-            <!--</div>-->
+            <h5 class="chart-desc3-1"></h5>
+            <h5 class="chart-desc3-2"></h5>
+            <h5 class="chart-desc3-3"></h5>
+            <h5 class="chart-desc3-4"></h5>
         </div>
     </div>
-    <!--other graphics inserted here-->
+    <!--ingredient network visualization inserted here-->
     <div class="chart3" id="ingredient-network"></div>
 
 </div>
@@ -84,80 +82,73 @@
 
 <script src="js/d3.v3.min.js"></script>
 <script src="js/topojson.v1.min.js"></script>
-<!-- I recommend you host this file on your own, since this will change without warning -->
 
 <!--<script src="http://datamaps.github.io/scripts/datamaps.world.min.js?v=1"></script>-->
 <!--locally:-->
 <script src="js/datamaps.world.min.js"></script>
-<!--<h2>Datamaps Playground</h2>-->
-<!--<p><a href="http://datamaps.github.io/">DataMaps Project Homepage</a></p>-->
+
+<!--for network:-->
+<script src="js/d3.tip.v0.6.3.js"></script>
 
 
-<!--this is where map is inserted:-->
-<!--<div id="container1" style="position: relative; width: 80%; max-height: 450px;"></div>-->
+<style>
 
-    <style>
+    .axis path,
+    .axis line {
+        fill: none;
+        stroke: lightgrey;
+        stroke-width: 0.5;
+        shape-rendering: crispEdges;
+    }
 
-        /*body {*/
-            /*font: 10px sans-serif;*/
-        /*}*/
+    .bar {
+        fill: lavender;
+    }
 
-        .axis path,
-        .axis line {
-            fill: none;
-            stroke: lightgrey;
-            stroke-width: 0.5;
-            shape-rendering: crispEdges;
-        }
+    .bar:hover {
+        fill: orangered ;
+    }
 
-        .bar {
-            fill: lavender;
-        }
+    .x.axis path {
+        display: none;
+    }
 
-        .bar:hover {
-            fill: orangered;
-        }
-
-        .x.axis path {
-            display: none;
-        }
-
-        .chart {
-            background: #b0e0f8;
-            margin: 5px;
-        }
+    .chart {
+        background: #b0e0f8;
+        margin: 5px;
+    }
 
 
 
-        /*.d3-tip {*/
-            /*line-height: 1;*/
-            /*font-weight: bold;*/
-            /*padding: 12px;*/
-            /*background: rgba(0, 0, 0, 0.8);*/
-            /*color: #fff;*/
-            /*border-radius: 2px;*/
-        /*}*/
+    /*for ingredient network visualization:*/
+    .node {
+        stroke: #fff;
+        stroke-width: 1.5px;
+    }
 
-        /*/!* Creates a small triangle extender for the tooltip *!/*/
-        /*.d3-tip:after {*/
-            /*box-sizing: border-box;*/
-            /*display: inline;*/
-            /*font-size: 10px;*/
-            /*width: 100%;*/
-            /*line-height: 1;*/
-            /*color: rgba(0, 0, 0, 0.8);*/
-            /*content: "\25BC";*/
-            /*position: absolute;*/
-            /*text-align: center;*/
-        /*}*/
+    .link {
+        stroke: #999;
+        stroke-opacity: .6;
+    }
 
-        /*/!* Style northward tooltips differently *!/*/
-        /*.d3-tip.n:after {*/
-            /*margin: -1px 0 0 0;*/
-            /*top: 100%;*/
-            /*left: 0;*/
-        /*}*/
-    </style>
+    /*for tooltips*/
+    .d3-tip {
+        line-height: 0.1;
+        font-weight: bold;
+        /*padding: .5px;*/
+        /*background: rgba(0, 0, 0, 0.8);*/
+        color: #fff;
+        border-radius: .5px;
+    }
+
+    /* Style northward tooltips differently */
+    .d3-tip.n:after {
+        margin: -1px 0 0 0;
+        top: 100%;
+        left: 0;
+    }
+
+</style>
 
 
 
@@ -165,6 +156,7 @@
 
 <script>
 
+    //define colors to use:
     var colors = {
         "grey":   "#bbbbbb",
         "blue":   "#377eb8",
@@ -180,104 +172,23 @@
         "white": "#FFFFFF"
     };
 
-
-//    var secondChart = d3.select(".chart2").append("svg")
-//            .attr("width", 500)
-//            .attr("height", 500);
-//
-//    secondChart.append("rect")
-//            .attr("height", 50)
-//            .attr("width", 50)
-//            .style("fill", colors.lightpink);
-
-//    var csv_data;
-//    d3.csv("data/scirep-cuisines-detail/country_popular_pairs/Austria_popular_pairs.csv", function(data) {
-//        data.forEach(function (d) {
-//            d.ing = d.ingredients;
-//            d.percent = +d.percent_recipes;
-//            csv_data = data;
-//        });
-//    });
-
-
-
-
-//    console.log(Ingredients);
-
-    // TODO: load data from most common pairs here:
-//    d3.csv("data/scirep-cuisines-detail/country_popular_pairs/Austria_popular.csv", function(error, data) {
-//        data.forEach(function(d) {
-//            d.Ingredients = +d.ingredients;
-//            d.Percent = +d.percent_recipes;
-//        });
-//        console.log(data);
-//    });
-
-//    d3.csv("data/scirep-cuisines-detail/country_popular_pairs/Austria_popular_pairs.csv", function(d) {
-//        return {
-//            Ingredients: d.ingredients,
-//            Percent: +d.percent_recipes
-//        };
-//    }, function(error, rows) {
-//        console.log(rows);
-//    });
-
-    // console.log(Ingredients)
-
-//    var included_countries = {"United States of America":true, "Canada":true, "Mexico":true};
-//
-//    console.log(included_countries);
-
     //determine chart1 container width:
     var selection = d3.select(".chart1");
     var chart1Width = selection[0][0].clientWidth;
     var chart1Height = selection[0][0].clientHeight;
     console.log("Width for chart 2 is " + chart1Width);
 
-    //basic map config with custom fills, mercator projection
+    //basic map config with custom fills, equirectangular projection:
     var map = new Datamap({
         scope: 'world',
-//        element: document.getElementById('container1'),
         element: document.getElementById('chart1'),
         projection: 'equirectangular',
         scope: 'world',
-        // uncomment line below to automatically scale size of svg:
-//        responsive: true,
+
+        // set height and width attributes to correspond to browser window size, although max height is specified
+        // in html as 600px:
         height: chart1Height,
-//        width: 1000,
         width: chart1Width,
-        // uncomment below four lines for no country name or highlight on hover:
-//        geographyConfig: {
-//            popupOnHover: false,
-//            highlightOnHover: false
-//        },
-
-//        popIng: d3.csv("data/scirep-cuisines-detail/country_popular/Austria_popular.csv", function(d) {
-//            return {
-//                ingredient: d.ingredient
-//            };
-//            console.log(ingredient)
-//        }),
-////            }, function(error, rows) {
-////                console.log(rows);
-////            });
-
-//        done: function(datamap) {
-//            datamap.svg.selectAll('.datamaps-subunit').on('click', function() {
-//                // TODO: change below click function to display graph of network for that country, or barchart
-//                // TODO: displaying most popular pairs of ingredients:
-//
-//                alert("ingredient here")
-//        });
-//        },
-
-//        done: function(datamap) {
-//            datamap.svg.selectAll('.datamaps-subunit').on('click', function(geography) {
-//                // TODO: change below click function to display graph of network for that country, or barchart
-//                // TODO: displaying most popular pairs of ingredients:
-//                alert(geography.properties.name);
-//            });
-//        },
 
         geographyConfig: {
             highlightFillColor: colors.redorange,
@@ -287,35 +198,42 @@
                 test_ing = 'most popular here';
                 error_msg = "country not in set";
                 included_countries = {"United States of America":true, "Canada":true, "Mexico":true,
-                                    "Austria": true, "Belgium": true, "China":true, "France":true,
-                                    "Germany":true, "Greece": true, "India":true, "Iran":true, "Ireland":true,
-                                    "Israel":true, "Italy":true, "Japan":true, "South Korea":true, "North Korea":true,
-                                    "Malaysia":true, "Netherlands":true, "Philippines":true, "Spain":true,
-                                    "Thailand":true, "United Kingdom":true, "Vietnam":true};
+                    "Austria": true, "Belgium": true, "China":true, "France":true,
+                    "Germany":true, "Greece": true, "India":true, "Iran":true, "Ireland":true,
+                    "Israel":true, "Italy":true, "Japan":true, "South Korea":true, "North Korea":true,
+                    "Malaysia":true, "Netherlands":true, "Philippines":true, "Spain":true,
+                    "Thailand":true, "United Kingdom":true, "Vietnam":true};
+
+                popular_ings = {"United States of America":'butter', "Canada":'wheat', "Mexico":'cayenne',
+                    "Austria": 'wheat & egg', "Belgium": 'wheat', "China":'soy sauce', "France":'butter',
+                    "Germany":'wheat', "Greece": 'olive oil', "India":'cumin', "Iran":'onion', "Ireland":'butter',
+                    "Israel":'wheat', "Italy":'garlic', "Japan":'soy sauce', "South Korea":'soy sauce', "North Korea":'soy sauce',
+                    "Malaysia":'coconut & garlic', "Netherlands":'wheat', "Philippines":'garlic', "Spain":'onion',
+                    "Thailand":'garlic', "United Kingdom":'wheat', "Vietnam":'garlic'};
+
+                //TODO: insert variable similar to one above presenting the most popular ingredient per country:
+
                 if (geography.properties.name in included_countries){
-//                    console.log(geography.properties.name)
+
+                    // change hover over North and South Korea to display as "Korea":
                     if(geography.properties.name == "South Korea" || geography.properties.name == "North Korea"){
-                        return '<div class="hoverinfo"><strong>' + "Korea" + "<br>" + "Ingredient: " + test_ing + "</strong></div>"
+                        return '<div class="hoverinfo"><strong>' + "Korea" + "<br>" + "Ingredient: " + popular_ings[geography.properties.name] + "</strong></div>"
                     }
                     // TODO: change this 'ingredient' to be the most popular one for that country:
-                    else{ return '<div class="hoverinfo"><strong>' + geography.properties.name + "<br>" + "Ingredient: " + test_ing + "</strong></div>"}
+                    else{ return '<div class="hoverinfo"><strong>' + geography.properties.name + "<br>" + "Ingredient: " + popular_ings[geography.properties.name] + "</strong></div>"}
                 }
                 else{
-//                    console.log(error_msg)
                     return '<div class="hoverinfo"><strong><font color="grey">'+geography.properties.name+"</font></strong></div>"
                 }
             }
         },
         fills: {
-//            defaultFill: '#f0af0a',
             defaultFill: colors.grey,
-//            lt50: 'rgba(0,244,244,0.9)',
-//            gt50: 'red'
             have_recipes: colors.black,
             highlight_red: colors.redorange
         },
 
-        // fill these in with colors corresponding to countries which recipes exist for:
+        // fill these in with black, corresponding to countries which recipes exist for:
         data: {
             USA: {fillKey: 'have_recipes' },
             CAN: {fillKey: 'have_recipes' },
@@ -340,101 +258,14 @@
             GBR: {fillKey: 'have_recipes' },
             VNM: {fillKey: 'have_recipes' },
             PHL: {fillKey: 'have_recipes' }
-//            LBN: {fillKey: 'highlight_red' } //too small to see on map
-
-//            BRA: {fillKey: 'gt50' },
-//            ARG: {fillKey: 'gt50'},
-//            COL: {fillKey: 'gt50' },
-//            AUS: {fillKey: 'lt50' },
-//            ZAF: {fillKey: 'gt50' },
-//            MAD: {fillKey: 'gt50' }
         }
     });
-//
-//    function showCountryDetails(){
-//
-//        var margin2 = {top: 40, right: 20, bottom: 30, left: 40},
-////                        width2 = 960 - margin2.left - margin2.right,
-////                        height2 = 500 - margin2.top - margin2.bottom;
-//                width2 = 960/1.5 - margin2.left - margin2.right,
-//                height2 = 500/1.5 - margin2.top - margin2.bottom;
-//
-//        var formatPercent = d3.format(".2%");
-//
-//        var x2 = d3.scale.ordinal()
-//                .rangeRoundBands([0, width2], .1);
-//
-//        var y2 = d3.scale.linear()
-//                .range([height2, 0]);
-//
-//        var xAxis = d3.svg.axis()
-//                .scale(x2)
-//                .orient("bottom");
-//
-//        var yAxis = d3.svg.axis()
-//                        .scale(y2)
-//                        .orient("left")
-//                        .tickFormat(formatPercent)
-//                ;
-//
-////                var tip = d3.tip()
-////                        .attr('class', 'd3-tip')
-////                        .offset([-10, 0])
-////                        .html(function(d) {
-////                            return "<strong>Frequency:</strong> <span style='color:red'>" + d.frequency + "</span>";
-////                        })
-//
-//        var svg2 = d3.select(".chart2").append("svg")
-//                .attr("width", width2 + margin2.left + margin2.right)
-//                .attr("height", height2 + margin2.top + margin2.bottom)
-//                .append("g")
-//                .attr("transform", "translate(" + margin2.left + "," + margin2.top + ")");
-//
-////                svg.call(tip);
-//
-//        d3.csv("data/scirep-cuisines-detail/country_popular_pairs/Austria_popular_pairs.csv", type, function(error, data) {
-//            x2.domain(data.map(function(d) { return d.ingredients; }));
-//            y2.domain([0, d3.max(data, function(d) { return d.percent_recipes; })]);
-//
-//            svg2.append("g")
-//                    .attr("class", "x axis")
-//                    .attr("transform", "translate(0," + height2 + ")")
-//                    .call(xAxis);
-//
-//            svg2.append("g")
-//                    .attr("class", "y axis")
-//                    .call(yAxis)
-//                    .append("text")
-//                    .attr("transform", "rotate(-90)")
-//                    .attr("y", 6)
-//                    .attr("dy", ".71em")
-//                    .style("text-anchor", "end")
-//                    .text("Frequency");
-//
-//            svg2.selectAll(".bar")
-//                    .data(data)
-//                    .enter().append("rect")
-//                    .attr("class", "bar")
-//                    .attr("x", function(d) { return x2(d.ingredients); })
-//                    .attr("width", x2.rangeBand())
-//                    .attr("y", function(d) { return y2(d.percent_recipes); })
-//                    .attr("height", function(d) { return height2 - y2(d.percent_recipes); });
-////                            .on('mouseover', tip.show)
-////                            .on('mouseout', tip.hide)
-//
-//        });
-//
-//        function type(d) {
-//            d.percent_recipes = +d.percent_recipes;
-//            return d;
-//        }
-//
-//    };
+
+    //initiate variable indicating that no barchart is showing yet:
     var graph_showing = false;
 
     d3.selectAll('.datamaps-subunit')
             .on('click', function(geography) {
-//                insertPlot();
 
                 var included_countries = {"United States of America":true, "Canada":true, "Mexico":true,
                     "Austria": true, "Belgium": true, "China":true, "France":true,
@@ -448,31 +279,18 @@
 
                 if (geography.properties.name in included_countries){
 
+                    //make North Korea and South Korea combined and called "Korea":
                     if(geography.properties.name == "South Korea" || geography.properties.name == "North Korea"){
                         selectedCountry = "Korea";
                     }
 
-//                    graph_showing = detectPlot(graph_showing);
-//                    console.log(graph_showing);
-                    // remove
-
                     insertPlots(colors, selectedCountry);
-                    document.getElementById("ingredient-pairings-chart").scrollIntoView({block: "end", behavior: "smooth"});
+                    document.getElementById("popular-ingredients-chart").scrollIntoView(false); //directs to bottom of chart, use true to go to top
+
                 }
-
-//                console.log(graph_showing);
-//
-
-//
-//                console.log(graph_showing);
-//
-//                // if graph is not showing, insert svg:
-//
-//
-//                // if graph is showing, clear svg, then insert new one:
-
             });
 
+    //function to detect whether a bar chart is already being displayed:
     function detectPlot(graph_showing) {
         if (graph_showing===false){
             return true
@@ -480,188 +298,348 @@
         else { return false}
     }
 
-    console.log(colors);
 
-    function goToChart() {
-        window.location.href = "#ingredient-pairings-chart";
-    }
 
-    function goToDiv() {
-        var sel = document.getElementsByTagName('ingredient-pairings-chart');
-        sel.style.display = 'block';
-    }
 
+
+
+
+
+
+
+
+    //function to insert barchart underneath map when a country is clicked on:
     function insertPlots(colors, selectedCountry){
 
-//        console.log(colors);
-//
-//        var svg2 = d3.select(".chart2").append("svg")
-//                .attr("height", 50)
-//                .attr("width", 50)
-//                .style("background-color", colors.blue);
-        //                var selectedCountry = geography.properties.name;
-//                console.log(selectedCountry);
-//
+        // if chart is already showing for another country, remove it first:
+        console.log(graph_showing);
+        if (graph_showing===true){
+            d3.select("#popular-ingredients-chart").remove();
+            d3.select("#ingredient-network-chart").remove();
+            console.log("removing previous charts...");
+        }
 
-                // if chart is already showing for another country, remove it first:
-                console.log(graph_showing);
-                if (graph_showing===true){
-                    d3.select("#popular-ingredients-chart").remove();
-                    console.log("removing svg...");
+////////////////////// BAR CHART VISUALIZATION BEGINS HERE ///////////////////////
+
+        //indicate how many recipes have been used in analysis for each country:
+        var countryNumRecipes = {"United States of America":40150, "Canada":774, "Mexico":1754,
+            "Austria": 21, "Belgium": 11, "China":130, "France":268,
+            "Germany":289, "Greece": 225, "India":324, "Iran":21, "Ireland":86,
+            "Israel":9, "Italy":1461, "Japan":85, "Korea":32,
+            "Malaysia":18, "Netherlands":32, "Philippines":43, "Spain":75,
+            "Thailand":289, "United Kingdom":282, "Vietnam":30};
+
+        //TODO: insert variable similar to one above presenting the most popular ingredient per country:
+
+        var chartTitle = d3.select(".chart-title2").text(selectedCountry);
+        var chartDesc = d3.select(".chart-desc2-1").text("Ten most popular ingredient pairings presented as a percentage of overall recipes appeared in together.");
+        var chartDesc = d3.select(".chart-desc2-2").text("Total number of traditional recipes compiled: " + countryNumRecipes[selectedCountry]);
+
+        //determine width of container for chart2:
+        var selection = d3.select(".chart2");
+        var chart2Width = selection[0][0].clientWidth;
+//        console.log("Width for chart 2 is " + chart2Width);
+
+        var margin2 = {top: 40*1.5 *.5, right: 20*1.5, bottom: 30*1.5*2, left: 40*1.5},
+                width2 = chart2Width - margin2.left - margin2.right,    //make chart width dependent on browser window size
+                height2 = 500 / 1.5 - margin2.top - margin2.bottom;
+
+        var formatPercent = d3.format("%");
+
+        var x2 = d3.scale.ordinal()
+                .rangeRoundBands([0, width2], .1);
+
+        var y2 = d3.scale.linear()
+                .range([height2, 0]);
+
+        //set number of y-axis ticks visible:
+        var num_ticks = 5;
+
+        var xAxis = d3.svg.axis()
+                .scale(x2)
+                .orient("bottom");
+
+        var yAxis = d3.svg.axis()
+                        .scale(y2)
+                        .orient("left")
+                        .tickFormat(formatPercent)
+                        .ticks(num_ticks)
+                        .tickSize(-width2) //extend ticks to make horizontal gridlines
+                ;
+
+        var svg2 = d3.select(".chart2").append("svg")
+                .attr("id", "popular-ingredients-chart")
+                .attr("width", width2 + margin2.left + margin2.right)
+                .attr("height", height2 + margin2.top + margin2.bottom)
+                .append("g")
+                .attr("transform", "translate(" + margin2.left + "," + margin2.top + ")");
+
+        var csv_name = "data/scirep-cuisines-detail/country_popular_pairs/" + selectedCountry + "_popular_pairs.csv";
+        d3.csv(csv_name, type, function (error, data) {
+            x2.domain(data.map(function (d) {
+                return d.ingredients;
+            }));
+            y2.domain([0, 1]);  //make y axis presented as percent from 0 to 100 always
+
+            svg2.append("g")
+                    .attr("class", "x axis")
+                    .attr("transform", "translate(0," + height2 + ")")
+                    .call(xAxis)
+                    .selectAll(".tick text")
+                    .call(wrap, x2.rangeBand())
+            ;
+
+            svg2.append("g")
+                    .attr("class", "y axis")
+                    .call(yAxis)
+                    .append("text")
+                    .attr("transform", "rotate(-90)")
+                    .attr("y", 4)
+                    .attr("dy", ".71em")
+                    .style("text-anchor", "end")
+                    .text("")   //add y-axis label, but this would need to be repositioned
+            ;
+
+            svg2.selectAll(".bar")
+                    .data(data)
+                    .enter().append("rect")
+                    .attr("class", "bar")
+                    .attr("x", function (d) {
+                        return x2(d.ingredients);
+                    })
+                    .attr("width", x2.rangeBand())
+                    .attr("y", function (d) {
+                        return y2(d.percent_recipes);
+                    })
+                    .attr("height", function (d) {
+                        return height2 - y2(d.percent_recipes);
+                    });
+        });
+
+
+
+        //function to make ingredient pair labels run across multiple lines
+        function wrap(text, width) {
+            text.each(function() {
+                var text = d3.select(this),
+                        words = text.text().split(/\s+/).reverse(),
+                        word,
+                        line = [],
+                        lineNumber = 0,
+                        lineHeight = 1.1, // ems
+                        y = text.attr("y"),
+                        dy = parseFloat(text.attr("dy")),
+                        tspan = text.text(null).append("tspan").attr("x", 0).attr("y", y).attr("dy", dy + "em");
+                while (word = words.pop()) {
+                    line.push(word);
+                    tspan.text(line.join(" "));
+                    if (tspan.node().getComputedTextLength() > width) {
+                        line.pop();
+                        tspan.text(line.join(" "));
+                        line = [word];
+                        tspan = text.append("tspan").attr("x", 0).attr("y", y).attr("dy", ++lineNumber * lineHeight + dy + "em").text(word);
+                    }
                 }
+            });
+        }
 
-                var countryNumRecipes = {"United States of America":40150, "Canada":774, "Mexico":1754,
-                    "Austria": 21, "Belgium": 11, "China":130, "France":268,
-                    "Germany":289, "Greece": 225, "India":324, "Iran":21, "Ireland":86,
-                    "Israel":9, "Italy":1461, "Japan":85, "Korea":32,
-                    "Malaysia":18, "Netherlands":32, "Philippines":43, "Spain":75,
-                    "Thailand":289, "United Kingdom":282, "Vietnam":30};
-                console.log(countryNumRecipes);
+        function type(d) {
+            d.percent_recipes = +d.percent_recipes;
+            return d;
+        }
 
-
-                var chartTitle = d3.select(".chart-title2").text(selectedCountry);
-                var chartDesc = d3.select(".chart-desc2-1").text("Ten most popular ingredient pairings presented as a percentage of overall recipes appeared in together.");
-                var chartDesc = d3.select(".chart-desc2-2").text("Total number of recipes compiled: " + countryNumRecipes[selectedCountry]);
-
-                //determine width of container for chart2:
-                var selection = d3.select(".chart2");
-                var chart2Width = selection[0][0].clientWidth;
-                console.log("Width for chart 2 is " + chart2Width);
+////////////////////// END BAR CHART VISUALIZATION ///////////////////////
 
 
-                var margin2 = {top: 40*1.5 *.5, right: 20*1.5, bottom: 30*1.5*2, left: 40*1.5},
-//                        width2 = 1400 / 1.5 - margin2.left - margin2.right,
-                        width2 = chart2Width - margin2.left - margin2.right,
-                        height2 = 500 / 1.5 - margin2.top - margin2.bottom;
 
-                var formatPercent = d3.format("%");
+////////////////////// NETWORK VISUALIZATION BEGINS HERE ///////////////////////
 
-                var x2 = d3.scale.ordinal()
-                        .rangeRoundBands([0, width2], .1);
+        //descriptions and titles for network plot:
+//        var chartTitle = d3.select(".chart-title3").text(selectedCountry);
+//        var chartDesc = d3.select(".chart-desc3-1").text("Interactive network visualization of ingredients comprising recipes.");
+//        var chartDesc = d3.select(".chart-desc3-2").text("Ingredients are connected in the network if they appear in a recipe together. " +
+//                                                          "Click an ingredient to highlight ingredients occurring in a recipe with " +
+//                                                          "it.");
+        var chartDesc = d3.select(".chart-title3").text("Interactive network visualization of ingredients appearing in the same recipe.");
+        d3.select(".chart-desc3-1").text("Ingredients are connected in the network if they exist in the same recipe. " +
+        "Edges are weighted as a function of the number of recipes the two ingredients have appeared in together.");
+        d3.select(".chart-desc3-2").text("Hover over a node to display ingredient name.");
+        d3.select(".chart-desc3-3").text("Drag a node to better view connections.");
+        d3.select(".chart-desc3-4").text("Select an " +
+        "ingredient to view all other connected ingredients. Select the ingredient again to return to initial display.");
+//        var width_n  = 1100;
+//        var height_n = 600;
+        //console.log(width_n);
 
-                var y2 = d3.scale.linear()
-//                        .range([height2, 0]);
-                        .range([height2, 0]);
+        //determine width of container for chart3:
+        var selection_n = d3.select(".chart3");
+        var chart3Width = selection_n[0][0].clientWidth;
+        console.log("Width for chart 3 is " + chart3Width);
 
-                //change y axis range from 0 to 100 (percent)
-//                var axisScale = d3.scale.linear()
-//                                         .domain([0,100])
-//                                         .range([height2,0]);
+        var margin3 = {top: 40*1.5 *.5, right: 20*1.5, bottom: 30*1.5*2, left: 40*1.5},
+                width_n = chart3Width - margin3.left - margin3.right,    //make chart width dependent on browser window size
+                height_n = 600 - margin3.top - margin3.bottom;
 
-                //set number of y-axis ticks visible:
-                var num_ticks = 5;
-
-                var xAxis = d3.svg.axis()
-                        .scale(x2)
-                        .orient("bottom");
-
-                var yAxis = d3.svg.axis()
-                                .scale(y2)
-//                                .scale(axisScale)
-                                .orient("left")
-                                .tickFormat(formatPercent)
-                                .ticks(num_ticks)
-                                .tickSize(-width2) //extend ticks to make horizontal gridlines
-                        ;
-
-//                var tip = d3.tip()
-//                        .attr('class', 'd3-tip')
-//                        .offset([-10, 0])
-//                        .html(function(d) {
-//                            return "<strong>Frequency:</strong> <span style='color:red'>" + d.frequency + "</span>";
-//                        })
-
-                var svg2 = d3.select(".chart2").append("svg")
-                        .attr("id", "popular-ingredients-chart")
-                        .attr("width", width2 + margin2.left + margin2.right)
-                        .attr("height", height2 + margin2.top + margin2.bottom)
-                        .append("g")
-                        .attr("transform", "translate(" + margin2.left + "," + margin2.top + ")");
-
-//                svg.call(tip);
-
-                var csv_name = "data/scirep-cuisines-detail/country_popular_pairs/" + selectedCountry + "_popular_pairs.csv";
-
-                //console.log(csv_name);
-
-                d3.csv(csv_name, type, function (error, data) {
-                    x2.domain(data.map(function (d) {
-                        return d.ingredients;
-                    }));
-//                    y2.domain([0, d3.max(data, function (d) {
-//                        return d.percent_recipes;
-//                    })]);
-                    y2.domain([0, 1]);
-
-                    svg2.append("g")
-                            .attr("class", "x axis")
-                            .attr("transform", "translate(0," + height2 + ")")
-                            .call(xAxis)
-                            .selectAll(".tick text")
-                            .call(wrap, x2.rangeBand())
-                            ;
-
-                    svg2.append("g")
-                            .attr("class", "y axis")
-                            .call(yAxis)
-                            .append("text")
-                            .attr("transform", "rotate(-90)")
-                            .attr("y", 4)
-                            .attr("dy", ".71em")
-                            .style("text-anchor", "end")
-//                            .text("Frequency")
-                    ;
-
-                    svg2.selectAll(".bar")
-                            .data(data)
-                            .enter().append("rect")
-                            .attr("class", "bar")
-                            .attr("x", function (d) {
-                                return x2(d.ingredients);
-                            })
-                            .attr("width", x2.rangeBand())
-                            .attr("y", function (d) {
-                                return y2(d.percent_recipes);
-                            })
-                            .attr("height", function (d) {
-                                return height2 - y2(d.percent_recipes);
-                            });
+        //defining tooltip:
+        var tip = d3.tip()
+                .attr('class', 'd3-tip')
+                .offset([-10, 0])
+                .html(function(d) {
+                    return "<span style='color:black'><font face='verdana'><strong>" + d.name + "</strong></font></span>";
                 });
 
+        var force = d3.layout.force()
+                        .charge(-320)
+                        .linkDistance(300)
+                        .size([width_n, height_n])
+                        .friction(.1)
+                        .chargeDistance(height_n/3)
+                        .gravity(1)
+                ;
 
-                function wrap(text, width) {
-                    text.each(function() {
-                        var text = d3.select(this),
-                                words = text.text().split(/\s+/).reverse(),
-                                word,
-                                line = [],
-                                lineNumber = 0,
-                                lineHeight = 1.1, // ems
-                                y = text.attr("y"),
-                                dy = parseFloat(text.attr("dy")),
-                                tspan = text.text(null).append("tspan").attr("x", 0).attr("y", y).attr("dy", dy + "em");
-                        while (word = words.pop()) {
-                            line.push(word);
-                            tspan.text(line.join(" "));
-                            if (tspan.node().getComputedTextLength() > width) {
-                                line.pop();
-                                tspan.text(line.join(" "));
-                                line = [word];
-                                tspan = text.append("tspan").attr("x", 0).attr("y", y).attr("dy", ++lineNumber * lineHeight + dy + "em").text(word);
-                            }
-                        }
+        var svg_n = d3.select(".chart3").append("svg")
+                .attr("id", "ingredient-network-chart")
+                .attr("width", width_n)
+                .attr("height", height_n);
+
+        svg_n.call(tip);
+
+        //    d3.json("data/subset_network.json", function(error, graph) {
+
+        var json_name = "data/scirep-cuisines-detail/country_split_network_subset/" + selectedCountry + ".json";
+        d3.json(json_name, function(error, graph) {
+            force
+                    .nodes(graph.nodes)
+                    .links(graph.links)
+                    .start();
+
+            var link = svg_n.selectAll(".link")
+                    .data(graph.links)
+                    .enter().append("line")
+                    .attr("class", "link")
+                    .style("stroke-width", function (d) {
+                        return Math.sqrt(d.value);
                     });
-                }
 
-                function type(d) {
-                    d.percent_recipes = +d.percent_recipes;
-                    return d;
-                }
+            var node = svg_n.selectAll(".node")
+                            .data(graph.nodes)
+                            .enter().append("circle")
+                            .attr("class", "node")
+                            .attr("r", 6)
+                            .style("fill", colors.darkpurple)
+                            .call(force.drag)
+                            .on('mouseover', tip.show)
+                            .on('mouseout', tip.hide)
+                            .on("click.highlight", function(d){
+                                d3.select(this)
+                                        .transition();
 
-                //indicate that we have drawn a chart:
-                graph_showing = true;
+                                var self = this;
+
+                                // Check if the node is "active", or has been clicked on:
+                                var active   = self.active ? false : true,
+                                        newSelectedColor = active ? colors.redorange : colors.darkpurple,
+                                        newNotselectedColor = active ? colors.grey : colors.darkpurple,
+                                        newSelectedRadius = active ? 15 : 6
+                                        ;
+
+                                var nodeNeighbors = graph.links.filter(function(link) {
+                                    // Filter the list of links to only those links that have our target
+                                    // node as a source or target
+                                    return link.source.index === d.index || link.target.index === d.index;})
+                                        .map(function(link) {
+                                            // Map the list of links to a simple array of the neighboring indices - this is
+                                            // technically not required but makes the code below simpler because we can use
+                                            // indexOf instead of iterating and searching ourselves.
+                                            return link.source.index === d.index ? link.target.index : link.source.index; });
+
+                                // change all nodes to not selected:
+                                svg_n.selectAll('circle')
+//                                        .style('stroke', newNotselectedColor)
+                                        .transition()
+                                        .duration(1000)
+                                        .style('fill', newNotselectedColor)
+                                        .attr('r', 6);
+
+                                svg_n.selectAll('circle').filter(function(node) {
+                                    // Filter the selection of all circles to only those that hold a node with an
+                                    // index in list of neighbors
+                                    return nodeNeighbors.indexOf(node.index) > -1;
+                                })
+                                        .transition()
+                                        .duration(1000)
+                                        .style('fill', newSelectedColor)
+                                ;
+
+                                d3.select(this)
+                                        .style("fill", newSelectedColor)
+                                        .transition()
+                                        .duration(1000)
+                                        .attr("r", newSelectedRadius)
+                                ;
+
+                                // select all lines coming from the node clicked on:
+                                //TODO: change the color to bold or the same color as the node clicked on
+
+                                //select all lines NOT coming from the node clicked on:
+                                //TODO: change the opacity to lighter
+
+                                //display text for ingredients of all connected nodes:
+
+                                // Update whether or not the elements are active:
+                                self.active = active;
+
+                            })
+                    ;
+
+
+            force.on("tick", function() {
+                link.attr("x1", function(d) { return d.source.x; })
+                        .attr("y1", function(d) { return d.source.y; })
+                        .attr("x2", function(d) { return d.target.x; })
+                        .attr("y2", function(d) { return d.target.y; });
+
+                node.attr("cx", function(d) { return d.x; })
+                        .attr("cy", function(d) { return d.y; });
+            });
+
+            // Returns an event handler for fading a given chord group.
+            function fade(opacity) {
+                return function (g, i) {
+                    svg_n.selectAll(".node")
+                            .filter(function (d) {
+                                return d.links.source.index != i && d.links.target.index != i;
+                            })
+                            .transition()
+                            .style("opacity", opacity);
+                }
+            }
+
+        });
+
+//////////////////////// END NETWORK CODE /////////////////////////////////
+
+
+
+        //indicate that we have drawn a chart:
+        graph_showing = true;
 
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 </script>
