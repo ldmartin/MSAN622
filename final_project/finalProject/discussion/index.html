@@ -61,7 +61,6 @@
             <a class="btn btn-primary btn-lg" href="http://ldmartin.github.io/MSAN622/final_project/finalProject/" role="button">Visualization</a>
             <a class="btn btn-info btn-lg" href="http://ldmartin.github.io/MSAN622/final_project/finalProject/discussion/" role="button">Discussion</a>
         </p>
-
     </div>
 </div>
 
@@ -69,39 +68,141 @@
 
     <div class="row">
         <div class="col-md-12">
-            <h2 class="page-header"><a name="project"></a>Interactive Map</h2>
-            <p>
-               Description here.
-            </p>
+            <h2 class="page-header"><a name="interactive-map"></a><b>Interactive Map</b></h2>
             <div class="media">
-                <img src="img/map1.png" style="width: 70%; margin-right: 5%; margin-bottom: 0.5em;">
+                <img src="img/map1.png" style="width: 80%; margin-right: 5%; margin-bottom: 0.5em;">
             </div>
+        </div>
+    </div>
+
+    <div class="jumbotron color-lightteal">
+        <div class="container">
+            <h3><b>Interactivity</b></h3>
+            <h5>
+                Upon entering the visualization webpage, the user is presented with an interactive map. The countries
+                that are shaded black correspond to countries which I have recipe information for. The remaining
+                countries are shaded grey to signify that they are not part of the interactive visualization. When the
+                user hovers over a grey shaded country, the country turns red and a tooltip will display with the
+                country name. When the user hovers over a black shaded country, the country turns red and a tooltip
+                displays the country name as well as the ingredient occurring most frequently in recipes for that
+                country.
+            </h5>
+            <h5>
+                When the user clicks on a grey shaded country, nothing will happen; however, when a user clicks on a
+                black shaded country, two new visualizations are generated and the user is
+                scrolled down the page to the first of these visualizations (discussed below).
+            </h5>
+            <h3><b>Techniques</b></h3>
+            <h5>
+                Techniques here.
+            </h5>
         </div>
     </div>
 
     <div class="row">
         <div class="col-md-12">
             <h2 class="page-header"><a name="project"></a>Ingredient Pairings Barchart</h2>
-            <p>
-               Description here.
-            </p>
             <div class="media">
                 <img src="img/barchart1.png" style="width: 65%; margin-right: 5%; margin-bottom: 0.5em;">
             </div>
         </div>
     </div>
 
+    <div class="jumbotron color-lightteal">
+        <div class="container">
+            <h3><b>Interactivity</b></h3>
+            <h5>
+                This visualization is generated based on the country the user has clicked on in the interactive map.
+                This barchart presents the ten most common occurring <i>pairs</i> of ingredients in recipes for that
+                country. The bar height is the percent of all recipes that pair occurred in. Because each country has
+                a vastly different number of recipes compiled, the number of recipes used in analysis is presented
+                above the barchart. This serves to decrease the lie factor when switching between countries within the
+                visualization.
+            </h5>
+            <h5>
+                When the user hovers over a bar in the chart, the bar fills to red. I had initially had a tooltip
+                displaying the exact percent as well but I chose to remove this to increase simplicity of the visual.
+                This visual is meant to give the user an overall picture of common pairings rather than present them
+                with specifics about each pair. Because all recipes were scraped from online sites, I did not want this
+                visual to be interpreted as a full coverage of all cuisines in that country, but rather a rough
+                depiction of what was common within the data I had.
+            </h5>
+            <h3><b>Techniques</b></h3>
+            <h5>
+                Techniques here.
+            </h5>
+        </div>
+    </div>
+
     <div class="row">
         <div class="col-md-12">
             <h2 class="page-header"><a name="project"></a>Recipe Ingredient Network</h2>
-            <p>
-                Description here.
-            </p>
             <div class="media">
                 <img src="img/network1.png" style="width: 45%; margin-right: 5%; margin-bottom: 0.5em;">
             </div>
         </div>
     </div>
+
+    <div class="jumbotron color-lightteal">
+        <div class="container">
+            <h3><b>Interactivity</b></h3>
+            <h5>
+                This is the second visual generated when the user clicks on a country of the interactive map. The user
+                is presented with a network representing the coexistence of different ingredients within all recipes
+                of that country. Each node represents an ingredient and two ingredients are connected with a line if
+                they exist in a recipe together. This visual serves to give the user a more in-depth look at how
+                prevalent certain ingredients are within cuisines for a given country.
+            </h5>
+            <h5>
+                When the user hovers over a node, they are presented with the ingredient represented by that node.
+                The user may click on a node to highlight every other node which is linked with the selected node.
+                The selected node will grow in size and turn red, while every connectsed node will turn red as well.
+                Additionally, all nodes which are not selected will fade to grey in order to draw greater contrast
+                between connected and non-connected nodes. The user may click the selected node again to reset the
+                visual to it's initial state.
+            </h5>
+            <h5>
+                Because this visual aims to show the user how connected certain ingredients are within cuisines, it is
+                important for the user to be able to see how many edges emanate from each node. For the nodes existing
+                in the center of the network, this may be challenging. In order to fix this problem, the user can drag
+                any node in the network to a different point on the page in which they can better view the edges for
+                that node. When the user releases the node, the network bounces back to it's initial state.
+            </h5>
+            <h3><b>Techniques</b></h3>
+            <h5>
+                Techniques here.
+            </h5>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <h2 class="page-header"><a name="interactive-map"></a><b>Challenges</b></h2>
+            <p>
+                Challenges here.
+            </p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <h2 class="page-header"><a name="interactive-map"></a><b>Conclusion</b></h2>
+            <p>
+                Conclusion here.
+            </p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <h2 class="page-header"><a name="interactive-map"></a><b>Feedback</b></h2>
+            <p>
+                Feedback here.
+            </p>
+        </div>
+    </div>
+
+</div><!--/.container -->
 
 <hr/>
 
