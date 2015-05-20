@@ -2,7 +2,113 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="98f70332-6a3d-4f75-bc2a-cdb0fe28b4b4" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/final_project/data/ingr_comp/README.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/final_project/data/ingr_comp/comp_info.tsv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/final_project/data/ingr_comp/ingr_comp.tsv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/final_project/data/ingr_comp/ingr_info.tsv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/final_project/data/scirep-cuisines-detail/by_continent.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/final_project/data/scirep-cuisines-detail/by_country.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/final_project/data/scirep-cuisines-detail/code/format_recipes.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/final_project/data/scirep-cuisines-detail/code/split_data.R" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/final_project/data/scirep-cuisines-detail/country_popular_pairs/Austria_popular.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/final_project/data/scirep-cuisines-detail/country_popular_pairs/Austria_popular_pairs.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/final_project/data/scirep-cuisines-detail/country_popular_pairs/Belgium_popular.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/final_project/data/scirep-cuisines-detail/country_popular_pairs/Belgium_popular_pairs.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/final_project/data/scirep-cuisines-detail/country_popular_pairs/Canada_popular.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/final_project/data/scirep-cuisines-detail/country_popular_pairs/Canada_popular_pairs.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/final_project/data/scirep-cuisines-detail/country_popular_pairs/China_popular.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/final_project/data/scirep-cuisines-detail/country_popular_pairs/China_popular_pairs.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/final_project/data/scirep-cuisines-detail/country_popular_pairs/France_popular.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/final_project/data/scirep-cuisines-detail/country_popular_pairs/France_popular_pairs.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/final_project/data/scirep-cuisines-detail/country_popular_pairs/Germany_popular.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/final_project/data/scirep-cuisines-detail/country_popular_pairs/Germany_popular_pairs.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/final_project/data/scirep-cuisines-detail/country_popular_pairs/Greece_popular.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/final_project/data/scirep-cuisines-detail/country_popular_pairs/Greece_popular_pairs.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/final_project/data/scirep-cuisines-detail/country_popular_pairs/India_popular.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/final_project/data/scirep-cuisines-detail/country_popular_pairs/India_popular_pairs.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/final_project/data/scirep-cuisines-detail/country_popular_pairs/Iran_popular.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/final_project/data/scirep-cuisines-detail/country_popular_pairs/Iran_popular_pairs.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/final_project/data/scirep-cuisines-detail/country_popular_pairs/Ireland_popular.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/final_project/data/scirep-cuisines-detail/country_popular_pairs/Ireland_popular_pairs.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/final_project/data/scirep-cuisines-detail/country_popular_pairs/Israel_popular.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/final_project/data/scirep-cuisines-detail/country_popular_pairs/Israel_popular_pairs.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/final_project/data/scirep-cuisines-detail/country_popular_pairs/Italy_popular.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/final_project/data/scirep-cuisines-detail/country_popular_pairs/Italy_popular_pairs.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/final_project/data/scirep-cuisines-detail/country_popular_pairs/Japan_popular.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/final_project/data/scirep-cuisines-detail/country_popular_pairs/Japan_popular_pairs.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/final_project/data/scirep-cuisines-detail/country_popular_pairs/Korea_popular.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/final_project/data/scirep-cuisines-detail/country_popular_pairs/Korea_popular_pairs.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/final_project/data/scirep-cuisines-detail/country_popular_pairs/Malaysia_popular.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/final_project/data/scirep-cuisines-detail/country_popular_pairs/Malaysia_popular_pairs.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/final_project/data/scirep-cuisines-detail/country_popular_pairs/Mexico_popular.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/final_project/data/scirep-cuisines-detail/country_popular_pairs/Mexico_popular_pairs.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/final_project/data/scirep-cuisines-detail/country_popular_pairs/Netherlands_popular.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/final_project/data/scirep-cuisines-detail/country_popular_pairs/Netherlands_popular_pairs.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/final_project/data/scirep-cuisines-detail/country_popular_pairs/Philippines_popular.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/final_project/data/scirep-cuisines-detail/country_popular_pairs/Philippines_popular_pairs.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/final_project/data/scirep-cuisines-detail/country_popular_pairs/Spain_popular.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/final_project/data/scirep-cuisines-detail/country_popular_pairs/Spain_popular_pairs.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/final_project/data/scirep-cuisines-detail/country_popular_pairs/Thailand_popular.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/final_project/data/scirep-cuisines-detail/country_popular_pairs/Thailand_popular_pairs.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/final_project/data/scirep-cuisines-detail/country_popular_pairs/United Kingdom_popular.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/final_project/data/scirep-cuisines-detail/country_popular_pairs/United Kingdom_popular_pairs.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/final_project/data/scirep-cuisines-detail/country_popular_pairs/United States_popular.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/final_project/data/scirep-cuisines-detail/country_popular_pairs/United States_popular_pairs.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/final_project/data/scirep-cuisines-detail/country_popular_pairs/Vietnam_popular.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/final_project/data/scirep-cuisines-detail/country_popular_pairs/Vietnam_popular_pairs.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/final_project/data/scirep-cuisines-detail/country_split_df/Austria.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/final_project/data/scirep-cuisines-detail/country_split_df/Belgium.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/final_project/data/scirep-cuisines-detail/country_split_df/Canada.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/final_project/data/scirep-cuisines-detail/country_split_df/China.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/final_project/data/scirep-cuisines-detail/country_split_df/France.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/final_project/data/scirep-cuisines-detail/country_split_df/Germany.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/final_project/data/scirep-cuisines-detail/country_split_df/Greece.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/final_project/data/scirep-cuisines-detail/country_split_df/India.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/final_project/data/scirep-cuisines-detail/country_split_df/Iran.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/final_project/data/scirep-cuisines-detail/country_split_df/Ireland.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/final_project/data/scirep-cuisines-detail/country_split_df/Israel.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/final_project/data/scirep-cuisines-detail/country_split_df/Italy.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/final_project/data/scirep-cuisines-detail/country_split_df/Japan.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/final_project/data/scirep-cuisines-detail/country_split_df/Korea.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/final_project/data/scirep-cuisines-detail/country_split_df/Malaysia.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/final_project/data/scirep-cuisines-detail/country_split_df/Mexico.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/final_project/data/scirep-cuisines-detail/country_split_df/Netherlands.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/final_project/data/scirep-cuisines-detail/country_split_df/Philippines.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/final_project/data/scirep-cuisines-detail/country_split_df/Spain.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/final_project/data/scirep-cuisines-detail/country_split_df/Thailand.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/final_project/data/scirep-cuisines-detail/country_split_df/United Kingdom.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/final_project/data/scirep-cuisines-detail/country_split_df/United States.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/final_project/data/scirep-cuisines-detail/country_split_df/Vietnam.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/final_project/data/scirep-cuisines-detail/country_split_network/Austria.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/final_project/data/scirep-cuisines-detail/country_split_network/Belgium.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/final_project/data/scirep-cuisines-detail/country_split_network/Canada.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/final_project/data/scirep-cuisines-detail/country_split_network/China.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/final_project/data/scirep-cuisines-detail/country_split_network/France.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/final_project/data/scirep-cuisines-detail/country_split_network/Germany.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/final_project/data/scirep-cuisines-detail/country_split_network/Greece.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/final_project/data/scirep-cuisines-detail/country_split_network/India.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/final_project/data/scirep-cuisines-detail/country_split_network/Iran.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/final_project/data/scirep-cuisines-detail/country_split_network/Ireland.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/final_project/data/scirep-cuisines-detail/country_split_network/Israel.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/final_project/data/scirep-cuisines-detail/country_split_network/Italy.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/final_project/data/scirep-cuisines-detail/country_split_network/Japan.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/final_project/data/scirep-cuisines-detail/country_split_network/Kingdom.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/final_project/data/scirep-cuisines-detail/country_split_network/Korea.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/final_project/data/scirep-cuisines-detail/country_split_network/Malaysia.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/final_project/data/scirep-cuisines-detail/country_split_network/Mexico.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/final_project/data/scirep-cuisines-detail/country_split_network/Netherlands.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/final_project/data/scirep-cuisines-detail/country_split_network/Philippines.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/final_project/data/scirep-cuisines-detail/country_split_network/Spain.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/final_project/data/scirep-cuisines-detail/country_split_network/States.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/final_project/data/scirep-cuisines-detail/country_split_network/Thailand.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/final_project/data/scirep-cuisines-detail/country_split_network/United Kingdom.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/final_project/data/scirep-cuisines-detail/country_split_network/United States.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/final_project/data/scirep-cuisines-detail/country_split_network/Vietnam.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/final_project/data/scirep-cuisines-detail/most_pop_pairs.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/final_project/data/scirep-cuisines-detail/recipes.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/final_project/data/scirep-cuisines-detail/transform_network.py" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/final_project/.idea/workspace.xml" afterPath="$PROJECT_DIR$/final_project/.idea/workspace.xml" />
     </list>
     <ignored path="ldmartin.github.io.iws" />
@@ -27,8 +133,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.44194108">
-              <caret line="94" column="66" selection-start-line="94" selection-start-column="66" selection-end-line="94" selection-end-column="66" />
+            <state vertical-scroll-proportion="0.75389946">
+              <caret line="106" column="26" selection-start-line="106" selection-start-column="26" selection-end-line="106" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -634,8 +740,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.44194108">
-          <caret line="94" column="66" selection-start-line="94" selection-start-column="66" selection-end-line="94" selection-end-column="66" />
+        <state vertical-scroll-proportion="0.75389946">
+          <caret line="106" column="26" selection-start-line="106" selection-start-column="26" selection-end-line="106" selection-end-column="26" />
           <folding />
         </state>
       </provider>

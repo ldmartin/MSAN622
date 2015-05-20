@@ -1,0 +1,11 @@
+node1,node2,weight,ingredients,percent_recipes
+fish,garlic,16,fish & garlic,0.53
+cilantro,rice,13,cilantro & rice,0.43
+cilantro,garlic,12,cilantro & garlic,0.4
+fish,rice,12,fish & rice,0.4
+rice,garlic,11,rice & garlic,0.37
+fish,cilantro,11,fish & cilantro,0.37
+pepper,garlic,11,pepper & garlic,0.37
+fish,pepper,9,fish & pepper,0.3
+cayenne,garlic,9,cayenne & garlic,0.3
+cilantro,cayenne,9,cilantro & cayenne,0.3

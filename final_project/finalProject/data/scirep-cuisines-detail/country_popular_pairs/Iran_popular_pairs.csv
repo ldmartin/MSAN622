@@ -1,0 +1,11 @@
+node1,node2,weight,ingredients,percent_recipes
+tomato,onion,7,tomato & onion,0.33
+black pepper,onion,5,black pepper & onion,0.24
+olive oil,onion,5,olive oil & onion,0.24
+chicken,onion,4,chicken & onion,0.19
+tomato,black pepper,4,tomato & black pepper,0.19
+vegetable oil,turmeric,4,vegetable oil & turmeric,0.19
+black pepper,garlic,4,black pepper & garlic,0.19
+vegetable oil,onion,4,vegetable oil & onion,0.19
+tomato,garlic,3,tomato & garlic,0.14
+yogurt,cucumber,3,yogurt & cucumber,0.14

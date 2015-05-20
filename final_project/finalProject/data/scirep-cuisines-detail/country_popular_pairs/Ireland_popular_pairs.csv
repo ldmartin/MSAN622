@@ -1,0 +1,11 @@
+node1,node2,weight,ingredients,percent_recipes
+wheat,butter,32,wheat & butter,0.37
+wheat,egg,27,wheat & egg,0.31
+butter,egg,25,butter & egg,0.29
+wheat,buttermilk,21,wheat & buttermilk,0.24
+cream,egg,18,cream & egg,0.21
+buttermilk,butter,17,buttermilk & butter,0.2
+wheat,cane molasses,13,wheat & cane molasses,0.15
+cream,butter,13,cream & butter,0.15
+wheat,oat,12,wheat & oat,0.14
+vanilla,egg,12,vanilla & egg,0.14
