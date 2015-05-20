@@ -1,0 +1,11 @@
+node1,node2,weight,ingredients,percent_recipes
+pepper,garlic,7,pepper & garlic,39.0
+cumin,garlic,7,cumin & garlic,39.0
+coriander,cumin,7,coriander & cumin,39.0
+coriander,garlic,7,coriander & garlic,39.0
+fenugreek,coriander,6,fenugreek & coriander,33.0
+pepper,cumin,6,pepper & cumin,33.0
+ginger,garlic,6,ginger & garlic,33.0
+pepper,turmeric,6,pepper & turmeric,33.0
+onion,garlic,6,onion & garlic,33.0
+coconut,garlic,6,coconut & garlic,33.0

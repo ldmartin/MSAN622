@@ -1,0 +1,11 @@
+node1,node2,weight,ingredients,percent_recipes
+wheat,egg,150,wheat & egg,0.52
+wheat,butter,111,wheat & butter,0.38
+butter,egg,106,butter & egg,0.37
+milk,wheat,74,milk & wheat,0.26
+milk,egg,71,milk & egg,0.25
+milk,butter,60,milk & butter,0.21
+wheat,cinnamon,50,wheat & cinnamon,0.17
+cinnamon,egg,49,cinnamon & egg,0.17
+onion,vinegar,48,onion & vinegar,0.17
+wheat,vanilla,43,wheat & vanilla,0.15

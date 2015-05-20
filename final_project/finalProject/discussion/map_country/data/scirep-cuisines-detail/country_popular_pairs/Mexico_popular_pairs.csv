@@ -1,0 +1,11 @@
+node1,node2,weight,ingredients,percent_recipes
+cayenne,onion,1037,cayenne & onion,0.59
+cayenne,garlic,981,cayenne & garlic,0.56
+onion,garlic,968,onion & garlic,0.55
+onion,tomato,949,onion & tomato,0.54
+cayenne,tomato,917,cayenne & tomato,0.52
+tomato,garlic,859,tomato & garlic,0.49
+cayenne,cumin,529,cayenne & cumin,0.3
+cumin,garlic,516,cumin & garlic,0.29
+onion,cumin,494,onion & cumin,0.28
+cayenne,corn,434,cayenne & corn,0.25
