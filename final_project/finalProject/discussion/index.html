@@ -234,7 +234,7 @@
             <h5>
                 When the user hovers over a node, they are presented with the ingredient represented by that node.
                 The user may click on a node to highlight every other node which is linked with the selected node.
-                The selected node will grow in size and turn red, while every connectsed node will turn red as well.
+                The selected node will grow in size and turn red, while every connected node will turn red as well.
                 Additionally, all nodes which are not selected will fade to grey in order to draw greater contrast
                 between connected and non-connected nodes. The user may click the selected node again to reset the
                 visual to it's initial state.
@@ -248,14 +248,49 @@
             </h5>
             <h3><b>Techniques</b></h3>
             <h5>
-                Encoding of data.
+                Data for this visualization was the most challenging to encode, as the format for generating networks
+                in D3 takes as input a JSON object with two elements. The first element contains encoding information to
+                generate the names of each node and the second element encodes the weights between nodes, when necessary.
+                In most cases, this manipulation was performed in python by simply transforming the dataset to sparse
+                matrix form, then altering the format to the JSON object needed.
             </h5>
             <h5>
-                Lie factor, data density, data to ink.
+                Problems arise with this technique when
+                the network is too connected or contains too many nodes. I visually identified that networks were too
+                crowded when more than 100 recipes were being visualized. I have conducted a thresholding step in these
+                cases to only show significant connections in the network. The network visualization is reduced to a
+                reasonable size by selecting only nodes which appear in more than 50 recipes with another ingredient.
+                Thus, the "weights" between nodes dictate whether that node should be visualized.
             </h5>
             <h5>
-                Purpose, why include this visual.
+                In thresholding certain countries' networks, the lie factor is greatly increased because some ingredients
+                are no longer represented in the network. Similarly, of the nodes that do appear in the network,
+                connections will only be drawn between ones existing in over 50 recipes together. This means certain
+                nodes visualized <i>could</i> exist in recipes together, but will not be connected in the visualization.
+                The data to ink ratio and data density ratios remain high because there is no extraneous information
+                presented in the network. I have increased the data to ink ratio by displaying node labels only on
+                user hoverover.
             </h5>
+            <h5>
+                Since my main inspiration for this project was another network visualization, this piece was what I spent
+                most work on. I believe it gives the user the most amount of information about cuisines for the
+                selected country because the data density ratio is so high. Users are able to get an overall picture of how
+                ingredients exist together in cuisines by interacting with this network. It especially allows the user
+                to visualize how prevalent certain ingredients are by highlighting connected nodes when one node is clicked on.
+            </h5>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <h2 class="page-header"><a name="interactive-map"></a><b>Feedback</b></h2>
+            <p>
+                The final project only has slight changes made from the prototype. The plots, layout, and interactivity
+                are exactly the same; however, I have modified the color scheme due to feedback that colors used to
+                highlight elements should be consistent across graphics. Thus I have chosen to use red as the
+                highlighting color across all visuals. All other colors used are light and more neutral so as not
+                to overcrowd the visual with more noise.
+            </p>
         </div>
     </div>
 
@@ -263,7 +298,30 @@
         <div class="col-md-12">
             <h2 class="page-header"><a name="interactive-map"></a><b>Challenges</b></h2>
             <p>
-                Challenges here.
+                Most challenges for this project came in not fully understanding javascript and how to make D3 interact
+                with outside data. This led me to do a great amount of work outside of D3 and in Python. I ended up
+                hard-coding many variables with data because I couldn't figure out how to load it in D3 and assign it
+                to a variable to use much later in the script. This technique was only able to work for me because my
+                dataset was relatively small; however, on a larger dataset I would need to create more robust methods
+                for interacting with outside data.
+            </p>
+            <p>
+                Formatting data for use in the network visualization also was quite challenging. For some networks this
+                was a straightforward process in Python which involved manipulating data to sparse matrix form and then
+                writing functions to transform this network to a JSON object in the correct format. I assumed this
+                technique would work across all countries until I ran into networks with over 500 nodes. Of course these
+                networks would have to be cut down in order to display meaningfully with the rest of the project. Coding
+                this thresholding rule in Python was the hardest part of the project because of the very specific way
+                a network has to be encoded to render in D3.
+            </p>
+            <p>
+                Each individual visualization was created in a few days by reading documentation and looking at blocks
+                in which similar techniques are implemented. Challenges arose when combining visualizations and
+                enabling interactivity between them. This was especially hard when getting the DataMaps package to
+                interact with base D3 because the formatting and syntax is completely different in DataMaps functions.
+                As previously stated, hard-coding values and finding other "hack-y" ways to deal with these problems
+                turned out to be my best options. Perhaps if I felt as comfortable with javascript as I do with
+                Python, my code would be more robust to issues like these.
             </p>
         </div>
     </div>
@@ -273,15 +331,6 @@
             <h2 class="page-header"><a name="interactive-map"></a><b>Conclusion</b></h2>
             <p>
                 Conclusion here.
-            </p>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-md-12">
-            <h2 class="page-header"><a name="interactive-map"></a><b>Feedback</b></h2>
-            <p>
-                Feedback here.
             </p>
         </div>
     </div>
