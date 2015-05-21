@@ -64,13 +64,22 @@
     </div>
 </div>
 
+<div class="jumbotron color-lightgreen">
+    <div class="container">
+        <h3><b>Data Preprocessing</b></h3>
+        <h5>
+            Preprocessing here.
+        </h5>
+    </div>
+</div>
+
 <div class="container">
 
     <div class="row">
         <div class="col-md-12">
             <h2 class="page-header"><a name="interactive-map"></a><b>Interactive Map</b></h2>
             <div class="media">
-                <img src="img/map1.png" style="width: 80%; margin-right: 5%; margin-bottom: 0.5em;">
+                <img src="img/map2.png" style="width: 80%; margin-right: 5%; margin-bottom: 0.5em;">
             </div>
         </div>
     </div>
@@ -94,7 +103,45 @@
             </h5>
             <h3><b>Techniques</b></h3>
             <h5>
-                Techniques here.
+                This visual was implemented using the <a href="http://datamaps.github.io/">DataMaps</a> D3 package. I
+                have modified the javascript default code in the following ways:
+                <p></p>
+                <li>Custom coloring for countries as either black or grey</li>
+                <li>Using 'equirectangular' map layout instead of the standard mercator projection</li>
+                <li>Red highlight of country on user mouseover</li>
+                <li>Custom tooltip displaying country name and most popular ingredient when applicable</li>
+                <li>Generation of new charts on user click of country</li>
+                <p></p>
+                In addition to these standard javascript formatting changes, a bit of data manipulation had to take
+                place. Because the DataMaps package does not allow for CSV reading within the map generation function,
+                I defined variables within this function containing country and ingredient information. The first
+                variable defined contained the list of countries which I had data for (displayed as black on map) and
+                the second variable was a dictionary-like object where the keys were countries and the values were
+                the most popular ingredient (displayed in the tooltip). Although hard-coding is never desirable,
+                it was trivial in this case
+                because I only had data for 17 countries. Finding the most popular ingredient for each country was
+                performed as a preprocessing step in python.
+            </h5>
+            <h5>
+                The lie factor of this visual is low and possibly only occurs in the equirectangular projection used
+                since the world is being mapped from a sphere to a rectangle. However, I believe the equirectangular
+                projection does a better job of minimizing the lie factor over the default mercator projection. The data
+                to ink ratio is low for this visual because the data pertains to ony a small amount of countries. I
+                have chosen to ignore this fact because I wanted to present the user with a complete picture of the
+                world to give context which would be lost if only the 17 countries with data were presented. Similarly,
+                the data to ink ratio is low because this visual takes up the majority of the page and presents the user
+                with information not pertaining to the dataset at all. For example, on user mouseover of grey shaded
+                countries, the tooltip still displays the country name. Again, even with the decrease in data density,
+                these attributes were kept to maintain the context of the dataset and allow the user to visualize
+                the regions of the world which are being depicted throughout the interactive visualization.
+            </h5>
+            <h5>
+                The sole purpose of this visual is a depiction of context for the user. This visual serves as the
+                anchor of the project in that the user chooses what information they would like to be presented with
+                by interacting with this map. The user is able to see from this visual that countries in similar
+                regions of the world have similar ingredients comprising cuisines. It is also important to present this
+                information as a complete map in order to show the user immediately that the data being presented to
+                them has an important underlying geospacial component.
             </h5>
         </div>
     </div>
@@ -103,7 +150,7 @@
         <div class="col-md-12">
             <h2 class="page-header"><a name="project"></a>Ingredient Pairings Barchart</h2>
             <div class="media">
-                <img src="img/barchart1.png" style="width: 65%; margin-right: 5%; margin-bottom: 0.5em;">
+                <img src="img/barchart2.png" style="width: 75%; margin-right: 5%; margin-bottom: 0.5em;">
             </div>
         </div>
     </div>
@@ -129,7 +176,13 @@
             </h5>
             <h3><b>Techniques</b></h3>
             <h5>
-                Techniques here.
+                Encoding of data.
+            </h5>
+            <h5>
+                Lie factor, data density, data to ink.
+            </h5>
+            <h5>
+                Purpose, why include this visual.
             </h5>
         </div>
     </div>
@@ -138,7 +191,7 @@
         <div class="col-md-12">
             <h2 class="page-header"><a name="project"></a>Recipe Ingredient Network</h2>
             <div class="media">
-                <img src="img/network1.png" style="width: 45%; margin-right: 5%; margin-bottom: 0.5em;">
+                <img src="img/network2.png" style="width: 55%; margin-right: 5%; margin-bottom: 0.5em;">
             </div>
         </div>
     </div>
@@ -170,7 +223,13 @@
             </h5>
             <h3><b>Techniques</b></h3>
             <h5>
-                Techniques here.
+                Encoding of data.
+            </h5>
+            <h5>
+                Lie factor, data density, data to ink.
+            </h5>
+            <h5>
+                Purpose, why include this visual.
             </h5>
         </div>
     </div>
