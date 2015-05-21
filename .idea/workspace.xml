@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="98f70332-6a3d-4f75-bc2a-cdb0fe28b4b4" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/final_project/finalProject/discussion/css/custom.css" afterPath="$PROJECT_DIR$/final_project/finalProject/discussion/css/custom.css" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/final_project/code/format_recipes.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/final_project/code/most_pop_ing.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/final_project/code/most_pop_pairs.py" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/final_project/finalProject/index.html" afterPath="$PROJECT_DIR$/final_project/finalProject/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/final_project/finalProject/discussion/index.html" afterPath="$PROJECT_DIR$/final_project/finalProject/discussion/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/final_project/.idea/workspace.xml" afterPath="$PROJECT_DIR$/final_project/.idea/workspace.xml" />
     </list>

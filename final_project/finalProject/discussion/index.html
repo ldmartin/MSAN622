@@ -60,6 +60,7 @@
         <p>
             <a class="btn btn-primary btn-lg" href="http://ldmartin.github.io/MSAN622/final_project/finalProject/" role="button">Visualization</a>
             <a class="btn btn-info btn-lg" href="http://ldmartin.github.io/MSAN622/final_project/finalProject/discussion/" role="button">Discussion</a>
+            <a class="btn btn-info btn-lg" href="https://github.com/ldmartin/MSAN622/tree/gh-pages/final_project/finalProject" role="button">GitHub Repo</a>
         </p>
     </div>
 </div>
@@ -68,7 +69,15 @@
     <div class="container">
         <h3><b>Data Preprocessing</b></h3>
         <h5>
-            Preprocessing here.
+            Since the dataset in it's raw form was a simple text file with each row representing a cuisine, much work
+            was done in the preprocessing phase in order to manipulate this data for use in the three visualizations.
+            The majority of preprocessing was done in python, with small bits of analysis performed in R. Specifically,
+            the dataset was decomposed into many smaller datasets which were able to be called from D3 and javascript
+            functions. In the case of the barchart and network visualizations, there exist one CSV and one JSON file
+            per country. These files are in turn called upon depending on the user clicked country in the interactive
+            map visualization. All preprocessing code can be found in the
+            <a href="https://github.com/ldmartin/MSAN622/tree/gh-pages/final_project/code">code</a> section of my
+            GitHub repository.
         </h5>
     </div>
 </div>
@@ -176,13 +185,29 @@
             </h5>
             <h3><b>Techniques</b></h3>
             <h5>
-                Encoding of data.
+                The data for this chart is read in from multiple CSV files containing columns "ingredient pairs" and
+                "percent". There exists one CSV file per country, and this file is called corresponding to the country
+                clicked on in the initial map visualization. Each row of the CSV file maps to a bar on the barchart, with
+                the x-axis label coming from the "ingredient pairs" column and the height of the bar coming from the
+                column "percent". Each CSV file has been generated in the data preprocessing step in python.
             </h5>
             <h5>
-                Lie factor, data density, data to ink.
+                As previously mentioned, the lie factor in this chart is apparent when transitioning between countries.
+                Because every country has a different number of recipes in the dataset (ranging from 9 to over 40,000),
+                when new barcharts are displayed, the user could get the illusion that the number of recipes certain
+                ingredient pairings appear in is the same across countries because the percentages are the same. The
+                data to ink ratio and data densities are higher. I have removed unnecesary grid lines, lightened the
+                tick marks, and only included percentages on the y-axis every 20% in order to increase simplicity of
+                the chart. Additionally, I have removed tool tips and included a red highlight on user hoer over for
+                emphasis.
             </h5>
             <h5>
-                Purpose, why include this visual.
+                This visual was included to give the user an idea of how ingredients coexist in cuisines across
+                countries. It is purposefully the second visual presented because it expands minimally from the
+                ingredient information presented in the interactive map. Each subsequent visual is meant to give the
+                user a more broad look at ingredients within cuisines. Therefore, the map introduces the most popular
+                ingredient, the barchart introduces commonly paired ingredients, and the last visual portrays the
+                connectivity of all ingredients within cuisines.
             </h5>
         </div>
     </div>
